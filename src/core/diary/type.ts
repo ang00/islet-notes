@@ -77,7 +77,7 @@ export type AttachmentRecord =
   | VideoAttachmentRecord
   | UnknownAttachmentRecord;
 
-export type SyncProvider = 's3' | 'webdav';
+export type SyncProvider = 's3' | 'webdav' | 'smb';
 
 export interface S3ConfigRecord {
   provider: 's3';
@@ -104,7 +104,20 @@ export interface WebDAVConfigRecord {
   updatedAt: number;
 }
 
-export type SyncConfigRecord = S3ConfigRecord | WebDAVConfigRecord;
+export interface SMBConfigRecord {
+  provider: 'smb';
+  host: string;
+  share: string;
+  username: string;
+  password: string;
+  domain: string;
+  prefix: string;
+  recoveryKey?: string;
+  recoveryKeyHash?: string;
+  updatedAt: number;
+}
+
+export type SyncConfigRecord = S3ConfigRecord | WebDAVConfigRecord | SMBConfigRecord;
 
 export interface DiaryModelData {
   version: Record<string, number>;

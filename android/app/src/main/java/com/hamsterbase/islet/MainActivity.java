@@ -21,6 +21,7 @@ public class MainActivity extends BridgeActivity {
     registerPlugin(AttachmentFileCachePlugin.class);
     registerPlugin(WebDavHttpPlugin.class);
     registerPlugin(VideoToolsPlugin.class);
+    registerPlugin(SmbPlugin.class);
     super.onCreate(savedInstanceState);
     configureWebViewDebugging();
     configureEdgeToEdge();

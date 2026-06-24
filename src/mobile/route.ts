@@ -46,6 +46,12 @@ export const routes: PageRoute[] = [
     fallback: '/',
   },
   {
+    url: '/startup/setup/sync/smb',
+    file: './pages/startup/setup/sync/smb/smb',
+    component: 'StartupSetupSyncSmbPage',
+    fallback: '/',
+  },
+  {
     url: '/startup/setup/key/init',
     file: './pages/startup/setup/key/init/init',
     component: 'StartupSetupKeyInitPage',

@@ -31,7 +31,7 @@ export function SyncManagementPage({ config }: { config: SyncConfigRecord }) {
               label: syncChannelDisplayName(config.provider),
               right: {
                 type: 'value',
-                text: config.provider === 'webdav' ? config.url : config.bucket,
+                text: config.provider === 'webdav' ? config.url : config.provider === 'smb' ? `${config.host}/${config.share}` : config.bucket,
               },
               testId: CloudSync.storageSummary,
               onClick: () => navigationService.navigate({ path: '/settings/s3/storage' }),

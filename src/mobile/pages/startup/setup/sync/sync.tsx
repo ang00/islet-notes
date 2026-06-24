@@ -4,11 +4,12 @@ import { FormGroup } from '@/mobile/components/WeuiForm';
 import { CloudSync } from '@/mobile/test.id';
 import { styles } from '@/mobile/styles/ui';
 import { localize } from '@/nls';
-import { Database, Server } from 'lucide-react';
+import { Database, HardDrive, Server } from 'lucide-react';
 import React from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router';
 
 type SetupMode = 'auto' | 'import';
+type Channel = 's3' | 'webdav' | 'smb';
 interface SetupRouteState {
   mode?: SetupMode;
 }
@@ -18,8 +19,8 @@ export function StartupSetupSyncPage() {
   const routeState = getRouteState(location.state);
   const navigate = useNavigate();
   const mode = routeState?.mode;
-  const selectChannel = (channel: 's3' | 'webdav') => {
-    const path = channel === 's3' ? '/startup/setup/sync/s3' : '/startup/setup/sync/webdav';
+  const selectChannel = (channel: Channel) => {
+    const path = channel === 's3' ? '/startup/setup/sync/s3' : channel === 'webdav' ? '/startup/setup/sync/webdav' : '/startup/setup/sync/smb';
     navigate(path, { state: { mode, channel } });
   };
 
@@ -65,6 +66,17 @@ export function StartupSetupSyncPage() {
               ),
               testId: CloudSync.channelS3,
               onClick: () => selectChannel('s3'),
+            },
+            {
+              type: 'navigation',
+              icon: <HardDrive size={26} strokeWidth={1.5} />,
+              title: 'SMB',
+              description: localize(
+                'settings.sync.channel.smbDesc',
+                'Sync data through an SMB/CIFS network share.',
+              ),
+              testId: CloudSync.channelSmb,
+              onClick: () => selectChannel('smb'),
             },
           ]}
         />

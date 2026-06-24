@@ -365,6 +365,9 @@ function isReadySyncConfig(config: SyncConfigRecord | undefined): config is Read
   if (config.provider === 'webdav') {
     return !!config.url.trim();
   }
+  if (config.provider === 'smb') {
+    return !!config.host.trim() && !!config.share.trim();
+  }
   return !!(
     config.endpoint.trim() &&
     config.region.trim() &&

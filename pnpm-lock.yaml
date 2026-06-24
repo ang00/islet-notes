@@ -35,6 +35,9 @@ importers:
       '@chenglou/pretext':
         specifier: 0.0.7
         version: 0.0.7
+      '@marsaud/smb2':
+        specifier: ^0.18.0
+        version: 0.18.0
       date-fns:
         specifier: ^4.1.0
         version: 4.4.0
@@ -489,6 +492,10 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@marsaud/smb2@0.18.0':
+    resolution: {integrity: sha512-DxOVZCX0uDe3S9QQqXk6mnnQ7nEaqI5gPwuNQ7dDQCXY00Qp0CIa5N1LNYKCcW1DYTJceOvRvNujL5hgnQmqOA==}
+    engines: {node: '>=5.10'}
 
   '@napi-rs/wasm-runtime@1.1.4':
     resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
@@ -1116,6 +1123,10 @@ packages:
 
   next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
+
+  ntlm@0.1.3:
+    resolution: {integrity: sha512-pPlHxhAegZP4QAaOYd51vRd6VXTGfF7VLKJwuwN0iEB1aIi3SnqXYuS/bH/6wWBOq+Ehdil49mHm1Nseon085w==}
+    engines: {'0': node}
 
   open@8.4.2:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
@@ -1908,6 +1919,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  '@marsaud/smb2@0.18.0':
+    dependencies:
+      ntlm: 0.1.3
+      readable-stream: 3.6.2
+
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
       '@emnapi/core': 1.10.0
@@ -2450,6 +2466,8 @@ snapshots:
       - supports-color
 
   next-tick@1.1.0: {}
+
+  ntlm@0.1.3: {}
 
   open@8.4.2:
     dependencies:

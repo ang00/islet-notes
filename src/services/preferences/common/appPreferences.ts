@@ -33,6 +33,18 @@ export const SyncConfigSchema = z.discriminatedUnion('provider', [
     recoveryKeyHash: z.string().optional(),
     updatedAt: z.number(),
   }),
+  z.object({
+    provider: z.literal('smb'),
+    host: z.string(),
+    share: z.string(),
+    username: z.string(),
+    password: z.string(),
+    domain: z.string(),
+    prefix: z.string(),
+    recoveryKey: z.string().optional(),
+    recoveryKeyHash: z.string().optional(),
+    updatedAt: z.number(),
+  }),
 ]);
 
 export function createSyncConfigPreference(
@@ -74,6 +86,9 @@ export async function getSyncStorageScope(config: SyncConfigRecord): Promise<str
 function getRemoteIdentity(config: SyncConfigRecord): string[] {
   if (config.provider === 'webdav') {
     return [normalizeRemoteUrl(config.url)];
+  }
+  if (config.provider === 'smb') {
+    return [normalizeRemoteUrl(config.host), config.share.trim()];
   }
   return [normalizeRemoteUrl(config.endpoint), config.bucket.trim()];
 }

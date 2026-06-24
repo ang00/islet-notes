@@ -1,11 +1,12 @@
 // @islet-import-scope same-dir
 
-import type { S3ConfigRecord, SyncConfigRecord, WebDAVConfigRecord } from '@/core/diary/type';
+import type { S3ConfigRecord, SMBConfigRecord, SyncConfigRecord, WebDAVConfigRecord } from '@/core/diary/type';
 
 export type UploadConfig = SyncConfigRecord;
 export type EditableS3Config = Omit<S3ConfigRecord, 'updatedAt'>;
 export type EditableWebDAVConfig = Omit<WebDAVConfigRecord, 'updatedAt'>;
-export type EditableUploadConfig = EditableS3Config | EditableWebDAVConfig;
+export type EditableSMBConfig = Omit<SMBConfigRecord, 'updatedAt'>;
+export type EditableUploadConfig = EditableS3Config | EditableWebDAVConfig | EditableSMBConfig;
 
 export function emptyS3Config(): EditableS3Config {
   return {
@@ -30,8 +31,20 @@ export function emptyWebDAVConfig(): EditableWebDAVConfig {
   };
 }
 
+export function emptySMBConfig(): EditableSMBConfig {
+  return {
+    provider: 'smb',
+    host: '',
+    share: '',
+    username: '',
+    password: '',
+    domain: '',
+    prefix: 'chat-diary',
+  };
+}
+
 export function syncChannelDisplayName(provider: SyncConfigRecord['provider']): string {
-  return provider === 'webdav' ? 'WebDAV' : 'S3';
+  return provider === 'webdav' ? 'WebDAV' : provider === 'smb' ? 'SMB' : 'S3';
 }
 
 export function isUploadConfigComplete(
@@ -40,6 +53,9 @@ export function isUploadConfigComplete(
   if (!config) return false;
   if (config.provider === 'webdav') {
     return !!config.url.trim();
+  }
+  if (config.provider === 'smb') {
+    return !!config.host.trim() && !!config.share.trim();
   }
   return !!(
     config.endpoint.trim() &&

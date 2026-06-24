@@ -23,7 +23,7 @@ import { Navigate, useLocation } from 'react-router';
 export type RecoveryKeySetupForm = { recoveryKey: string };
 interface SetupRouteState {
   mode?: 'auto' | 'import';
-  channel?: 's3' | 'webdav';
+  channel?: 's3' | 'webdav' | 'smb';
   uploadConfig?: EditableUploadConfig;
 }
 
@@ -140,7 +140,7 @@ function getRouteState(state: unknown): SetupRouteState | undefined {
     uploadConfig?: unknown;
   };
   if (value.mode !== 'import') return undefined;
-  if (value.channel !== 's3' && value.channel !== 'webdav') return undefined;
+  if (value.channel !== 's3' && value.channel !== 'webdav' && value.channel !== 'smb') return undefined;
   if (!isUploadConfig(value.uploadConfig)) return undefined;
   return {
     mode: 'import',
@@ -152,5 +152,5 @@ function getRouteState(state: unknown): SetupRouteState | undefined {
 function isUploadConfig(value: unknown): value is EditableUploadConfig {
   if (!value || typeof value !== 'object') return false;
   const provider = (value as { provider?: unknown }).provider;
-  return provider === 's3' || provider === 'webdav';
+  return provider === 's3' || provider === 'webdav' || provider === 'smb';
 }

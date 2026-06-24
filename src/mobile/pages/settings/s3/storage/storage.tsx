@@ -31,19 +31,33 @@ export function SettingsS3StoragePage() {
             value: config.prefix || localize('settings.sync.none', 'None'),
           },
         ]
-      : [
-          {
-            label: localize('settings.sync.channelLabel', 'Storage type'),
-            value: syncChannelDisplayName(config.provider),
-          },
-          { label: 'Endpoint', value: config.endpoint },
-          { label: 'Region', value: config.region },
-          { label: 'Bucket', value: config.bucket },
-          {
-            label: 'Prefix',
-            value: config.prefix || localize('settings.sync.none', 'None'),
-          },
-        ];
+      : config.provider === 'smb'
+        ? [
+            {
+              label: localize('settings.sync.channelLabel', 'Storage type'),
+              value: syncChannelDisplayName(config.provider),
+            },
+            { label: 'Host', value: config.host },
+            { label: 'Share', value: config.share },
+            { label: 'Domain', value: config.domain || localize('settings.sync.none', 'None') },
+            {
+              label: 'Prefix',
+              value: config.prefix || localize('settings.sync.none', 'None'),
+            },
+          ]
+        : [
+            {
+              label: localize('settings.sync.channelLabel', 'Storage type'),
+              value: syncChannelDisplayName(config.provider),
+            },
+            { label: 'Endpoint', value: config.endpoint },
+            { label: 'Region', value: config.region },
+            { label: 'Bucket', value: config.bucket },
+            {
+              label: 'Prefix',
+              value: config.prefix || localize('settings.sync.none', 'None'),
+            },
+          ];
 
   return (
     <HeaderLayoutPage

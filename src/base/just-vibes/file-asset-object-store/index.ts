@@ -12,8 +12,10 @@ export { verifyExistingSync, type VerifyExistingSyncResult } from './syncImport'
 export {
   emptyS3Config,
   emptyWebDAVConfig,
+  emptySMBConfig,
   syncChannelDisplayName,
   type EditableS3Config,
   type EditableUploadConfig,
   type EditableWebDAVConfig,
+  type EditableSMBConfig,
 } from './uploadConfig';
