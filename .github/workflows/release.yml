@@ -80,12 +80,10 @@ jobs:
           mkdir -p android/signing
           if [ -n "$KEYSTORE_BASE64" ]; then
             echo "$KEYSTORE_BASE64" | base64 -d > android/signing/islet-release.keystore
-            cat > android/signing/keystore.properties <<-EOF
-            storeFile=signing/islet-release.keystore
-            storePassword=$KEYSTORE_PASSWORD
-            keyAlias=$KEY_ALIAS
-            keyPassword=$KEY_PASSWORD
-            EOF
+            echo "storeFile=signing/islet-release.keystore" > android/signing/keystore.properties
+            echo "storePassword=$KEYSTORE_PASSWORD" >> android/signing/keystore.properties
+            echo "keyAlias=$KEY_ALIAS" >> android/signing/keystore.properties
+            echo "keyPassword=$KEY_PASSWORD" >> android/signing/keystore.properties
             echo "Signing keys configured."
           else
             echo "No KEYSTORE_BASE64 secret set — APK will be unsigned."
