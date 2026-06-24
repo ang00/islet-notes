@@ -60,3 +60,12 @@ Set `COVERAGE=true` env var to enable `vite-plugin-istanbul` instrumentation dur
 - i18n via `src/nls.ts` `localize()` function; locale files in `src/locales/`.
 - `react-router` v7 with `BrowserRouter` (not hash router).
 - Tailwind CSS v4 via `@tailwindcss/postcss` Vite plugin.
+
+## CI/CD (GitHub Actions)
+
+- Workflow at `.github/workflows/release.yml`.
+- **Trigger**: Push tag `v*` (e.g., `v1.2.3`) or `workflow_dispatch` with version input.
+- **Steps**: setup Java 21 + Node 22 + pnpm → `pnpm install` → install Android SDK 36 → decode signing keys from secrets → `pnpm release:android -- --version X.Y.Z` → upload APK to release.
+- **Signing**: Requires GitHub Secrets `KEYSTORE_BASE64` (base64 of keystore file), `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`. Without them the APK is unsigned.
+- **Artifacts**: APK uploaded as workflow artifact for both triggers; GitHub Release created only on tag push.
+- **Cache**: pnpm store and Gradle caches are restored/ saved for faster builds.
