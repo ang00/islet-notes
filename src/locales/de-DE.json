@@ -1,0 +1,807 @@
+{
+  "__i18n_ease__": "true",
+  "attachment.image.tooLarge": {
+    "defaultMessage": "Images must be 50 MB or smaller.",
+    "content": "Bilder müssen 50 MB oder kleiner sein."
+  },
+  "attachment.image.unsupported": {
+    "defaultMessage": "JPEG, PNG, and WebP images are supported.",
+    "content": "JPEG-, PNG- und WebP-Bilder werden unterstützt."
+  },
+  "calendar.dayTitleDateFormat": {
+    "defaultMessage": "MMM d, EEE",
+    "content": "EEE, d. MMM"
+  },
+  "calendar.empty": {
+    "defaultMessage": "No entries on this day",
+    "content": "Keine Einträge an diesem Tag"
+  },
+  "calendar.monthTitleFormat": {
+    "defaultMessage": "MMMM yyyy",
+    "content": "MMMM yyyy"
+  },
+  "calendar.nextMonth": {
+    "defaultMessage": "Next month",
+    "content": "Nächster Monat"
+  },
+  "calendar.openRecord": {
+    "defaultMessage": "Open entry",
+    "content": "Eintrag öffnen"
+  },
+  "calendar.previousMonth": {
+    "defaultMessage": "Previous month",
+    "content": "Vorheriger Monat"
+  },
+  "calendar.recordCount": {
+    "defaultMessage": "{0} entries",
+    "content": "{0} Einträge"
+  },
+  "calendar.title": {
+    "defaultMessage": "Calendar",
+    "content": "Kalender"
+  },
+  "calendar.today": {
+    "defaultMessage": "Today",
+    "content": "Heute"
+  },
+  "common.back": {
+    "defaultMessage": "Back",
+    "content": "Zurück"
+  },
+  "common.cancel": {
+    "defaultMessage": "Cancel",
+    "content": "Abbrechen"
+  },
+  "common.close": {
+    "defaultMessage": "Close",
+    "content": "Schließen"
+  },
+  "common.copied": {
+    "defaultMessage": "Copied",
+    "content": "Kopiert"
+  },
+  "common.copy": {
+    "defaultMessage": "Copy",
+    "content": "Kopieren"
+  },
+  "common.copyFailed": {
+    "defaultMessage": "Copy failed",
+    "content": "Kopieren fehlgeschlagen"
+  },
+  "common.delete": {
+    "defaultMessage": "Delete",
+    "content": "Löschen"
+  },
+  "common.done": {
+    "defaultMessage": "Done",
+    "content": "Fertig"
+  },
+  "common.edit": {
+    "defaultMessage": "Edit",
+    "content": "Bearbeiten"
+  },
+  "common.loading": {
+    "defaultMessage": "Loading...",
+    "content": "Laden..."
+  },
+  "common.next": {
+    "defaultMessage": "Next",
+    "content": "Weiter"
+  },
+  "common.retry": {
+    "defaultMessage": "Retry",
+    "content": "Wiederholen"
+  },
+  "common.save": {
+    "defaultMessage": "Save",
+    "content": "Speichern"
+  },
+  "common.send": {
+    "defaultMessage": "Send",
+    "content": "Senden"
+  },
+  "common.sync": {
+    "defaultMessage": "Sync",
+    "content": "Sync"
+  },
+  "common.uploading": {
+    "defaultMessage": "Uploading...",
+    "content": "Hochladen..."
+  },
+  "diary.addNotebook": {
+    "defaultMessage": "New notebook",
+    "content": "Neues Notizbuch"
+  },
+  "diary.album": {
+    "defaultMessage": "Album",
+    "content": "Album"
+  },
+  "diary.camera": {
+    "defaultMessage": "Camera",
+    "content": "Kamera"
+  },
+  "diary.chat.empty": {
+    "defaultMessage": "No entries yet",
+    "content": "Noch keine Einträge"
+  },
+  "diary.cover": {
+    "defaultMessage": "Notebook cover",
+    "content": "Notizbuch-Cover"
+  },
+  "diary.create": {
+    "defaultMessage": "New notebook",
+    "content": "Neues Notizbuch"
+  },
+  "diary.defaultNotebookName": {
+    "defaultMessage": "My diary",
+    "content": "Mein Tagebuch"
+  },
+  "diary.deleteEntryConfirm": {
+    "defaultMessage": "Delete this entry? It will be removed from this notebook.",
+    "content": "Diesen Eintrag löschen? Er wird aus diesem Notizbuch entfernt."
+  },
+  "diary.deleteNotebook": {
+    "defaultMessage": "Delete notebook",
+    "content": "Notizbuch löschen"
+  },
+  "diary.deleteNotebookConfirm": {
+    "defaultMessage": "Delete this notebook? Entries in it will also be removed.",
+    "content": "Dieses Notizbuch löschen? Die darin enthaltenen Einträge werden ebenfalls entfernt."
+  },
+  "diary.edit.placeholder": {
+    "defaultMessage": "Enter text",
+    "content": "Text eingeben"
+  },
+  "diary.editTextEntry": {
+    "defaultMessage": "Edit text",
+    "content": "Text bearbeiten"
+  },
+  "diary.entryDeleted": {
+    "defaultMessage": "Deleted",
+    "content": "Gelöscht"
+  },
+  "diary.entryMoved": {
+    "defaultMessage": "Moved",
+    "content": "Verschoben"
+  },
+  "diary.image.loadFailed": {
+    "defaultMessage": "Image failed to load",
+    "content": "Bild konnte nicht geladen werden"
+  },
+  "diary.inputPlaceholder": {
+    "defaultMessage": "Write something...",
+    "content": "Schreib etwas..."
+  },
+  "diary.moveEntry.action": {
+    "defaultMessage": "Move",
+    "content": "Verschieben"
+  },
+  "diary.moveEntry.emptySearch": {
+    "defaultMessage": "No matching notebooks",
+    "content": "Keine passenden Notizbücher"
+  },
+  "diary.moveEntry.searchPlaceholder": {
+    "defaultMessage": "Search notebooks",
+    "content": "Notizbücher durchsuchen"
+  },
+  "diary.moveEntry.title": {
+    "defaultMessage": "Move to notebook",
+    "content": "In Notizbuch verschieben"
+  },
+  "diary.name": {
+    "defaultMessage": "Notebook name",
+    "content": "Notizbuchname"
+  },
+  "diary.notebook.emptySummary": {
+    "defaultMessage": "No entries yet",
+    "content": "Noch keine Einträge"
+  },
+  "diary.notebooks": {
+    "defaultMessage": "Diaries",
+    "content": "Tagebücher"
+  },
+  "diary.recordVideo": {
+    "defaultMessage": "Record video",
+    "content": "Video aufnehmen"
+  },
+  "diary.settings": {
+    "defaultMessage": "Notebook settings",
+    "content": "Notizbuch-Einstellungen"
+  },
+  "diary.unknownAttachment": {
+    "defaultMessage": "Unsupported attachment",
+    "content": "Nicht unterstützter Anhang"
+  },
+  "diary.unknownAttachmentUpgrade": {
+    "defaultMessage": "Update Islet to view this attachment.",
+    "content": "Aktualisiere Islet, um diesen Anhang anzuzeigen."
+  },
+  "diary.unknownEntry": {
+    "defaultMessage": "Unsupported record",
+    "content": "Nicht unterstützter Eintrag"
+  },
+  "diary.unknownEntryUpgrade": {
+    "defaultMessage": "Update Islet to view this record.",
+    "content": "Aktualisiere Islet, um diesen Eintrag anzuzeigen."
+  },
+  "diary.upload.deleteAudioConfirmTitle": {
+    "defaultMessage": "Delete this audio",
+    "content": "Dieses Audio löschen"
+  },
+  "diary.upload.deleteConfirmDescription": {
+    "defaultMessage": "Deleted items cannot be restored. Delete it?",
+    "content": "Gelöschte Elemente können nicht wiederhergestellt werden. Löschen?"
+  },
+  "diary.upload.deleteImageConfirmTitle": {
+    "defaultMessage": "Delete this image",
+    "content": "Dieses Bild löschen"
+  },
+  "diary.upload.deleteVideoConfirmTitle": {
+    "defaultMessage": "Delete this video",
+    "content": "Dieses Video löschen"
+  },
+  "diary.upload.failed": {
+    "defaultMessage": "Failed to send",
+    "content": "Senden fehlgeschlagen"
+  },
+  "diary.video.compressed": {
+    "defaultMessage": "compressed",
+    "content": "komprimiert"
+  },
+  "diary.video.confirmSave": {
+    "defaultMessage": "Save",
+    "content": "Speichern"
+  },
+  "diary.video.estimatedSize": {
+    "defaultMessage": "Estimated size",
+    "content": "Geschätzte Größe"
+  },
+  "diary.video.missing": {
+    "defaultMessage": "Video is missing",
+    "content": "Video fehlt"
+  },
+  "diary.video.originalQuality": {
+    "defaultMessage": "Save original (no compression)",
+    "content": "Original speichern (ohne Komprimierung)"
+  },
+  "diary.video.originalSize": {
+    "defaultMessage": "original",
+    "content": "Original"
+  },
+  "diary.video.preview": {
+    "defaultMessage": "Preview",
+    "content": "Vorschau"
+  },
+  "diary.voice.countdownHint": {
+    "defaultMessage": "{0}s left",
+    "content": "Noch {0}s"
+  },
+  "diary.voice.deleteTranscriptConfirm": {
+    "defaultMessage": "Delete this text?",
+    "content": "Diesen Text löschen?"
+  },
+  "diary.voice.editTranscript": {
+    "defaultMessage": "Edit transcript",
+    "content": "Transkript bearbeiten"
+  },
+  "diary.voice.holdToTalk": {
+    "defaultMessage": "Hold to talk",
+    "content": "Gedrückt halten zum Sprechen"
+  },
+  "diary.voice.permissionDenied": {
+    "defaultMessage": "Microphone access is unavailable. Check permissions and try again.",
+    "content": "Mikrofonzugriff nicht verfügbar. Überprüfe die Berechtigungen und versuche es erneut."
+  },
+  "diary.voice.preparing": {
+    "defaultMessage": "Preparing",
+    "content": "Vorbereiten"
+  },
+  "diary.voice.recognize": {
+    "defaultMessage": "Transcribe",
+    "content": "Transkribieren"
+  },
+  "diary.voice.recognizing": {
+    "defaultMessage": "Transcribing...",
+    "content": "Transkribiere..."
+  },
+  "diary.voice.releaseToCancel": {
+    "defaultMessage": "Release to cancel",
+    "content": "Loslassen zum Abbrechen"
+  },
+  "diary.voice.releaseToSend": {
+    "defaultMessage": "Release to send",
+    "content": "Loslassen zum Senden"
+  },
+  "diary.voice.rerecognize": {
+    "defaultMessage": "Transcribe again",
+    "content": "Erneut transkribieren"
+  },
+  "diary.voice.slideUpToCancel": {
+    "defaultMessage": "Slide up to cancel",
+    "content": "Nach oben streichen zum Abbrechen"
+  },
+  "diary.voice.switchToKeyboard": {
+    "defaultMessage": "Switch to keyboard",
+    "content": "Zur Tastatur wechseln"
+  },
+  "diary.voice.switchToVoice": {
+    "defaultMessage": "Switch to voice input",
+    "content": "Zur Spracheingabe wechseln"
+  },
+  "diary.voice.tooShort": {
+    "defaultMessage": "Recording is too short. Hold and speak again.",
+    "content": "Aufnahme zu kurz. Gedrückt halten und erneut sprechen."
+  },
+  "diary.voice.transcriptDeleted": {
+    "defaultMessage": "Deleted",
+    "content": "Gelöscht"
+  },
+  "me.entriesRecorded": {
+    "defaultMessage": "{0} entries recorded",
+    "content": "{0} Einträge aufgezeichnet"
+  },
+  "parser.minimalDiary.note": {
+    "defaultMessage": "Note: {0}",
+    "content": "Notiz: {0}"
+  },
+  "parser.minimalDiary.tags": {
+    "defaultMessage": "Tags: {0}",
+    "content": "Tags: {0}"
+  },
+  "profile.avatar": {
+    "defaultMessage": "Avatar",
+    "content": "Avatar"
+  },
+  "profile.name": {
+    "defaultMessage": "Name",
+    "content": "Name"
+  },
+  "profile.namePlaceholder": {
+    "defaultMessage": "Enter a name",
+    "content": "Namen eingeben"
+  },
+  "profile.title": {
+    "defaultMessage": "Profile",
+    "content": "Profil"
+  },
+  "settings.ai": {
+    "defaultMessage": "AI",
+    "content": "KI"
+  },
+  "settings.aiConfig": {
+    "defaultMessage": "AI settings",
+    "content": "KI-Einstellungen"
+  },
+  "settings.configured": {
+    "defaultMessage": "Configured",
+    "content": "Konfiguriert"
+  },
+  "settings.experience.exit": {
+    "defaultMessage": "Exit experience mode",
+    "content": "Erlebnis-Modus beenden"
+  },
+  "settings.experience.exitAction": {
+    "defaultMessage": "Exit experience mode",
+    "content": "Erlebnis-Modus beenden"
+  },
+  "settings.experience.exitConfirm": {
+    "defaultMessage": "Exit experience mode? Data from this session will be cleared.",
+    "content": "Erlebnis-Modus beenden? Die Daten dieser Sitzung werden gelöscht."
+  },
+  "settings.experience.seedData": {
+    "defaultMessage": "Add sample data",
+    "content": "Beispieldaten hinzufügen"
+  },
+  "settings.experience.seedDone": {
+    "defaultMessage": "Sample data added",
+    "content": "Beispieldaten hinzugefügt"
+  },
+  "settings.experience.seedExists": {
+    "defaultMessage": "Sample data already exists",
+    "content": "Beispieldaten sind bereits vorhanden"
+  },
+  "settings.experience.seedFailed": {
+    "defaultMessage": "Could not add sample data",
+    "content": "Beispieldaten konnten nicht hinzugefügt werden"
+  },
+  "settings.experience.seedWriting": {
+    "defaultMessage": "Adding sample data...",
+    "content": "Füge Beispieldaten hinzu..."
+  },
+  "settings.followSystem": {
+    "defaultMessage": "Follow system",
+    "content": "System folgen"
+  },
+  "settings.import.chooseFile": {
+    "defaultMessage": "Choose file",
+    "content": "Datei auswählen"
+  },
+  "settings.import.file": {
+    "defaultMessage": "File",
+    "content": "Datei"
+  },
+  "settings.import.fileTooLarge": {
+    "defaultMessage": "Files must be {0} MB or smaller.",
+    "content": "Dateien müssen {0} MB oder kleiner sein."
+  },
+  "settings.import.importing": {
+    "defaultMessage": "Importing",
+    "content": "Importieren"
+  },
+  "settings.import.minimalDiary": {
+    "defaultMessage": "Minimal Diary",
+    "content": "Minimal Diary"
+  },
+  "settings.import.minimalDiary.title": {
+    "defaultMessage": "Import Minimal Diary",
+    "content": "Minimal Diary importieren"
+  },
+  "settings.import.minimalDiary.unsupportedFile": {
+    "defaultMessage": "Only .mdd and .zip files are supported.",
+    "content": "Nur .mdd- und .zip-Dateien werden unterstützt."
+  },
+  "settings.import.result.assetImported": {
+    "defaultMessage": "Attachments",
+    "content": "Anhänge"
+  },
+  "settings.import.result.ok": {
+    "defaultMessage": "OK",
+    "content": "OK"
+  },
+  "settings.import.result.parsing": {
+    "defaultMessage": "Parsing",
+    "content": "Analysieren"
+  },
+  "settings.import.result.skipped": {
+    "defaultMessage": "Skipped",
+    "content": "Übersprungen"
+  },
+  "settings.import.result.success": {
+    "defaultMessage": "Import complete",
+    "content": "Import abgeschlossen"
+  },
+  "settings.import.result.summary": {
+    "defaultMessage": "Import results",
+    "content": "Importergebnisse"
+  },
+  "settings.import.result.textImported": {
+    "defaultMessage": "Text",
+    "content": "Text"
+  },
+  "settings.import.result.title": {
+    "defaultMessage": "Import",
+    "content": "Import"
+  },
+  "settings.import.start": {
+    "defaultMessage": "Import",
+    "content": "Importieren"
+  },
+  "settings.import.targetNotebook": {
+    "defaultMessage": "Target notebook",
+    "content": "Ziel-Notizbuch"
+  },
+  "settings.import.targetNotebookUnavailable": {
+    "defaultMessage": "Target notebook is unavailable. Choose another notebook.",
+    "content": "Ziel-Notizbuch nicht verfügbar. Wähle ein anderes Notizbuch."
+  },
+  "settings.import.title": {
+    "defaultMessage": "Import",
+    "content": "Import"
+  },
+  "settings.language": {
+    "defaultMessage": "Language",
+    "content": "Sprache"
+  },
+  "settings.myNotebook": {
+    "defaultMessage": "My notebook",
+    "content": "Mein Notizbuch"
+  },
+  "settings.notConfigured": {
+    "defaultMessage": "Not configured",
+    "content": "Nicht konfiguriert"
+  },
+  "settings.s3": {
+    "defaultMessage": "Cloud Sync",
+    "content": "Cloud-Sync"
+  },
+  "settings.speechRecognition.addFormDesc": {
+    "defaultMessage": "Turn voice messages into text, up to 59 seconds.",
+    "content": "Wandelt Sprachnachrichten in Text um, bis zu 59 Sekunden."
+  },
+  "settings.speechRecognition.addTitle": {
+    "defaultMessage": "Configure Baidu AI Cloud",
+    "content": "Baidu AI Cloud konfigurieren"
+  },
+  "settings.speechRecognition.autoTranscribe": {
+    "defaultMessage": "Auto-transcribe voice",
+    "content": "Sprache automatisch transkribieren"
+  },
+  "settings.speechRecognition.baiduDesc": {
+    "defaultMessage": "Short Speech Recognition Pro",
+    "content": "Short Speech Recognition Pro"
+  },
+  "settings.speechRecognition.configInfo": {
+    "defaultMessage": "Configuration",
+    "content": "Konfiguration"
+  },
+  "settings.speechRecognition.configuredDesc": {
+    "defaultMessage": "Voice to text is ready to use.",
+    "content": "Sprache-zu-Text ist bereit zur Nutzung."
+  },
+  "settings.speechRecognition.consoleHint": {
+    "defaultMessage": "Create an app in the Baidu AI Cloud console and enable Short Speech Recognition Pro to get the API Key and Secret Key. These credentials are used for automatic transcription after sending voice messages and manual transcription from a voice message.",
+    "content": "Erstelle eine App in der Baidu AI Cloud-Konsole und aktiviere Short Speech Recognition Pro, um den API-Key und Secret-Key zu erhalten. Diese Anmeldedaten werden für die automatische Transkription nach dem Senden von Sprachnachrichten sowie für die manuelle Transkription verwendet."
+  },
+  "settings.speechRecognition.current": {
+    "defaultMessage": "Current service",
+    "content": "Aktueller Dienst"
+  },
+  "settings.speechRecognition.delete": {
+    "defaultMessage": "Delete configuration",
+    "content": "Konfiguration löschen"
+  },
+  "settings.speechRecognition.deleteConfirm": {
+    "defaultMessage": "Delete voice-to-text configuration? You can still send voice messages.",
+    "content": "Sprache-zu-Text-Konfiguration löschen? Du kannst weiterhin Sprachnachrichten senden."
+  },
+  "settings.speechRecognition.deleted": {
+    "defaultMessage": "Deleted",
+    "content": "Gelöscht"
+  },
+  "settings.speechRecognition.emptyDesc": {
+    "defaultMessage": "Configure a service to turn voice messages into text.",
+    "content": "Konfiguriere einen Dienst, um Sprachnachrichten in Text umzuwandeln."
+  },
+  "settings.speechRecognition.emptyHint": {
+    "defaultMessage": "You can still send voice messages without voice to text.",
+    "content": "Du kannst auch ohne Sprache-zu-Text Sprachnachrichten senden."
+  },
+  "settings.speechRecognition.provider": {
+    "defaultMessage": "Provider",
+    "content": "Anbieter"
+  },
+  "settings.speechRecognition.providerBaidu": {
+    "defaultMessage": "Baidu AI Cloud",
+    "content": "Baidu AI Cloud"
+  },
+  "settings.speechRecognition.required": {
+    "defaultMessage": "{0} is required.",
+    "content": "{0} ist erforderlich."
+  },
+  "settings.speechRecognition.saved": {
+    "defaultMessage": "Saved",
+    "content": "Gespeichert"
+  },
+  "settings.speechRecognition.service": {
+    "defaultMessage": "Service",
+    "content": "Dienst"
+  },
+  "settings.speechRecognition.short": {
+    "defaultMessage": "Voice to text",
+    "content": "Sprache zu Text"
+  },
+  "settings.speechRecognition.testFailed": {
+    "defaultMessage": "Connection failed",
+    "content": "Verbindung fehlgeschlagen"
+  },
+  "settings.speechRecognition.testing": {
+    "defaultMessage": "Testing connection...",
+    "content": "Verbindung wird getestet..."
+  },
+  "settings.speechRecognition.title": {
+    "defaultMessage": "Voice to text",
+    "content": "Sprache zu Text"
+  },
+  "settings.sync.attachments": {
+    "defaultMessage": "Attachments",
+    "content": "Anhänge"
+  },
+  "settings.sync.attachmentsStats": {
+    "defaultMessage": "{0} files · {1}",
+    "content": "{0} Dateien · {1}"
+  },
+  "settings.sync.channel.desc": {
+    "defaultMessage": "Databases and attachments are encrypted before syncing to the selected storage.",
+    "content": "Datenbanken und Anhänge werden vor der Synchronisierung mit dem ausgewählten Speicher verschlüsselt."
+  },
+  "settings.sync.channel.s3Desc": {
+    "defaultMessage": "Sync data through S3 or S3-compatible object storage.",
+    "content": "Synchronisiere Daten über S3 oder S3-kompatiblen Objektspeicher."
+  },
+  "settings.sync.channel.title": {
+    "defaultMessage": "Choose storage type",
+    "content": "Speichertyp wählen"
+  },
+  "settings.sync.channel.webdavDesc": {
+    "defaultMessage": "Sync data through a WebDAV service such as Nextcloud.",
+    "content": "Synchronisiere Daten über einen WebDAV-Dienst wie Nextcloud."
+  },
+  "settings.sync.channelLabel": {
+    "defaultMessage": "Storage type",
+    "content": "Speichertyp"
+  },
+  "settings.sync.content": {
+    "defaultMessage": "Sync content",
+    "content": "Sync-Inhalt"
+  },
+  "settings.sync.database": {
+    "defaultMessage": "Database",
+    "content": "Datenbank"
+  },
+  "settings.sync.databaseStats": {
+    "defaultMessage": "{0} entries · {1}",
+    "content": "{0} Einträge · {1}"
+  },
+  "settings.sync.importFailed": {
+    "defaultMessage": "Could not connect to the existing sync. Check the storage settings and recovery key, then try again.",
+    "content": "Verbindung zur bestehenden Synchronisation fehlgeschlagen. Überprüfe die Speichereinstellungen und den Wiederherstellungsschlüssel und versuche es erneut."
+  },
+  "settings.sync.initMode": {
+    "defaultMessage": "Sync setup",
+    "content": "Sync-Einrichtung"
+  },
+  "settings.sync.key.backedUp": {
+    "defaultMessage": "I have safely backed up this recovery key",
+    "content": "Ich habe diesen Wiederherstellungsschlüssel sicher gesichert"
+  },
+  "settings.sync.key.desc": {
+    "defaultMessage": "This recovery key encrypts databases and attachments synced to cloud storage. Local data is not encrypted.",
+    "content": "Dieser Wiederherstellungsschlüssel verschlüsselt Datenbanken und Anhänge, die in den Cloud-Speicher synchronisiert werden. Lokale Daten werden nicht verschlüsselt."
+  },
+  "settings.sync.key.empty": {
+    "defaultMessage": "Paste the recovery key first.",
+    "content": "Füge zuerst den Wiederherstellungsschlüssel ein."
+  },
+  "settings.sync.key.generated": {
+    "defaultMessage": "New recovery key",
+    "content": "Neuer Wiederherstellungsschlüssel"
+  },
+  "settings.sync.key.importLabel": {
+    "defaultMessage": "Recovery key",
+    "content": "Wiederherstellungsschlüssel"
+  },
+  "settings.sync.key.title": {
+    "defaultMessage": "Set recovery key",
+    "content": "Wiederherstellungsschlüssel festlegen"
+  },
+  "settings.sync.mode.auto": {
+    "defaultMessage": "Create new sync",
+    "content": "Neue Synchronisation erstellen"
+  },
+  "settings.sync.mode.autoDesc": {
+    "defaultMessage": "Generate a new recovery key and create an encrypted remote library.",
+    "content": "Erzeuge einen neuen Wiederherstellungsschlüssel und erstelle eine verschlüsselte entfernte Bibliothek."
+  },
+  "settings.sync.mode.import": {
+    "defaultMessage": "Connect existing sync",
+    "content": "Bestehende Synchronisation verbinden"
+  },
+  "settings.sync.mode.importDesc": {
+    "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library.",
+    "content": "Verwende einen vorherigen Wiederherstellungsschlüssel, um eine Verbindung zu einer verschlüsselten entfernten Bibliothek herzustellen."
+  },
+  "settings.sync.none": {
+    "defaultMessage": "None",
+    "content": "Keine"
+  },
+  "settings.sync.recoveryKey": {
+    "defaultMessage": "Recovery key",
+    "content": "Wiederherstellungsschlüssel"
+  },
+  "settings.sync.s3.desc": {
+    "defaultMessage": "Data is encrypted on this device before syncing to your S3 storage.",
+    "content": "Daten werden auf diesem Gerät verschlüsselt, bevor sie in deinen S3-Speicher synchronisiert werden."
+  },
+  "settings.sync.s3.forcePathStyle": {
+    "defaultMessage": "Force path style",
+    "content": "Pfad-Stil erzwingen"
+  },
+  "settings.sync.s3.required": {
+    "defaultMessage": "{0} is required.",
+    "content": "{0} ist erforderlich."
+  },
+  "settings.sync.s3.testFailed": {
+    "defaultMessage": "Connection test failed: {0}",
+    "content": "Verbindungstest fehlgeschlagen: {0}"
+  },
+  "settings.sync.s3.testingShort": {
+    "defaultMessage": "Connecting...",
+    "content": "Verbinde..."
+  },
+  "settings.sync.s3.title": {
+    "defaultMessage": "Configure S3 storage",
+    "content": "S3-Speicher konfigurieren"
+  },
+  "settings.sync.storage": {
+    "defaultMessage": "Storage",
+    "content": "Speicher"
+  },
+  "settings.sync.storage.detailTitle": {
+    "defaultMessage": "Storage details",
+    "content": "Speicherdetails"
+  },
+  "settings.sync.title": {
+    "defaultMessage": "Cloud Sync",
+    "content": "Cloud-Sync"
+  },
+  "settings.sync.turnOff": {
+    "defaultMessage": "Turn off sync",
+    "content": "Sync deaktivieren"
+  },
+  "settings.sync.turnOff.desc": {
+    "defaultMessage": "After you turn off sync, this device stops syncing and its local sync settings are removed. Cloud data remains encrypted with the recovery key. Without a backup of the key, that data cannot be decrypted.",
+    "content": "Nachdem du Sync deaktivierst, wird dieses Gerät nicht mehr synchronisiert und seine lokalen Sync-Einstellungen werden entfernt. Cloud-Daten bleiben mit dem Wiederherstellungsschlüssel verschlüsselt. Ohne ein Backup des Schlüssels können diese Daten nicht entschlüsselt werden."
+  },
+  "settings.sync.webdav.desc": {
+    "defaultMessage": "Data is encrypted on this device before syncing to your WebDAV storage.",
+    "content": "Daten werden auf diesem Gerät verschlüsselt, bevor sie in deinen WebDAV-Speicher synchronisiert werden."
+  },
+  "settings.sync.webdav.password": {
+    "defaultMessage": "Password or app password",
+    "content": "Passwort oder App-Passwort"
+  },
+  "settings.sync.webdav.title": {
+    "defaultMessage": "Configure WebDAV storage",
+    "content": "WebDAV-Speicher konfigurieren"
+  },
+  "settings.theme": {
+    "defaultMessage": "Theme",
+    "content": "Design"
+  },
+  "settings.title": {
+    "defaultMessage": "Settings",
+    "content": "Einstellungen"
+  },
+  "settings.version": {
+    "defaultMessage": "Version",
+    "content": "Version"
+  },
+  "startup.error.retry": {
+    "defaultMessage": "Retry",
+    "content": "Wiederholen"
+  },
+  "startup.error.title": {
+    "defaultMessage": "Could not start Islet",
+    "content": "Islet konnte nicht gestartet werden"
+  },
+  "startup.experience.confirmDesc": {
+    "defaultMessage": "Experience mode keeps data only in memory. Refreshing, closing the app, or changing language will clear it.",
+    "content": "Der Erlebnis-Modus behält Daten nur im Arbeitsspeicher. Durch Aktualisieren, Schließen der App oder Sprachwechsel werden sie gelöscht."
+  },
+  "startup.experience.confirmTitle": {
+    "defaultMessage": "Enter experience mode?",
+    "content": "Erlebnis-Modus betreten?"
+  },
+  "startup.experience.enter": {
+    "defaultMessage": "Enter experience mode",
+    "content": "Erlebnis-Modus betreten"
+  },
+  "startup.experience.title": {
+    "defaultMessage": "Experience mode",
+    "content": "Erlebnis-Modus"
+  },
+  "startup.title": {
+    "defaultMessage": "Choose startup mode",
+    "content": "Startmodus wählen"
+  },
+  "tab.calendar": {
+    "defaultMessage": "Calendar",
+    "content": "Kalender"
+  },
+  "tab.diary": {
+    "defaultMessage": "Diary",
+    "content": "Tagebuch"
+  },
+  "tab.settings": {
+    "defaultMessage": "My",
+    "content": "Mein"
+  },
+  "theme.dark": {
+    "defaultMessage": "Dark",
+    "content": "Dunkel"
+  },
+  "theme.light": {
+    "defaultMessage": "Light",
+    "content": "Hell"
+  }
+}

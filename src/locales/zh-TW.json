@@ -1,0 +1,807 @@
+{
+  "__i18n_ease__": "true",
+  "attachment.image.tooLarge": {
+    "content": "圖片不能超過 50 MB",
+    "defaultMessage": "Images must be 50 MB or smaller."
+  },
+  "attachment.image.unsupported": {
+    "content": "目前支援 JPEG、PNG 和 WebP 圖片",
+    "defaultMessage": "JPEG, PNG, and WebP images are supported."
+  },
+  "calendar.dayTitleDateFormat": {
+    "content": "M月d日EEE",
+    "defaultMessage": "MMM d, EEE"
+  },
+  "calendar.empty": {
+    "content": "這天還沒有記錄",
+    "defaultMessage": "No entries on this day"
+  },
+  "calendar.monthTitleFormat": {
+    "content": "yyyy年M月",
+    "defaultMessage": "MMMM yyyy"
+  },
+  "calendar.nextMonth": {
+    "content": "下個月",
+    "defaultMessage": "Next month"
+  },
+  "calendar.openRecord": {
+    "defaultMessage": "Open entry",
+    "content": "跳轉到訊息"
+  },
+  "calendar.previousMonth": {
+    "content": "上個月",
+    "defaultMessage": "Previous month"
+  },
+  "calendar.recordCount": {
+    "content": "{0} 條",
+    "defaultMessage": "{0} entries"
+  },
+  "calendar.title": {
+    "content": "日曆",
+    "defaultMessage": "Calendar"
+  },
+  "calendar.today": {
+    "content": "今天",
+    "defaultMessage": "Today"
+  },
+  "common.back": {
+    "content": "返回",
+    "defaultMessage": "Back"
+  },
+  "common.cancel": {
+    "content": "取消",
+    "defaultMessage": "Cancel"
+  },
+  "common.close": {
+    "defaultMessage": "Close",
+    "content": "關閉"
+  },
+  "common.copied": {
+    "content": "已複製",
+    "defaultMessage": "Copied"
+  },
+  "common.copy": {
+    "content": "複製",
+    "defaultMessage": "Copy"
+  },
+  "common.copyFailed": {
+    "content": "複製失敗",
+    "defaultMessage": "Copy failed"
+  },
+  "common.delete": {
+    "content": "刪除",
+    "defaultMessage": "Delete"
+  },
+  "common.done": {
+    "content": "完成",
+    "defaultMessage": "Done"
+  },
+  "common.edit": {
+    "defaultMessage": "Edit",
+    "content": "編輯"
+  },
+  "common.loading": {
+    "content": "載入中…",
+    "defaultMessage": "Loading..."
+  },
+  "common.next": {
+    "content": "下一步",
+    "defaultMessage": "Next"
+  },
+  "common.retry": {
+    "defaultMessage": "Retry",
+    "content": "重試"
+  },
+  "common.save": {
+    "content": "儲存",
+    "defaultMessage": "Save"
+  },
+  "common.send": {
+    "content": "傳送",
+    "defaultMessage": "Send"
+  },
+  "common.sync": {
+    "content": "同步",
+    "defaultMessage": "Sync"
+  },
+  "common.uploading": {
+    "content": "上傳中…",
+    "defaultMessage": "Uploading..."
+  },
+  "diary.addNotebook": {
+    "content": "新增日記本",
+    "defaultMessage": "New notebook"
+  },
+  "diary.album": {
+    "content": "相簿",
+    "defaultMessage": "Album"
+  },
+  "diary.camera": {
+    "content": "拍照",
+    "defaultMessage": "Camera"
+  },
+  "diary.chat.empty": {
+    "content": "還沒有日記",
+    "defaultMessage": "No entries yet"
+  },
+  "diary.cover": {
+    "content": "日記本封面",
+    "defaultMessage": "Notebook cover"
+  },
+  "diary.create": {
+    "content": "新增日記本",
+    "defaultMessage": "New notebook"
+  },
+  "diary.defaultNotebookName": {
+    "content": "我的日記",
+    "defaultMessage": "My diary"
+  },
+  "diary.deleteEntryConfirm": {
+    "content": "刪除這條記錄？刪除後會從日記本中移除。",
+    "defaultMessage": "Delete this entry? It will be removed from this notebook."
+  },
+  "diary.deleteNotebook": {
+    "content": "刪除日記本",
+    "defaultMessage": "Delete notebook"
+  },
+  "diary.deleteNotebookConfirm": {
+    "content": "刪除這個日記本？其中的日記也會一併移除。",
+    "defaultMessage": "Delete this notebook? Entries in it will also be removed."
+  },
+  "diary.edit.placeholder": {
+    "defaultMessage": "Enter text",
+    "content": "輸入內容"
+  },
+  "diary.editTextEntry": {
+    "defaultMessage": "Edit text",
+    "content": "編輯文字"
+  },
+  "diary.entryDeleted": {
+    "content": "已刪除",
+    "defaultMessage": "Deleted"
+  },
+  "diary.entryMoved": {
+    "defaultMessage": "Moved",
+    "content": "已移動"
+  },
+  "diary.image.loadFailed": {
+    "content": "圖片載入失敗",
+    "defaultMessage": "Image failed to load"
+  },
+  "diary.inputPlaceholder": {
+    "content": "寫點什麼…",
+    "defaultMessage": "Write something..."
+  },
+  "diary.moveEntry.action": {
+    "defaultMessage": "Move",
+    "content": "移動"
+  },
+  "diary.moveEntry.emptySearch": {
+    "defaultMessage": "No matching notebooks",
+    "content": "沒有符合的日記本"
+  },
+  "diary.moveEntry.searchPlaceholder": {
+    "defaultMessage": "Search notebooks",
+    "content": "搜尋日記本"
+  },
+  "diary.moveEntry.title": {
+    "defaultMessage": "Move to notebook",
+    "content": "移動到日記本"
+  },
+  "diary.name": {
+    "content": "日記本名稱",
+    "defaultMessage": "Notebook name"
+  },
+  "diary.notebook.emptySummary": {
+    "content": "還沒有日記",
+    "defaultMessage": "No entries yet"
+  },
+  "diary.notebooks": {
+    "content": "日記本",
+    "defaultMessage": "Diaries"
+  },
+  "diary.recordVideo": {
+    "defaultMessage": "Record video",
+    "content": "錄影"
+  },
+  "diary.settings": {
+    "content": "日記本設定",
+    "defaultMessage": "Notebook settings"
+  },
+  "diary.unknownAttachment": {
+    "content": "不支援的附件",
+    "defaultMessage": "Unsupported attachment"
+  },
+  "diary.unknownAttachmentUpgrade": {
+    "content": "更新嶼聲後可檢視此附件",
+    "defaultMessage": "Update Islet to view this attachment."
+  },
+  "diary.unknownEntry": {
+    "defaultMessage": "Unsupported record",
+    "content": "不支援的記錄"
+  },
+  "diary.unknownEntryUpgrade": {
+    "defaultMessage": "Update Islet to view this record.",
+    "content": "更新嶼聲後可檢視這筆記錄"
+  },
+  "diary.upload.deleteAudioConfirmTitle": {
+    "defaultMessage": "Delete this audio",
+    "content": "刪除這段語音"
+  },
+  "diary.upload.deleteConfirmDescription": {
+    "defaultMessage": "Deleted items cannot be restored. Delete it?",
+    "content": "刪除後無法復原，確認刪除？"
+  },
+  "diary.upload.deleteImageConfirmTitle": {
+    "defaultMessage": "Delete this image",
+    "content": "刪除這張圖片"
+  },
+  "diary.upload.deleteVideoConfirmTitle": {
+    "defaultMessage": "Delete this video",
+    "content": "刪除這段影片"
+  },
+  "diary.upload.failed": {
+    "defaultMessage": "Failed to send",
+    "content": "傳送失敗"
+  },
+  "diary.video.compressed": {
+    "defaultMessage": "compressed",
+    "content": "壓縮後"
+  },
+  "diary.video.confirmSave": {
+    "defaultMessage": "Save",
+    "content": "確認儲存"
+  },
+  "diary.video.estimatedSize": {
+    "defaultMessage": "Estimated size",
+    "content": "預估大小"
+  },
+  "diary.video.missing": {
+    "defaultMessage": "Video is missing",
+    "content": "影片不存在"
+  },
+  "diary.video.originalQuality": {
+    "defaultMessage": "Save original (no compression)",
+    "content": "儲存原始影片（不壓縮畫質）"
+  },
+  "diary.video.originalSize": {
+    "defaultMessage": "original",
+    "content": "原始大小"
+  },
+  "diary.video.preview": {
+    "defaultMessage": "Preview",
+    "content": "預覽"
+  },
+  "diary.voice.countdownHint": {
+    "content": "還可以說 {0} 秒",
+    "defaultMessage": "{0}s left"
+  },
+  "diary.voice.deleteTranscriptConfirm": {
+    "content": "刪除這段文字？",
+    "defaultMessage": "Delete this text?"
+  },
+  "diary.voice.editTranscript": {
+    "defaultMessage": "Edit transcript",
+    "content": "編輯錄音文字"
+  },
+  "diary.voice.holdToTalk": {
+    "content": "按住說話",
+    "defaultMessage": "Hold to talk"
+  },
+  "diary.voice.permissionDenied": {
+    "content": "無法使用麥克風，請檢查權限",
+    "defaultMessage": "Microphone access is unavailable. Check permissions and try again."
+  },
+  "diary.voice.preparing": {
+    "content": "準備中",
+    "defaultMessage": "Preparing"
+  },
+  "diary.voice.recognize": {
+    "content": "轉文字",
+    "defaultMessage": "Transcribe"
+  },
+  "diary.voice.recognizing": {
+    "content": "轉寫中…",
+    "defaultMessage": "Transcribing..."
+  },
+  "diary.voice.releaseToCancel": {
+    "content": "鬆開取消",
+    "defaultMessage": "Release to cancel"
+  },
+  "diary.voice.releaseToSend": {
+    "content": "鬆開傳送",
+    "defaultMessage": "Release to send"
+  },
+  "diary.voice.rerecognize": {
+    "content": "重新轉文字",
+    "defaultMessage": "Transcribe again"
+  },
+  "diary.voice.slideUpToCancel": {
+    "content": "上滑取消",
+    "defaultMessage": "Slide up to cancel"
+  },
+  "diary.voice.switchToKeyboard": {
+    "content": "切換到鍵盤",
+    "defaultMessage": "Switch to keyboard"
+  },
+  "diary.voice.switchToVoice": {
+    "content": "切換到語音輸入",
+    "defaultMessage": "Switch to voice input"
+  },
+  "diary.voice.tooShort": {
+    "content": "錄音太短，請按住後再說話",
+    "defaultMessage": "Recording is too short. Hold and speak again."
+  },
+  "diary.voice.transcriptDeleted": {
+    "content": "已刪除",
+    "defaultMessage": "Deleted"
+  },
+  "me.entriesRecorded": {
+    "content": "已記錄 {0} 條日記",
+    "defaultMessage": "{0} entries recorded"
+  },
+  "parser.minimalDiary.note": {
+    "content": "備註：{0}",
+    "defaultMessage": "Note: {0}"
+  },
+  "parser.minimalDiary.tags": {
+    "content": "標籤：{0}",
+    "defaultMessage": "Tags: {0}"
+  },
+  "profile.avatar": {
+    "content": "頭像",
+    "defaultMessage": "Avatar"
+  },
+  "profile.name": {
+    "content": "名字",
+    "defaultMessage": "Name"
+  },
+  "profile.namePlaceholder": {
+    "content": "輸入名字",
+    "defaultMessage": "Enter a name"
+  },
+  "profile.title": {
+    "content": "個人資料",
+    "defaultMessage": "Profile"
+  },
+  "settings.ai": {
+    "content": "AI",
+    "defaultMessage": "AI"
+  },
+  "settings.aiConfig": {
+    "content": "AI 設定",
+    "defaultMessage": "AI settings"
+  },
+  "settings.configured": {
+    "content": "已設定",
+    "defaultMessage": "Configured"
+  },
+  "settings.experience.exit": {
+    "content": "退出體驗模式",
+    "defaultMessage": "Exit experience mode"
+  },
+  "settings.experience.exitAction": {
+    "content": "退出體驗模式",
+    "defaultMessage": "Exit experience mode"
+  },
+  "settings.experience.exitConfirm": {
+    "content": "退出體驗模式？本次會話中的資料將被清空。",
+    "defaultMessage": "Exit experience mode? Data from this session will be cleared."
+  },
+  "settings.experience.seedData": {
+    "content": "寫入範例資料",
+    "defaultMessage": "Add sample data"
+  },
+  "settings.experience.seedDone": {
+    "content": "範例資料已寫入",
+    "defaultMessage": "Sample data added"
+  },
+  "settings.experience.seedExists": {
+    "content": "範例資料已存在",
+    "defaultMessage": "Sample data already exists"
+  },
+  "settings.experience.seedFailed": {
+    "content": "範例資料寫入失敗",
+    "defaultMessage": "Could not add sample data"
+  },
+  "settings.experience.seedWriting": {
+    "content": "正在寫入範例資料…",
+    "defaultMessage": "Adding sample data..."
+  },
+  "settings.followSystem": {
+    "content": "跟隨系統",
+    "defaultMessage": "Follow system"
+  },
+  "settings.import.chooseFile": {
+    "content": "選擇檔案",
+    "defaultMessage": "Choose file"
+  },
+  "settings.import.file": {
+    "content": "檔案",
+    "defaultMessage": "File"
+  },
+  "settings.import.fileTooLarge": {
+    "content": "檔案不能超過 {0} MB",
+    "defaultMessage": "Files must be {0} MB or smaller."
+  },
+  "settings.import.importing": {
+    "content": "匯入中…",
+    "defaultMessage": "Importing"
+  },
+  "settings.import.minimalDiary": {
+    "content": "極簡日記",
+    "defaultMessage": "Minimal Diary"
+  },
+  "settings.import.minimalDiary.title": {
+    "content": "匯入極簡日記",
+    "defaultMessage": "Import Minimal Diary"
+  },
+  "settings.import.minimalDiary.unsupportedFile": {
+    "content": "請選擇 .mdd 或 .zip 檔案",
+    "defaultMessage": "Only .mdd and .zip files are supported."
+  },
+  "settings.import.result.assetImported": {
+    "content": "附件",
+    "defaultMessage": "Attachments"
+  },
+  "settings.import.result.ok": {
+    "content": "好的",
+    "defaultMessage": "OK"
+  },
+  "settings.import.result.parsing": {
+    "content": "解析中…",
+    "defaultMessage": "Parsing"
+  },
+  "settings.import.result.skipped": {
+    "content": "已略過",
+    "defaultMessage": "Skipped"
+  },
+  "settings.import.result.success": {
+    "content": "匯入完成",
+    "defaultMessage": "Import complete"
+  },
+  "settings.import.result.summary": {
+    "content": "匯入結果",
+    "defaultMessage": "Import results"
+  },
+  "settings.import.result.textImported": {
+    "content": "文字",
+    "defaultMessage": "Text"
+  },
+  "settings.import.result.title": {
+    "content": "匯入",
+    "defaultMessage": "Import"
+  },
+  "settings.import.start": {
+    "content": "匯入",
+    "defaultMessage": "Import"
+  },
+  "settings.import.targetNotebook": {
+    "content": "目標日記本",
+    "defaultMessage": "Target notebook"
+  },
+  "settings.import.targetNotebookUnavailable": {
+    "content": "目標日記本無法使用，請重新選擇。",
+    "defaultMessage": "Target notebook is unavailable. Choose another notebook."
+  },
+  "settings.import.title": {
+    "content": "匯入",
+    "defaultMessage": "Import"
+  },
+  "settings.language": {
+    "content": "語言",
+    "defaultMessage": "Language"
+  },
+  "settings.myNotebook": {
+    "content": "我的日記本",
+    "defaultMessage": "My notebook"
+  },
+  "settings.notConfigured": {
+    "content": "未設定",
+    "defaultMessage": "Not configured"
+  },
+  "settings.s3": {
+    "content": "雲端同步",
+    "defaultMessage": "Cloud Sync"
+  },
+  "settings.speechRecognition.addFormDesc": {
+    "content": "將語音訊息轉為文字，最長支援 59 秒。",
+    "defaultMessage": "Turn voice messages into text, up to 59 seconds."
+  },
+  "settings.speechRecognition.addTitle": {
+    "content": "設定百度智能雲",
+    "defaultMessage": "Configure Baidu AI Cloud"
+  },
+  "settings.speechRecognition.autoTranscribe": {
+    "content": "傳送後自動轉文字",
+    "defaultMessage": "Auto-transcribe voice"
+  },
+  "settings.speechRecognition.baiduDesc": {
+    "content": "短語音辨識極速版",
+    "defaultMessage": "Short Speech Recognition Pro"
+  },
+  "settings.speechRecognition.configInfo": {
+    "content": "設定資訊",
+    "defaultMessage": "Configuration"
+  },
+  "settings.speechRecognition.configuredDesc": {
+    "content": "已可將語音訊息轉為文字。",
+    "defaultMessage": "Voice to text is ready to use."
+  },
+  "settings.speechRecognition.consoleHint": {
+    "content": "在百度智能雲控制台建立應用，開通「短語音辨識極速版」，取得 API Key 和 Secret Key。憑證會用於傳送後的自動轉寫，以及在語音訊息上手動轉文字。",
+    "defaultMessage": "Create an app in the Baidu AI Cloud console and enable Short Speech Recognition Pro to get the API Key and Secret Key. These credentials are used for automatic transcription after sending voice messages and manual transcription from a voice message."
+  },
+  "settings.speechRecognition.current": {
+    "content": "目前服務",
+    "defaultMessage": "Current service"
+  },
+  "settings.speechRecognition.delete": {
+    "content": "刪除設定",
+    "defaultMessage": "Delete configuration"
+  },
+  "settings.speechRecognition.deleteConfirm": {
+    "content": "刪除語音轉文字設定？刪除後仍可傳送語音訊息。",
+    "defaultMessage": "Delete voice-to-text configuration? You can still send voice messages."
+  },
+  "settings.speechRecognition.deleted": {
+    "content": "已刪除",
+    "defaultMessage": "Deleted"
+  },
+  "settings.speechRecognition.emptyDesc": {
+    "content": "設定服務後，可將語音訊息轉為文字。",
+    "defaultMessage": "Configure a service to turn voice messages into text."
+  },
+  "settings.speechRecognition.emptyHint": {
+    "content": "未設定時，仍可傳送語音訊息。",
+    "defaultMessage": "You can still send voice messages without voice to text."
+  },
+  "settings.speechRecognition.provider": {
+    "content": "服務商",
+    "defaultMessage": "Provider"
+  },
+  "settings.speechRecognition.providerBaidu": {
+    "content": "百度智能雲",
+    "defaultMessage": "Baidu AI Cloud"
+  },
+  "settings.speechRecognition.required": {
+    "content": "請填寫 {0}",
+    "defaultMessage": "{0} is required."
+  },
+  "settings.speechRecognition.saved": {
+    "content": "已儲存",
+    "defaultMessage": "Saved"
+  },
+  "settings.speechRecognition.service": {
+    "content": "服務",
+    "defaultMessage": "Service"
+  },
+  "settings.speechRecognition.short": {
+    "content": "語音轉文字",
+    "defaultMessage": "Voice to text"
+  },
+  "settings.speechRecognition.testFailed": {
+    "content": "連線失敗，請檢查設定資訊",
+    "defaultMessage": "Connection failed"
+  },
+  "settings.speechRecognition.testing": {
+    "content": "正在測試連線…",
+    "defaultMessage": "Testing connection..."
+  },
+  "settings.speechRecognition.title": {
+    "content": "語音轉文字",
+    "defaultMessage": "Voice to text"
+  },
+  "settings.sync.attachments": {
+    "content": "附件",
+    "defaultMessage": "Attachments"
+  },
+  "settings.sync.attachmentsStats": {
+    "content": "{0} 個檔案 · {1}",
+    "defaultMessage": "{0} files · {1}"
+  },
+  "settings.sync.channel.desc": {
+    "content": "資料庫和附件會加密後同步到所選儲存空間。",
+    "defaultMessage": "Databases and attachments are encrypted before syncing to the selected storage."
+  },
+  "settings.sync.channel.s3Desc": {
+    "content": "透過 S3 或相容 S3 的物件儲存同步資料。",
+    "defaultMessage": "Sync data through S3 or S3-compatible object storage."
+  },
+  "settings.sync.channel.title": {
+    "content": "選擇儲存方式",
+    "defaultMessage": "Choose storage type"
+  },
+  "settings.sync.channel.webdavDesc": {
+    "content": "透過 Nextcloud 等支援 WebDAV 的服務同步資料。",
+    "defaultMessage": "Sync data through a WebDAV service such as Nextcloud."
+  },
+  "settings.sync.channelLabel": {
+    "content": "儲存方式",
+    "defaultMessage": "Storage type"
+  },
+  "settings.sync.content": {
+    "content": "同步內容",
+    "defaultMessage": "Sync content"
+  },
+  "settings.sync.database": {
+    "content": "資料庫",
+    "defaultMessage": "Database"
+  },
+  "settings.sync.databaseStats": {
+    "content": "{0} 筆記錄 · {1}",
+    "defaultMessage": "{0} entries · {1}"
+  },
+  "settings.sync.importFailed": {
+    "content": "無法連線已有同步。請檢查儲存設定和復原金鑰後重試。",
+    "defaultMessage": "Could not connect to the existing sync. Check the storage settings and recovery key, then try again."
+  },
+  "settings.sync.initMode": {
+    "content": "同步方式",
+    "defaultMessage": "Sync setup"
+  },
+  "settings.sync.key.backedUp": {
+    "content": "我已安全備份復原金鑰",
+    "defaultMessage": "I have safely backed up this recovery key"
+  },
+  "settings.sync.key.desc": {
+    "content": "復原金鑰用於加密同步到雲端的資料庫和附件。本機資料不會被加密。",
+    "defaultMessage": "This recovery key encrypts databases and attachments synced to cloud storage. Local data is not encrypted."
+  },
+  "settings.sync.key.empty": {
+    "content": "請先貼上復原金鑰",
+    "defaultMessage": "Paste the recovery key first."
+  },
+  "settings.sync.key.generated": {
+    "content": "新的復原金鑰",
+    "defaultMessage": "New recovery key"
+  },
+  "settings.sync.key.importLabel": {
+    "content": "復原金鑰",
+    "defaultMessage": "Recovery key"
+  },
+  "settings.sync.key.title": {
+    "content": "設定復原金鑰",
+    "defaultMessage": "Set recovery key"
+  },
+  "settings.sync.mode.auto": {
+    "content": "建立新同步",
+    "defaultMessage": "Create new sync"
+  },
+  "settings.sync.mode.autoDesc": {
+    "content": "產生新的復原金鑰，並建立遠端加密庫。",
+    "defaultMessage": "Generate a new recovery key and create an encrypted remote library."
+  },
+  "settings.sync.mode.import": {
+    "content": "連線已有同步",
+    "defaultMessage": "Connect existing sync"
+  },
+  "settings.sync.mode.importDesc": {
+    "content": "使用之前的復原金鑰連線已有遠端加密庫。",
+    "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library."
+  },
+  "settings.sync.none": {
+    "content": "無",
+    "defaultMessage": "None"
+  },
+  "settings.sync.recoveryKey": {
+    "content": "復原金鑰",
+    "defaultMessage": "Recovery key"
+  },
+  "settings.sync.s3.desc": {
+    "content": "資料會先在本機加密，再同步到你設定的 S3 儲存空間。",
+    "defaultMessage": "Data is encrypted on this device before syncing to your S3 storage."
+  },
+  "settings.sync.s3.forcePathStyle": {
+    "content": "強制路徑樣式",
+    "defaultMessage": "Force path style"
+  },
+  "settings.sync.s3.required": {
+    "content": "請填寫 {0}",
+    "defaultMessage": "{0} is required."
+  },
+  "settings.sync.s3.testFailed": {
+    "content": "連線測試失敗：{0}",
+    "defaultMessage": "Connection test failed: {0}"
+  },
+  "settings.sync.s3.testingShort": {
+    "content": "連線中…",
+    "defaultMessage": "Connecting..."
+  },
+  "settings.sync.s3.title": {
+    "content": "設定 S3 儲存空間",
+    "defaultMessage": "Configure S3 storage"
+  },
+  "settings.sync.storage": {
+    "content": "儲存空間",
+    "defaultMessage": "Storage"
+  },
+  "settings.sync.storage.detailTitle": {
+    "content": "儲存詳情",
+    "defaultMessage": "Storage details"
+  },
+  "settings.sync.title": {
+    "content": "雲端同步",
+    "defaultMessage": "Cloud Sync"
+  },
+  "settings.sync.turnOff": {
+    "content": "關閉同步",
+    "defaultMessage": "Turn off sync"
+  },
+  "settings.sync.turnOff.desc": {
+    "content": "關閉後，本裝置會停止同步，並移除本地同步設定。雲端資料仍由復原金鑰加密；如果未備份金鑰，將無法再解密這些資料。",
+    "defaultMessage": "After you turn off sync, this device stops syncing and its local sync settings are removed. Cloud data remains encrypted with the recovery key. Without a backup of the key, that data cannot be decrypted."
+  },
+  "settings.sync.webdav.desc": {
+    "defaultMessage": "Data is encrypted on this device before syncing to your WebDAV storage.",
+    "content": "資料會先在本機加密，再同步到你設定的 WebDAV 儲存空間。"
+  },
+  "settings.sync.webdav.password": {
+    "content": "密碼或應用程式密碼",
+    "defaultMessage": "Password or app password"
+  },
+  "settings.sync.webdav.title": {
+    "content": "設定 WebDAV 儲存空間",
+    "defaultMessage": "Configure WebDAV storage"
+  },
+  "settings.theme": {
+    "content": "主題",
+    "defaultMessage": "Theme"
+  },
+  "settings.title": {
+    "content": "設定",
+    "defaultMessage": "Settings"
+  },
+  "settings.version": {
+    "content": "版本",
+    "defaultMessage": "Version"
+  },
+  "startup.error.retry": {
+    "content": "重試",
+    "defaultMessage": "Retry"
+  },
+  "startup.error.title": {
+    "content": "無法啟動嶼聲",
+    "defaultMessage": "Could not start Islet"
+  },
+  "startup.experience.confirmDesc": {
+    "content": "體驗模式資料只儲存在記憶體中。重新整理、關閉應用或切換語言都會清空這些資料。",
+    "defaultMessage": "Experience mode keeps data only in memory. Refreshing, closing the app, or changing language will clear it."
+  },
+  "startup.experience.confirmTitle": {
+    "content": "進入體驗模式？",
+    "defaultMessage": "Enter experience mode?"
+  },
+  "startup.experience.enter": {
+    "content": "進入體驗模式",
+    "defaultMessage": "Enter experience mode"
+  },
+  "startup.experience.title": {
+    "content": "體驗模式",
+    "defaultMessage": "Experience mode"
+  },
+  "startup.title": {
+    "content": "選擇啟動方式",
+    "defaultMessage": "Choose startup mode"
+  },
+  "tab.calendar": {
+    "content": "日曆",
+    "defaultMessage": "Calendar"
+  },
+  "tab.diary": {
+    "content": "日記",
+    "defaultMessage": "Diary"
+  },
+  "tab.settings": {
+    "content": "我的",
+    "defaultMessage": "My"
+  },
+  "theme.dark": {
+    "content": "深色",
+    "defaultMessage": "Dark"
+  },
+  "theme.light": {
+    "content": "淺色",
+    "defaultMessage": "Light"
+  }
+}

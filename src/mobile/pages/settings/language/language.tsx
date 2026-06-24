@@ -5,11 +5,12 @@ import { HeaderPage } from '@/mobile/components/layout/HeaderPage';
 import { LanguageSettings } from '@/mobile/test.id';
 import React, { useState } from 'react';
 
-type LanguagePreference = 'auto' | 'en-US' | 'zh-CN';
+type LanguagePreference = 'auto' | 'en-US' | 'zh-CN' | 'zh-TW' | 'ko-KR' | 'ja-JP' | 'fr-FR' | 'de-DE';
 
 function getLanguagePreference(): LanguagePreference {
   const saved = localStorage.getItem('language');
-  return saved === 'en-US' || saved === 'zh-CN' ? saved : 'auto';
+  const valid: LanguagePreference[] = ['en-US', 'zh-CN', 'zh-TW', 'ko-KR', 'ja-JP', 'fr-FR', 'de-DE'];
+  return (valid as string[]).includes(saved ?? '') ? (saved as LanguagePreference) : 'auto';
 }
 
 export function SettingsLanguagePage() {

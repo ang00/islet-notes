@@ -1,0 +1,807 @@
+{
+  "__i18n_ease__": "true",
+  "attachment.image.tooLarge": {
+    "defaultMessage": "Images must be 50 MB or smaller.",
+    "content": "이미지는 50 MB 이하여야 합니다."
+  },
+  "attachment.image.unsupported": {
+    "defaultMessage": "JPEG, PNG, and WebP images are supported.",
+    "content": "JPEG, PNG, WebP 이미지를 지원합니다."
+  },
+  "calendar.dayTitleDateFormat": {
+    "defaultMessage": "MMM d, EEE",
+    "content": "M월 d일 EEE"
+  },
+  "calendar.empty": {
+    "defaultMessage": "No entries on this day",
+    "content": "이 날짜에 기록이 없습니다"
+  },
+  "calendar.monthTitleFormat": {
+    "defaultMessage": "MMMM yyyy",
+    "content": "yyyy년 M월"
+  },
+  "calendar.nextMonth": {
+    "defaultMessage": "Next month",
+    "content": "다음 달"
+  },
+  "calendar.openRecord": {
+    "defaultMessage": "Open entry",
+    "content": "기록 열기"
+  },
+  "calendar.previousMonth": {
+    "defaultMessage": "Previous month",
+    "content": "이전 달"
+  },
+  "calendar.recordCount": {
+    "defaultMessage": "{0} entries",
+    "content": "{0}개의 기록"
+  },
+  "calendar.title": {
+    "defaultMessage": "Calendar",
+    "content": "달력"
+  },
+  "calendar.today": {
+    "defaultMessage": "Today",
+    "content": "오늘"
+  },
+  "common.back": {
+    "defaultMessage": "Back",
+    "content": "뒤로"
+  },
+  "common.cancel": {
+    "defaultMessage": "Cancel",
+    "content": "취소"
+  },
+  "common.close": {
+    "defaultMessage": "Close",
+    "content": "닫기"
+  },
+  "common.copied": {
+    "defaultMessage": "Copied",
+    "content": "복사됨"
+  },
+  "common.copy": {
+    "defaultMessage": "Copy",
+    "content": "복사"
+  },
+  "common.copyFailed": {
+    "defaultMessage": "Copy failed",
+    "content": "복사 실패"
+  },
+  "common.delete": {
+    "defaultMessage": "Delete",
+    "content": "삭제"
+  },
+  "common.done": {
+    "defaultMessage": "Done",
+    "content": "완료"
+  },
+  "common.edit": {
+    "defaultMessage": "Edit",
+    "content": "편집"
+  },
+  "common.loading": {
+    "defaultMessage": "Loading...",
+    "content": "불러오는 중..."
+  },
+  "common.next": {
+    "defaultMessage": "Next",
+    "content": "다음"
+  },
+  "common.retry": {
+    "defaultMessage": "Retry",
+    "content": "재시도"
+  },
+  "common.save": {
+    "defaultMessage": "Save",
+    "content": "저장"
+  },
+  "common.send": {
+    "defaultMessage": "Send",
+    "content": "보내기"
+  },
+  "common.sync": {
+    "defaultMessage": "Sync",
+    "content": "동기화"
+  },
+  "common.uploading": {
+    "defaultMessage": "Uploading...",
+    "content": "업로드 중..."
+  },
+  "diary.addNotebook": {
+    "defaultMessage": "New notebook",
+    "content": "새 노트북"
+  },
+  "diary.album": {
+    "defaultMessage": "Album",
+    "content": "앨범"
+  },
+  "diary.camera": {
+    "defaultMessage": "Camera",
+    "content": "카메라"
+  },
+  "diary.chat.empty": {
+    "defaultMessage": "No entries yet",
+    "content": "아직 기록이 없습니다"
+  },
+  "diary.cover": {
+    "defaultMessage": "Notebook cover",
+    "content": "노트북 표지"
+  },
+  "diary.create": {
+    "defaultMessage": "New notebook",
+    "content": "새 노트북"
+  },
+  "diary.defaultNotebookName": {
+    "defaultMessage": "My diary",
+    "content": "내 일기"
+  },
+  "diary.deleteEntryConfirm": {
+    "defaultMessage": "Delete this entry? It will be removed from this notebook.",
+    "content": "이 기록을 삭제할까요? 이 노트북에서 제거됩니다."
+  },
+  "diary.deleteNotebook": {
+    "defaultMessage": "Delete notebook",
+    "content": "노트북 삭제"
+  },
+  "diary.deleteNotebookConfirm": {
+    "defaultMessage": "Delete this notebook? Entries in it will also be removed.",
+    "content": "이 노트북을 삭제할까요? 노트북의 기록도 함께 제거됩니다."
+  },
+  "diary.edit.placeholder": {
+    "defaultMessage": "Enter text",
+    "content": "텍스트 입력"
+  },
+  "diary.editTextEntry": {
+    "defaultMessage": "Edit text",
+    "content": "텍스트 편집"
+  },
+  "diary.entryDeleted": {
+    "defaultMessage": "Deleted",
+    "content": "삭제됨"
+  },
+  "diary.entryMoved": {
+    "defaultMessage": "Moved",
+    "content": "이동됨"
+  },
+  "diary.image.loadFailed": {
+    "defaultMessage": "Image failed to load",
+    "content": "이미지를 불러오지 못했습니다"
+  },
+  "diary.inputPlaceholder": {
+    "defaultMessage": "Write something...",
+    "content": "무언가를 작성하세요..."
+  },
+  "diary.moveEntry.action": {
+    "defaultMessage": "Move",
+    "content": "이동"
+  },
+  "diary.moveEntry.emptySearch": {
+    "defaultMessage": "No matching notebooks",
+    "content": "일치하는 노트북이 없습니다"
+  },
+  "diary.moveEntry.searchPlaceholder": {
+    "defaultMessage": "Search notebooks",
+    "content": "노트북 검색"
+  },
+  "diary.moveEntry.title": {
+    "defaultMessage": "Move to notebook",
+    "content": "노트북으로 이동"
+  },
+  "diary.name": {
+    "defaultMessage": "Notebook name",
+    "content": "노트북 이름"
+  },
+  "diary.notebook.emptySummary": {
+    "defaultMessage": "No entries yet",
+    "content": "아직 기록이 없습니다"
+  },
+  "diary.notebooks": {
+    "defaultMessage": "Diaries",
+    "content": "일기"
+  },
+  "diary.recordVideo": {
+    "defaultMessage": "Record video",
+    "content": "비디오 녹화"
+  },
+  "diary.settings": {
+    "defaultMessage": "Notebook settings",
+    "content": "노트북 설정"
+  },
+  "diary.unknownAttachment": {
+    "defaultMessage": "Unsupported attachment",
+    "content": "지원하지 않는 첨부 파일"
+  },
+  "diary.unknownAttachmentUpgrade": {
+    "defaultMessage": "Update Islet to view this attachment.",
+    "content": "이 첨부 파일을 보려면 Islet을 업데이트하세요."
+  },
+  "diary.unknownEntry": {
+    "defaultMessage": "Unsupported record",
+    "content": "지원하지 않는 기록"
+  },
+  "diary.unknownEntryUpgrade": {
+    "defaultMessage": "Update Islet to view this record.",
+    "content": "이 기록을 보려면 Islet을 업데이트하세요."
+  },
+  "diary.upload.deleteAudioConfirmTitle": {
+    "defaultMessage": "Delete this audio",
+    "content": "이 오디오 삭제"
+  },
+  "diary.upload.deleteConfirmDescription": {
+    "defaultMessage": "Deleted items cannot be restored. Delete it?",
+    "content": "삭제된 항목은 복구할 수 없습니다. 삭제할까요?"
+  },
+  "diary.upload.deleteImageConfirmTitle": {
+    "defaultMessage": "Delete this image",
+    "content": "이 이미지 삭제"
+  },
+  "diary.upload.deleteVideoConfirmTitle": {
+    "defaultMessage": "Delete this video",
+    "content": "이 비디오 삭제"
+  },
+  "diary.upload.failed": {
+    "defaultMessage": "Failed to send",
+    "content": "전송 실패"
+  },
+  "diary.video.compressed": {
+    "defaultMessage": "compressed",
+    "content": "압축됨"
+  },
+  "diary.video.confirmSave": {
+    "defaultMessage": "Save",
+    "content": "저장"
+  },
+  "diary.video.estimatedSize": {
+    "defaultMessage": "Estimated size",
+    "content": "예상 크기"
+  },
+  "diary.video.missing": {
+    "defaultMessage": "Video is missing",
+    "content": "비디오가 없습니다"
+  },
+  "diary.video.originalQuality": {
+    "defaultMessage": "Save original (no compression)",
+    "content": "원본 저장 (압축 안 함)"
+  },
+  "diary.video.originalSize": {
+    "defaultMessage": "original",
+    "content": "원본"
+  },
+  "diary.video.preview": {
+    "defaultMessage": "Preview",
+    "content": "미리보기"
+  },
+  "diary.voice.countdownHint": {
+    "defaultMessage": "{0}s left",
+    "content": "{0}초 남음"
+  },
+  "diary.voice.deleteTranscriptConfirm": {
+    "defaultMessage": "Delete this text?",
+    "content": "이 텍스트를 삭제할까요?"
+  },
+  "diary.voice.editTranscript": {
+    "defaultMessage": "Edit transcript",
+    "content": "텍스트 편집"
+  },
+  "diary.voice.holdToTalk": {
+    "defaultMessage": "Hold to talk",
+    "content": "길게 눌러 말하기"
+  },
+  "diary.voice.permissionDenied": {
+    "defaultMessage": "Microphone access is unavailable. Check permissions and try again.",
+    "content": "마이크에 접근할 수 없습니다. 권한을 확인하고 다시 시도하세요."
+  },
+  "diary.voice.preparing": {
+    "defaultMessage": "Preparing",
+    "content": "준비 중"
+  },
+  "diary.voice.recognize": {
+    "defaultMessage": "Transcribe",
+    "content": "텍스트 변환"
+  },
+  "diary.voice.recognizing": {
+    "defaultMessage": "Transcribing...",
+    "content": "텍스트 변환 중..."
+  },
+  "diary.voice.releaseToCancel": {
+    "defaultMessage": "Release to cancel",
+    "content": "놓으면 취소"
+  },
+  "diary.voice.releaseToSend": {
+    "defaultMessage": "Release to send",
+    "content": "놓으면 전송"
+  },
+  "diary.voice.rerecognize": {
+    "defaultMessage": "Transcribe again",
+    "content": "다시 변환"
+  },
+  "diary.voice.slideUpToCancel": {
+    "defaultMessage": "Slide up to cancel",
+    "content": "위로 밀어 취소"
+  },
+  "diary.voice.switchToKeyboard": {
+    "defaultMessage": "Switch to keyboard",
+    "content": "키보드로 전환"
+  },
+  "diary.voice.switchToVoice": {
+    "defaultMessage": "Switch to voice input",
+    "content": "음성 입력으로 전환"
+  },
+  "diary.voice.tooShort": {
+    "defaultMessage": "Recording is too short. Hold and speak again.",
+    "content": "녹음이 너무 짧습니다. 길게 눌러 다시 말씀해 주세요."
+  },
+  "diary.voice.transcriptDeleted": {
+    "defaultMessage": "Deleted",
+    "content": "삭제됨"
+  },
+  "me.entriesRecorded": {
+    "defaultMessage": "{0} entries recorded",
+    "content": "{0}개의 기록이 작성됨"
+  },
+  "parser.minimalDiary.note": {
+    "defaultMessage": "Note: {0}",
+    "content": "메모: {0}"
+  },
+  "parser.minimalDiary.tags": {
+    "defaultMessage": "Tags: {0}",
+    "content": "태그: {0}"
+  },
+  "profile.avatar": {
+    "defaultMessage": "Avatar",
+    "content": "아바타"
+  },
+  "profile.name": {
+    "defaultMessage": "Name",
+    "content": "이름"
+  },
+  "profile.namePlaceholder": {
+    "defaultMessage": "Enter a name",
+    "content": "이름 입력"
+  },
+  "profile.title": {
+    "defaultMessage": "Profile",
+    "content": "프로필"
+  },
+  "settings.ai": {
+    "defaultMessage": "AI",
+    "content": "AI"
+  },
+  "settings.aiConfig": {
+    "defaultMessage": "AI settings",
+    "content": "AI 설정"
+  },
+  "settings.configured": {
+    "defaultMessage": "Configured",
+    "content": "설정됨"
+  },
+  "settings.experience.exit": {
+    "defaultMessage": "Exit experience mode",
+    "content": "체험 모드 종료"
+  },
+  "settings.experience.exitAction": {
+    "defaultMessage": "Exit experience mode",
+    "content": "체험 모드 종료"
+  },
+  "settings.experience.exitConfirm": {
+    "defaultMessage": "Exit experience mode? Data from this session will be cleared.",
+    "content": "체험 모드를 종료할까요? 이 세션의 데이터가 삭제됩니다."
+  },
+  "settings.experience.seedData": {
+    "defaultMessage": "Add sample data",
+    "content": "샘플 데이터 추가"
+  },
+  "settings.experience.seedDone": {
+    "defaultMessage": "Sample data added",
+    "content": "샘플 데이터가 추가됨"
+  },
+  "settings.experience.seedExists": {
+    "defaultMessage": "Sample data already exists",
+    "content": "샘플 데이터가 이미 있습니다"
+  },
+  "settings.experience.seedFailed": {
+    "defaultMessage": "Could not add sample data",
+    "content": "샘플 데이터를 추가할 수 없습니다"
+  },
+  "settings.experience.seedWriting": {
+    "defaultMessage": "Adding sample data...",
+    "content": "샘플 데이터 추가 중..."
+  },
+  "settings.followSystem": {
+    "defaultMessage": "Follow system",
+    "content": "시스템 따르기"
+  },
+  "settings.import.chooseFile": {
+    "defaultMessage": "Choose file",
+    "content": "파일 선택"
+  },
+  "settings.import.file": {
+    "defaultMessage": "File",
+    "content": "파일"
+  },
+  "settings.import.fileTooLarge": {
+    "defaultMessage": "Files must be {0} MB or smaller.",
+    "content": "파일은 {0} MB 이하여야 합니다."
+  },
+  "settings.import.importing": {
+    "defaultMessage": "Importing",
+    "content": "가져오는 중"
+  },
+  "settings.import.minimalDiary": {
+    "defaultMessage": "Minimal Diary",
+    "content": "Minimal Diary"
+  },
+  "settings.import.minimalDiary.title": {
+    "defaultMessage": "Import Minimal Diary",
+    "content": "Minimal Diary 가져오기"
+  },
+  "settings.import.minimalDiary.unsupportedFile": {
+    "defaultMessage": "Only .mdd and .zip files are supported.",
+    "content": ".mdd 및 .zip 파일만 지원합니다."
+  },
+  "settings.import.result.assetImported": {
+    "defaultMessage": "Attachments",
+    "content": "첨부 파일"
+  },
+  "settings.import.result.ok": {
+    "defaultMessage": "OK",
+    "content": "확인"
+  },
+  "settings.import.result.parsing": {
+    "defaultMessage": "Parsing",
+    "content": "파싱"
+  },
+  "settings.import.result.skipped": {
+    "defaultMessage": "Skipped",
+    "content": "건너뜀"
+  },
+  "settings.import.result.success": {
+    "defaultMessage": "Import complete",
+    "content": "가져오기 완료"
+  },
+  "settings.import.result.summary": {
+    "defaultMessage": "Import results",
+    "content": "가져오기 결과"
+  },
+  "settings.import.result.textImported": {
+    "defaultMessage": "Text",
+    "content": "텍스트"
+  },
+  "settings.import.result.title": {
+    "defaultMessage": "Import",
+    "content": "가져오기"
+  },
+  "settings.import.start": {
+    "defaultMessage": "Import",
+    "content": "가져오기"
+  },
+  "settings.import.targetNotebook": {
+    "defaultMessage": "Target notebook",
+    "content": "대상 노트북"
+  },
+  "settings.import.targetNotebookUnavailable": {
+    "defaultMessage": "Target notebook is unavailable. Choose another notebook.",
+    "content": "대상 노트북을 사용할 수 없습니다. 다른 노트북을 선택하세요."
+  },
+  "settings.import.title": {
+    "defaultMessage": "Import",
+    "content": "가져오기"
+  },
+  "settings.language": {
+    "defaultMessage": "Language",
+    "content": "언어"
+  },
+  "settings.myNotebook": {
+    "defaultMessage": "My notebook",
+    "content": "내 노트북"
+  },
+  "settings.notConfigured": {
+    "defaultMessage": "Not configured",
+    "content": "설정되지 않음"
+  },
+  "settings.s3": {
+    "defaultMessage": "Cloud Sync",
+    "content": "클라우드 동기화"
+  },
+  "settings.speechRecognition.addFormDesc": {
+    "defaultMessage": "Turn voice messages into text, up to 59 seconds.",
+    "content": "음성 메시지를 텍스트로 변환합니다. 최대 59초까지 지원합니다."
+  },
+  "settings.speechRecognition.addTitle": {
+    "defaultMessage": "Configure Baidu AI Cloud",
+    "content": "Baidu AI Cloud 설정"
+  },
+  "settings.speechRecognition.autoTranscribe": {
+    "defaultMessage": "Auto-transcribe voice",
+    "content": "음성 자동 변환"
+  },
+  "settings.speechRecognition.baiduDesc": {
+    "defaultMessage": "Short Speech Recognition Pro",
+    "content": "Short Speech Recognition Pro"
+  },
+  "settings.speechRecognition.configInfo": {
+    "defaultMessage": "Configuration",
+    "content": "설정"
+  },
+  "settings.speechRecognition.configuredDesc": {
+    "defaultMessage": "Voice to text is ready to use.",
+    "content": "음성-텍스트 변환을 사용할 준비가 되었습니다."
+  },
+  "settings.speechRecognition.consoleHint": {
+    "defaultMessage": "Create an app in the Baidu AI Cloud console and enable Short Speech Recognition Pro to get the API Key and Secret Key. These credentials are used for automatic transcription after sending voice messages and manual transcription from a voice message.",
+    "content": "Baidu AI Cloud 콘솔에서 앱을 만들고 Short Speech Recognition Pro를 활성화하여 API Key와 Secret Key를 받으세요. 이 자격 증명은 음성 메시지 전송 후 자동 변환 및 음성 메시지에서 수동 변환에 사용됩니다."
+  },
+  "settings.speechRecognition.current": {
+    "defaultMessage": "Current service",
+    "content": "현재 서비스"
+  },
+  "settings.speechRecognition.delete": {
+    "defaultMessage": "Delete configuration",
+    "content": "설정 삭제"
+  },
+  "settings.speechRecognition.deleteConfirm": {
+    "defaultMessage": "Delete voice-to-text configuration? You can still send voice messages.",
+    "content": "음성-텍스트 변환 설정을 삭제할까요? 음성 메시지는 계속 보낼 수 있습니다."
+  },
+  "settings.speechRecognition.deleted": {
+    "defaultMessage": "Deleted",
+    "content": "삭제됨"
+  },
+  "settings.speechRecognition.emptyDesc": {
+    "defaultMessage": "Configure a service to turn voice messages into text.",
+    "content": "음성 메시지를 텍스트로 변환할 서비스를 설정하세요."
+  },
+  "settings.speechRecognition.emptyHint": {
+    "defaultMessage": "You can still send voice messages without voice to text.",
+    "content": "음성-텍스트 변환 없이도 음성 메시지를 보낼 수 있습니다."
+  },
+  "settings.speechRecognition.provider": {
+    "defaultMessage": "Provider",
+    "content": "제공자"
+  },
+  "settings.speechRecognition.providerBaidu": {
+    "defaultMessage": "Baidu AI Cloud",
+    "content": "Baidu AI Cloud"
+  },
+  "settings.speechRecognition.required": {
+    "defaultMessage": "{0} is required.",
+    "content": "{0}이(가) 필요합니다."
+  },
+  "settings.speechRecognition.saved": {
+    "defaultMessage": "Saved",
+    "content": "저장됨"
+  },
+  "settings.speechRecognition.service": {
+    "defaultMessage": "Service",
+    "content": "서비스"
+  },
+  "settings.speechRecognition.short": {
+    "defaultMessage": "Voice to text",
+    "content": "음성 텍스트 변환"
+  },
+  "settings.speechRecognition.testFailed": {
+    "defaultMessage": "Connection failed",
+    "content": "연결 실패"
+  },
+  "settings.speechRecognition.testing": {
+    "defaultMessage": "Testing connection...",
+    "content": "연결 테스트 중..."
+  },
+  "settings.speechRecognition.title": {
+    "defaultMessage": "Voice to text",
+    "content": "음성 텍스트 변환"
+  },
+  "settings.sync.attachments": {
+    "defaultMessage": "Attachments",
+    "content": "첨부 파일"
+  },
+  "settings.sync.attachmentsStats": {
+    "defaultMessage": "{0} files · {1}",
+    "content": "{0}개 파일 · {1}"
+  },
+  "settings.sync.channel.desc": {
+    "defaultMessage": "Databases and attachments are encrypted before syncing to the selected storage.",
+    "content": "데이터베이스와 첨부 파일은 선택한 저장소에 동기화되기 전에 암호화됩니다."
+  },
+  "settings.sync.channel.s3Desc": {
+    "defaultMessage": "Sync data through S3 or S3-compatible object storage.",
+    "content": "S3 또는 S3 호환 객체 저장소를 통해 데이터를 동기화합니다."
+  },
+  "settings.sync.channel.title": {
+    "defaultMessage": "Choose storage type",
+    "content": "저장소 유형 선택"
+  },
+  "settings.sync.channel.webdavDesc": {
+    "defaultMessage": "Sync data through a WebDAV service such as Nextcloud.",
+    "content": "Nextcloud와 같은 WebDAV 서비스를 통해 데이터를 동기화합니다."
+  },
+  "settings.sync.channelLabel": {
+    "defaultMessage": "Storage type",
+    "content": "저장소 유형"
+  },
+  "settings.sync.content": {
+    "defaultMessage": "Sync content",
+    "content": "동기화 콘텐츠"
+  },
+  "settings.sync.database": {
+    "defaultMessage": "Database",
+    "content": "데이터베이스"
+  },
+  "settings.sync.databaseStats": {
+    "defaultMessage": "{0} entries · {1}",
+    "content": "{0}개 기록 · {1}"
+  },
+  "settings.sync.importFailed": {
+    "defaultMessage": "Could not connect to the existing sync. Check the storage settings and recovery key, then try again.",
+    "content": "기존 동기화에 연결할 수 없습니다. 저장소 설정과 복구 키를 확인한 후 다시 시도하세요."
+  },
+  "settings.sync.initMode": {
+    "defaultMessage": "Sync setup",
+    "content": "동기화 설정"
+  },
+  "settings.sync.key.backedUp": {
+    "defaultMessage": "I have safely backed up this recovery key",
+    "content": "이 복구 키를 안전하게 백업했습니다"
+  },
+  "settings.sync.key.desc": {
+    "defaultMessage": "This recovery key encrypts databases and attachments synced to cloud storage. Local data is not encrypted.",
+    "content": "이 복구 키는 클라우드 저장소에 동기화되는 데이터베이스와 첨부 파일을 암호화합니다. 로컬 데이터는 암호화되지 않습니다."
+  },
+  "settings.sync.key.empty": {
+    "defaultMessage": "Paste the recovery key first.",
+    "content": "먼저 복구 키를 붙여넣으세요."
+  },
+  "settings.sync.key.generated": {
+    "defaultMessage": "New recovery key",
+    "content": "새 복구 키"
+  },
+  "settings.sync.key.importLabel": {
+    "defaultMessage": "Recovery key",
+    "content": "복구 키"
+  },
+  "settings.sync.key.title": {
+    "defaultMessage": "Set recovery key",
+    "content": "복구 키 설정"
+  },
+  "settings.sync.mode.auto": {
+    "defaultMessage": "Create new sync",
+    "content": "새 동기화 만들기"
+  },
+  "settings.sync.mode.autoDesc": {
+    "defaultMessage": "Generate a new recovery key and create an encrypted remote library.",
+    "content": "새 복구 키를 생성하고 암호화된 원격 라이브러리를 만듭니다."
+  },
+  "settings.sync.mode.import": {
+    "defaultMessage": "Connect existing sync",
+    "content": "기존 동기화 연결"
+  },
+  "settings.sync.mode.importDesc": {
+    "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library.",
+    "content": "이전 복구 키를 사용하여 암호화된 원격 라이브러리에 연결합니다."
+  },
+  "settings.sync.none": {
+    "defaultMessage": "None",
+    "content": "없음"
+  },
+  "settings.sync.recoveryKey": {
+    "defaultMessage": "Recovery key",
+    "content": "복구 키"
+  },
+  "settings.sync.s3.desc": {
+    "defaultMessage": "Data is encrypted on this device before syncing to your S3 storage.",
+    "content": "데이터는 S3 저장소에 동기화되기 전에 이 기기에서 암호화됩니다."
+  },
+  "settings.sync.s3.forcePathStyle": {
+    "defaultMessage": "Force path style",
+    "content": "강제 경로 스타일"
+  },
+  "settings.sync.s3.required": {
+    "defaultMessage": "{0} is required.",
+    "content": "{0}이(가) 필요합니다."
+  },
+  "settings.sync.s3.testFailed": {
+    "defaultMessage": "Connection test failed: {0}",
+    "content": "연결 테스트 실패: {0}"
+  },
+  "settings.sync.s3.testingShort": {
+    "defaultMessage": "Connecting...",
+    "content": "연결 중..."
+  },
+  "settings.sync.s3.title": {
+    "defaultMessage": "Configure S3 storage",
+    "content": "S3 저장소 설정"
+  },
+  "settings.sync.storage": {
+    "defaultMessage": "Storage",
+    "content": "저장소"
+  },
+  "settings.sync.storage.detailTitle": {
+    "defaultMessage": "Storage details",
+    "content": "저장소 세부정보"
+  },
+  "settings.sync.title": {
+    "defaultMessage": "Cloud Sync",
+    "content": "클라우드 동기화"
+  },
+  "settings.sync.turnOff": {
+    "defaultMessage": "Turn off sync",
+    "content": "동기화 끄기"
+  },
+  "settings.sync.turnOff.desc": {
+    "defaultMessage": "After you turn off sync, this device stops syncing and its local sync settings are removed. Cloud data remains encrypted with the recovery key. Without a backup of the key, that data cannot be decrypted.",
+    "content": "동기화를 끄면 이 기기는 동기화를 중단하고 로컬 동기화 설정이 제거됩니다. 클라우드 데이터는 복구 키로 암호화된 상태로 유지됩니다. 키를 백업하지 않으면 해당 데이터를 복호화할 수 없습니다."
+  },
+  "settings.sync.webdav.desc": {
+    "defaultMessage": "Data is encrypted on this device before syncing to your WebDAV storage.",
+    "content": "데이터는 WebDAV 저장소에 동기화되기 전에 이 기기에서 암호화됩니다."
+  },
+  "settings.sync.webdav.password": {
+    "defaultMessage": "Password or app password",
+    "content": "비밀번호 또는 앱 비밀번호"
+  },
+  "settings.sync.webdav.title": {
+    "defaultMessage": "Configure WebDAV storage",
+    "content": "WebDAV 저장소 설정"
+  },
+  "settings.theme": {
+    "defaultMessage": "Theme",
+    "content": "테마"
+  },
+  "settings.title": {
+    "defaultMessage": "Settings",
+    "content": "설정"
+  },
+  "settings.version": {
+    "defaultMessage": "Version",
+    "content": "버전"
+  },
+  "startup.error.retry": {
+    "defaultMessage": "Retry",
+    "content": "재시도"
+  },
+  "startup.error.title": {
+    "defaultMessage": "Could not start Islet",
+    "content": "Islet을 시작할 수 없습니다"
+  },
+  "startup.experience.confirmDesc": {
+    "defaultMessage": "Experience mode keeps data only in memory. Refreshing, closing the app, or changing language will clear it.",
+    "content": "체험 모드는 메모리에만 데이터를 유지합니다. 새로고침, 앱 종료 또는 언어 변경 시 데이터가 지워집니다."
+  },
+  "startup.experience.confirmTitle": {
+    "defaultMessage": "Enter experience mode?",
+    "content": "체험 모드로 들어갈까요?"
+  },
+  "startup.experience.enter": {
+    "defaultMessage": "Enter experience mode",
+    "content": "체험 모드로 들어가기"
+  },
+  "startup.experience.title": {
+    "defaultMessage": "Experience mode",
+    "content": "체험 모드"
+  },
+  "startup.title": {
+    "defaultMessage": "Choose startup mode",
+    "content": "시작 모드 선택"
+  },
+  "tab.calendar": {
+    "defaultMessage": "Calendar",
+    "content": "달력"
+  },
+  "tab.diary": {
+    "defaultMessage": "Diary",
+    "content": "일기"
+  },
+  "tab.settings": {
+    "defaultMessage": "My",
+    "content": "내 정보"
+  },
+  "theme.dark": {
+    "defaultMessage": "Dark",
+    "content": "다크"
+  },
+  "theme.light": {
+    "defaultMessage": "Light",
+    "content": "라이트"
+  }
+}

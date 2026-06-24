@@ -1,0 +1,807 @@
+{
+  "__i18n_ease__": "true",
+  "attachment.image.tooLarge": {
+    "defaultMessage": "Images must be 50 MB or smaller.",
+    "content": "画像は50MB以下である必要があります。"
+  },
+  "attachment.image.unsupported": {
+    "defaultMessage": "JPEG, PNG, and WebP images are supported.",
+    "content": "JPEG、PNG、WebP画像に対応しています。"
+  },
+  "calendar.dayTitleDateFormat": {
+    "defaultMessage": "MMM d, EEE",
+    "content": "M月d日(EEE)"
+  },
+  "calendar.empty": {
+    "defaultMessage": "No entries on this day",
+    "content": "この日の記録はありません"
+  },
+  "calendar.monthTitleFormat": {
+    "defaultMessage": "MMMM yyyy",
+    "content": "yyyy年M月"
+  },
+  "calendar.nextMonth": {
+    "defaultMessage": "Next month",
+    "content": "翌月"
+  },
+  "calendar.openRecord": {
+    "defaultMessage": "Open entry",
+    "content": "記録を開く"
+  },
+  "calendar.previousMonth": {
+    "defaultMessage": "Previous month",
+    "content": "前月"
+  },
+  "calendar.recordCount": {
+    "defaultMessage": "{0} entries",
+    "content": "{0}件の記録"
+  },
+  "calendar.title": {
+    "defaultMessage": "Calendar",
+    "content": "カレンダー"
+  },
+  "calendar.today": {
+    "defaultMessage": "Today",
+    "content": "今日"
+  },
+  "common.back": {
+    "defaultMessage": "Back",
+    "content": "戻る"
+  },
+  "common.cancel": {
+    "defaultMessage": "Cancel",
+    "content": "キャンセル"
+  },
+  "common.close": {
+    "defaultMessage": "Close",
+    "content": "閉じる"
+  },
+  "common.copied": {
+    "defaultMessage": "Copied",
+    "content": "コピーしました"
+  },
+  "common.copy": {
+    "defaultMessage": "Copy",
+    "content": "コピー"
+  },
+  "common.copyFailed": {
+    "defaultMessage": "Copy failed",
+    "content": "コピーに失敗しました"
+  },
+  "common.delete": {
+    "defaultMessage": "Delete",
+    "content": "削除"
+  },
+  "common.done": {
+    "defaultMessage": "Done",
+    "content": "完了"
+  },
+  "common.edit": {
+    "defaultMessage": "Edit",
+    "content": "編集"
+  },
+  "common.loading": {
+    "defaultMessage": "Loading...",
+    "content": "読み込み中..."
+  },
+  "common.next": {
+    "defaultMessage": "Next",
+    "content": "次へ"
+  },
+  "common.retry": {
+    "defaultMessage": "Retry",
+    "content": "再試行"
+  },
+  "common.save": {
+    "defaultMessage": "Save",
+    "content": "保存"
+  },
+  "common.send": {
+    "defaultMessage": "Send",
+    "content": "送信"
+  },
+  "common.sync": {
+    "defaultMessage": "Sync",
+    "content": "同期"
+  },
+  "common.uploading": {
+    "defaultMessage": "Uploading...",
+    "content": "アップロード中..."
+  },
+  "diary.addNotebook": {
+    "defaultMessage": "New notebook",
+    "content": "新しいノートブック"
+  },
+  "diary.album": {
+    "defaultMessage": "Album",
+    "content": "アルバム"
+  },
+  "diary.camera": {
+    "defaultMessage": "Camera",
+    "content": "カメラ"
+  },
+  "diary.chat.empty": {
+    "defaultMessage": "No entries yet",
+    "content": "まだ記録がありません"
+  },
+  "diary.cover": {
+    "defaultMessage": "Notebook cover",
+    "content": "ノートブックカバー"
+  },
+  "diary.create": {
+    "defaultMessage": "New notebook",
+    "content": "新しいノートブック"
+  },
+  "diary.defaultNotebookName": {
+    "defaultMessage": "My diary",
+    "content": "マイ日記"
+  },
+  "diary.deleteEntryConfirm": {
+    "defaultMessage": "Delete this entry? It will be removed from this notebook.",
+    "content": "この記録を削除しますか？このノートブックから削除されます。"
+  },
+  "diary.deleteNotebook": {
+    "defaultMessage": "Delete notebook",
+    "content": "ノートブックを削除"
+  },
+  "diary.deleteNotebookConfirm": {
+    "defaultMessage": "Delete this notebook? Entries in it will also be removed.",
+    "content": "このノートブックを削除しますか？内部の記録も削除されます。"
+  },
+  "diary.edit.placeholder": {
+    "defaultMessage": "Enter text",
+    "content": "テキストを入力"
+  },
+  "diary.editTextEntry": {
+    "defaultMessage": "Edit text",
+    "content": "テキストを編集"
+  },
+  "diary.entryDeleted": {
+    "defaultMessage": "Deleted",
+    "content": "削除しました"
+  },
+  "diary.entryMoved": {
+    "defaultMessage": "Moved",
+    "content": "移動しました"
+  },
+  "diary.image.loadFailed": {
+    "defaultMessage": "Image failed to load",
+    "content": "画像の読み込みに失敗しました"
+  },
+  "diary.inputPlaceholder": {
+    "defaultMessage": "Write something...",
+    "content": "何か書いてみましょう..."
+  },
+  "diary.moveEntry.action": {
+    "defaultMessage": "Move",
+    "content": "移動"
+  },
+  "diary.moveEntry.emptySearch": {
+    "defaultMessage": "No matching notebooks",
+    "content": "一致するノートブックがありません"
+  },
+  "diary.moveEntry.searchPlaceholder": {
+    "defaultMessage": "Search notebooks",
+    "content": "ノートブックを検索"
+  },
+  "diary.moveEntry.title": {
+    "defaultMessage": "Move to notebook",
+    "content": "ノートブックに移動"
+  },
+  "diary.name": {
+    "defaultMessage": "Notebook name",
+    "content": "ノートブック名"
+  },
+  "diary.notebook.emptySummary": {
+    "defaultMessage": "No entries yet",
+    "content": "まだ記録がありません"
+  },
+  "diary.notebooks": {
+    "defaultMessage": "Diaries",
+    "content": "日記"
+  },
+  "diary.recordVideo": {
+    "defaultMessage": "Record video",
+    "content": "動画を録画"
+  },
+  "diary.settings": {
+    "defaultMessage": "Notebook settings",
+    "content": "ノートブック設定"
+  },
+  "diary.unknownAttachment": {
+    "defaultMessage": "Unsupported attachment",
+    "content": "未対応の添付ファイル"
+  },
+  "diary.unknownAttachmentUpgrade": {
+    "defaultMessage": "Update Islet to view this attachment.",
+    "content": "Isletをアップデートしてこの添付ファイルを表示してください。"
+  },
+  "diary.unknownEntry": {
+    "defaultMessage": "Unsupported record",
+    "content": "未対応の記録"
+  },
+  "diary.unknownEntryUpgrade": {
+    "defaultMessage": "Update Islet to view this record.",
+    "content": "Isletをアップデートしてこの記録を表示してください。"
+  },
+  "diary.upload.deleteAudioConfirmTitle": {
+    "defaultMessage": "Delete this audio",
+    "content": "この音声を削除"
+  },
+  "diary.upload.deleteConfirmDescription": {
+    "defaultMessage": "Deleted items cannot be restored. Delete it?",
+    "content": "削除した項目は復元できません。削除しますか？"
+  },
+  "diary.upload.deleteImageConfirmTitle": {
+    "defaultMessage": "Delete this image",
+    "content": "この画像を削除"
+  },
+  "diary.upload.deleteVideoConfirmTitle": {
+    "defaultMessage": "Delete this video",
+    "content": "この動画を削除"
+  },
+  "diary.upload.failed": {
+    "defaultMessage": "Failed to send",
+    "content": "送信に失敗しました"
+  },
+  "diary.video.compressed": {
+    "defaultMessage": "compressed",
+    "content": "圧縮"
+  },
+  "diary.video.confirmSave": {
+    "defaultMessage": "Save",
+    "content": "保存"
+  },
+  "diary.video.estimatedSize": {
+    "defaultMessage": "Estimated size",
+    "content": "推定サイズ"
+  },
+  "diary.video.missing": {
+    "defaultMessage": "Video is missing",
+    "content": "動画が見つかりません"
+  },
+  "diary.video.originalQuality": {
+    "defaultMessage": "Save original (no compression)",
+    "content": "元の品質で保存（圧縮なし）"
+  },
+  "diary.video.originalSize": {
+    "defaultMessage": "original",
+    "content": "元のサイズ"
+  },
+  "diary.video.preview": {
+    "defaultMessage": "Preview",
+    "content": "プレビュー"
+  },
+  "diary.voice.countdownHint": {
+    "defaultMessage": "{0}s left",
+    "content": "残り{0}秒"
+  },
+  "diary.voice.deleteTranscriptConfirm": {
+    "defaultMessage": "Delete this text?",
+    "content": "このテキストを削除しますか？"
+  },
+  "diary.voice.editTranscript": {
+    "defaultMessage": "Edit transcript",
+    "content": "文字起こしを編集"
+  },
+  "diary.voice.holdToTalk": {
+    "defaultMessage": "Hold to talk",
+    "content": "押して話す"
+  },
+  "diary.voice.permissionDenied": {
+    "defaultMessage": "Microphone access is unavailable. Check permissions and try again.",
+    "content": "マイクへのアクセスが利用できません。権限を確認して再試行してください。"
+  },
+  "diary.voice.preparing": {
+    "defaultMessage": "Preparing",
+    "content": "準備中"
+  },
+  "diary.voice.recognize": {
+    "defaultMessage": "Transcribe",
+    "content": "文字起こし"
+  },
+  "diary.voice.recognizing": {
+    "defaultMessage": "Transcribing...",
+    "content": "文字起こし中..."
+  },
+  "diary.voice.releaseToCancel": {
+    "defaultMessage": "Release to cancel",
+    "content": "離してキャンセル"
+  },
+  "diary.voice.releaseToSend": {
+    "defaultMessage": "Release to send",
+    "content": "離して送信"
+  },
+  "diary.voice.rerecognize": {
+    "defaultMessage": "Transcribe again",
+    "content": "再文字起こし"
+  },
+  "diary.voice.slideUpToCancel": {
+    "defaultMessage": "Slide up to cancel",
+    "content": "上にスライドしてキャンセル"
+  },
+  "diary.voice.switchToKeyboard": {
+    "defaultMessage": "Switch to keyboard",
+    "content": "キーボードに切り替え"
+  },
+  "diary.voice.switchToVoice": {
+    "defaultMessage": "Switch to voice input",
+    "content": "音声入力に切り替え"
+  },
+  "diary.voice.tooShort": {
+    "defaultMessage": "Recording is too short. Hold and speak again.",
+    "content": "録音が短すぎます。押してもう一度話してください。"
+  },
+  "diary.voice.transcriptDeleted": {
+    "defaultMessage": "Deleted",
+    "content": "削除しました"
+  },
+  "me.entriesRecorded": {
+    "defaultMessage": "{0} entries recorded",
+    "content": "{0}件の記録"
+  },
+  "parser.minimalDiary.note": {
+    "defaultMessage": "Note: {0}",
+    "content": "メモ：{0}"
+  },
+  "parser.minimalDiary.tags": {
+    "defaultMessage": "Tags: {0}",
+    "content": "タグ：{0}"
+  },
+  "profile.avatar": {
+    "defaultMessage": "Avatar",
+    "content": "アバター"
+  },
+  "profile.name": {
+    "defaultMessage": "Name",
+    "content": "名前"
+  },
+  "profile.namePlaceholder": {
+    "defaultMessage": "Enter a name",
+    "content": "名前を入力"
+  },
+  "profile.title": {
+    "defaultMessage": "Profile",
+    "content": "プロフィール"
+  },
+  "settings.ai": {
+    "defaultMessage": "AI",
+    "content": "AI"
+  },
+  "settings.aiConfig": {
+    "defaultMessage": "AI settings",
+    "content": "AI設定"
+  },
+  "settings.configured": {
+    "defaultMessage": "Configured",
+    "content": "設定済み"
+  },
+  "settings.experience.exit": {
+    "defaultMessage": "Exit experience mode",
+    "content": "体験モードを終了"
+  },
+  "settings.experience.exitAction": {
+    "defaultMessage": "Exit experience mode",
+    "content": "体験モードを終了"
+  },
+  "settings.experience.exitConfirm": {
+    "defaultMessage": "Exit experience mode? Data from this session will be cleared.",
+    "content": "体験モードを終了しますか？このセッションのデータは消去されます。"
+  },
+  "settings.experience.seedData": {
+    "defaultMessage": "Add sample data",
+    "content": "サンプルデータを追加"
+  },
+  "settings.experience.seedDone": {
+    "defaultMessage": "Sample data added",
+    "content": "サンプルデータを追加しました"
+  },
+  "settings.experience.seedExists": {
+    "defaultMessage": "Sample data already exists",
+    "content": "サンプルデータは既に存在します"
+  },
+  "settings.experience.seedFailed": {
+    "defaultMessage": "Could not add sample data",
+    "content": "サンプルデータを追加できませんでした"
+  },
+  "settings.experience.seedWriting": {
+    "defaultMessage": "Adding sample data...",
+    "content": "サンプルデータを追加中..."
+  },
+  "settings.followSystem": {
+    "defaultMessage": "Follow system",
+    "content": "システムに従う"
+  },
+  "settings.import.chooseFile": {
+    "defaultMessage": "Choose file",
+    "content": "ファイルを選択"
+  },
+  "settings.import.file": {
+    "defaultMessage": "File",
+    "content": "ファイル"
+  },
+  "settings.import.fileTooLarge": {
+    "defaultMessage": "Files must be {0} MB or smaller.",
+    "content": "ファイルは{0}MB以下である必要があります。"
+  },
+  "settings.import.importing": {
+    "defaultMessage": "Importing",
+    "content": "インポート中"
+  },
+  "settings.import.minimalDiary": {
+    "defaultMessage": "Minimal Diary",
+    "content": "Minimal Diary"
+  },
+  "settings.import.minimalDiary.title": {
+    "defaultMessage": "Import Minimal Diary",
+    "content": "Minimal Diaryをインポート"
+  },
+  "settings.import.minimalDiary.unsupportedFile": {
+    "defaultMessage": "Only .mdd and .zip files are supported.",
+    "content": ".mddおよび.zipファイルのみ対応しています。"
+  },
+  "settings.import.result.assetImported": {
+    "defaultMessage": "Attachments",
+    "content": "添付ファイル"
+  },
+  "settings.import.result.ok": {
+    "defaultMessage": "OK",
+    "content": "OK"
+  },
+  "settings.import.result.parsing": {
+    "defaultMessage": "Parsing",
+    "content": "解析"
+  },
+  "settings.import.result.skipped": {
+    "defaultMessage": "Skipped",
+    "content": "スキップ"
+  },
+  "settings.import.result.success": {
+    "defaultMessage": "Import complete",
+    "content": "インポート完了"
+  },
+  "settings.import.result.summary": {
+    "defaultMessage": "Import results",
+    "content": "インポート結果"
+  },
+  "settings.import.result.textImported": {
+    "defaultMessage": "Text",
+    "content": "テキスト"
+  },
+  "settings.import.result.title": {
+    "defaultMessage": "Import",
+    "content": "インポート"
+  },
+  "settings.import.start": {
+    "defaultMessage": "Import",
+    "content": "インポート"
+  },
+  "settings.import.targetNotebook": {
+    "defaultMessage": "Target notebook",
+    "content": "対象ノートブック"
+  },
+  "settings.import.targetNotebookUnavailable": {
+    "defaultMessage": "Target notebook is unavailable. Choose another notebook.",
+    "content": "対象ノートブックが利用できません。別のノートブックを選択してください。"
+  },
+  "settings.import.title": {
+    "defaultMessage": "Import",
+    "content": "インポート"
+  },
+  "settings.language": {
+    "defaultMessage": "Language",
+    "content": "言語"
+  },
+  "settings.myNotebook": {
+    "defaultMessage": "My notebook",
+    "content": "マイノートブック"
+  },
+  "settings.notConfigured": {
+    "defaultMessage": "Not configured",
+    "content": "未設定"
+  },
+  "settings.s3": {
+    "defaultMessage": "Cloud Sync",
+    "content": "クラウド同期"
+  },
+  "settings.speechRecognition.addFormDesc": {
+    "defaultMessage": "Turn voice messages into text, up to 59 seconds.",
+    "content": "音声メッセージをテキストに変換します（最大59秒）。"
+  },
+  "settings.speechRecognition.addTitle": {
+    "defaultMessage": "Configure Baidu AI Cloud",
+    "content": "Baidu AI Cloudを設定"
+  },
+  "settings.speechRecognition.autoTranscribe": {
+    "defaultMessage": "Auto-transcribe voice",
+    "content": "音声を自動文字起こし"
+  },
+  "settings.speechRecognition.baiduDesc": {
+    "defaultMessage": "Short Speech Recognition Pro",
+    "content": "短音声認識Pro"
+  },
+  "settings.speechRecognition.configInfo": {
+    "defaultMessage": "Configuration",
+    "content": "設定情報"
+  },
+  "settings.speechRecognition.configuredDesc": {
+    "defaultMessage": "Voice to text is ready to use.",
+    "content": "音声テキスト変換の準備ができました。"
+  },
+  "settings.speechRecognition.consoleHint": {
+    "defaultMessage": "Create an app in the Baidu AI Cloud console and enable Short Speech Recognition Pro to get the API Key and Secret Key. These credentials are used for automatic transcription after sending voice messages and manual transcription from a voice message.",
+    "content": "Baidu AI Cloudコンソールでアプリを作成し、短音声認識Proを有効にしてAPI KeyとSecret Keyを取得してください。これらの認証情報は、音声メッセージ送信後の自動文字起こしと、音声メッセージからの手動文字起こしに使用されます。"
+  },
+  "settings.speechRecognition.current": {
+    "defaultMessage": "Current service",
+    "content": "現在のサービス"
+  },
+  "settings.speechRecognition.delete": {
+    "defaultMessage": "Delete configuration",
+    "content": "設定を削除"
+  },
+  "settings.speechRecognition.deleteConfirm": {
+    "defaultMessage": "Delete voice-to-text configuration? You can still send voice messages.",
+    "content": "音声テキスト変換の設定を削除しますか？音声メッセージの送信は引き続き可能です。"
+  },
+  "settings.speechRecognition.deleted": {
+    "defaultMessage": "Deleted",
+    "content": "削除しました"
+  },
+  "settings.speechRecognition.emptyDesc": {
+    "defaultMessage": "Configure a service to turn voice messages into text.",
+    "content": "音声メッセージをテキストに変換するサービスを設定してください。"
+  },
+  "settings.speechRecognition.emptyHint": {
+    "defaultMessage": "You can still send voice messages without voice to text.",
+    "content": "音声テキスト変換がなくても音声メッセージは送信できます。"
+  },
+  "settings.speechRecognition.provider": {
+    "defaultMessage": "Provider",
+    "content": "プロバイダー"
+  },
+  "settings.speechRecognition.providerBaidu": {
+    "defaultMessage": "Baidu AI Cloud",
+    "content": "Baidu AI Cloud"
+  },
+  "settings.speechRecognition.required": {
+    "defaultMessage": "{0} is required.",
+    "content": "{0}は必須です。"
+  },
+  "settings.speechRecognition.saved": {
+    "defaultMessage": "Saved",
+    "content": "保存しました"
+  },
+  "settings.speechRecognition.service": {
+    "defaultMessage": "Service",
+    "content": "サービス"
+  },
+  "settings.speechRecognition.short": {
+    "defaultMessage": "Voice to text",
+    "content": "音声テキスト変換"
+  },
+  "settings.speechRecognition.testFailed": {
+    "defaultMessage": "Connection failed",
+    "content": "接続に失敗しました"
+  },
+  "settings.speechRecognition.testing": {
+    "defaultMessage": "Testing connection...",
+    "content": "接続をテスト中..."
+  },
+  "settings.speechRecognition.title": {
+    "defaultMessage": "Voice to text",
+    "content": "音声テキスト変換"
+  },
+  "settings.sync.attachments": {
+    "defaultMessage": "Attachments",
+    "content": "添付ファイル"
+  },
+  "settings.sync.attachmentsStats": {
+    "defaultMessage": "{0} files · {1}",
+    "content": "{0}ファイル · {1}"
+  },
+  "settings.sync.channel.desc": {
+    "defaultMessage": "Databases and attachments are encrypted before syncing to the selected storage.",
+    "content": "データベースと添付ファイルは暗号化された後、選択したストレージに同期されます。"
+  },
+  "settings.sync.channel.s3Desc": {
+    "defaultMessage": "Sync data through S3 or S3-compatible object storage.",
+    "content": "S3またはS3互換オブジェクトストレージを介してデータを同期します。"
+  },
+  "settings.sync.channel.title": {
+    "defaultMessage": "Choose storage type",
+    "content": "ストレージタイプを選択"
+  },
+  "settings.sync.channel.webdavDesc": {
+    "defaultMessage": "Sync data through a WebDAV service such as Nextcloud.",
+    "content": "NextcloudなどのWebDAVサービスを介してデータを同期します。"
+  },
+  "settings.sync.channelLabel": {
+    "defaultMessage": "Storage type",
+    "content": "ストレージタイプ"
+  },
+  "settings.sync.content": {
+    "defaultMessage": "Sync content",
+    "content": "同期コンテンツ"
+  },
+  "settings.sync.database": {
+    "defaultMessage": "Database",
+    "content": "データベース"
+  },
+  "settings.sync.databaseStats": {
+    "defaultMessage": "{0} entries · {1}",
+    "content": "{0}件の記録 · {1}"
+  },
+  "settings.sync.importFailed": {
+    "defaultMessage": "Could not connect to the existing sync. Check the storage settings and recovery key, then try again.",
+    "content": "既存の同期に接続できませんでした。ストレージ設定とリカバリーキーを確認して、もう一度お試しください。"
+  },
+  "settings.sync.initMode": {
+    "defaultMessage": "Sync setup",
+    "content": "同期のセットアップ"
+  },
+  "settings.sync.key.backedUp": {
+    "defaultMessage": "I have safely backed up this recovery key",
+    "content": "このリカバリーキーを安全にバックアップしました"
+  },
+  "settings.sync.key.desc": {
+    "defaultMessage": "This recovery key encrypts databases and attachments synced to cloud storage. Local data is not encrypted.",
+    "content": "このリカバリーキーは、クラウドストレージに同期されるデータベースと添付ファイルを暗号化します。ローカルデータは暗号化されません。"
+  },
+  "settings.sync.key.empty": {
+    "defaultMessage": "Paste the recovery key first.",
+    "content": "最初にリカバリーキーを貼り付けてください。"
+  },
+  "settings.sync.key.generated": {
+    "defaultMessage": "New recovery key",
+    "content": "新しいリカバリーキー"
+  },
+  "settings.sync.key.importLabel": {
+    "defaultMessage": "Recovery key",
+    "content": "リカバリーキー"
+  },
+  "settings.sync.key.title": {
+    "defaultMessage": "Set recovery key",
+    "content": "リカバリーキーを設定"
+  },
+  "settings.sync.mode.auto": {
+    "defaultMessage": "Create new sync",
+    "content": "新しい同期を作成"
+  },
+  "settings.sync.mode.autoDesc": {
+    "defaultMessage": "Generate a new recovery key and create an encrypted remote library.",
+    "content": "新しいリカバリーキーを生成し、暗号化されたリモートライブラリを作成します。"
+  },
+  "settings.sync.mode.import": {
+    "defaultMessage": "Connect existing sync",
+    "content": "既存の同期に接続"
+  },
+  "settings.sync.mode.importDesc": {
+    "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library.",
+    "content": "以前のリカバリーキーを使用して暗号化されたリモートライブラリに接続します。"
+  },
+  "settings.sync.none": {
+    "defaultMessage": "None",
+    "content": "なし"
+  },
+  "settings.sync.recoveryKey": {
+    "defaultMessage": "Recovery key",
+    "content": "リカバリーキー"
+  },
+  "settings.sync.s3.desc": {
+    "defaultMessage": "Data is encrypted on this device before syncing to your S3 storage.",
+    "content": "データはこのデバイス上で暗号化されてからS3ストレージに同期されます。"
+  },
+  "settings.sync.s3.forcePathStyle": {
+    "defaultMessage": "Force path style",
+    "content": "パススタイルを強制"
+  },
+  "settings.sync.s3.required": {
+    "defaultMessage": "{0} is required.",
+    "content": "{0}は必須です。"
+  },
+  "settings.sync.s3.testFailed": {
+    "defaultMessage": "Connection test failed: {0}",
+    "content": "接続テストに失敗しました：{0}"
+  },
+  "settings.sync.s3.testingShort": {
+    "defaultMessage": "Connecting...",
+    "content": "接続中..."
+  },
+  "settings.sync.s3.title": {
+    "defaultMessage": "Configure S3 storage",
+    "content": "S3ストレージを設定"
+  },
+  "settings.sync.storage": {
+    "defaultMessage": "Storage",
+    "content": "ストレージ"
+  },
+  "settings.sync.storage.detailTitle": {
+    "defaultMessage": "Storage details",
+    "content": "ストレージ詳細"
+  },
+  "settings.sync.title": {
+    "defaultMessage": "Cloud Sync",
+    "content": "クラウド同期"
+  },
+  "settings.sync.turnOff": {
+    "defaultMessage": "Turn off sync",
+    "content": "同期をオフにする"
+  },
+  "settings.sync.turnOff.desc": {
+    "defaultMessage": "After you turn off sync, this device stops syncing and its local sync settings are removed. Cloud data remains encrypted with the recovery key. Without a backup of the key, that data cannot be decrypted.",
+    "content": "同期をオフにすると、このデバイスは同期を停止し、ローカルの同期設定は削除されます。クラウドデータはリカバリーキーで暗号化されたまま維持されます。キーのバックアップがない場合、そのデータは復号できません。"
+  },
+  "settings.sync.webdav.desc": {
+    "defaultMessage": "Data is encrypted on this device before syncing to your WebDAV storage.",
+    "content": "データはこのデバイス上で暗号化されてからWebDAVストレージに同期されます。"
+  },
+  "settings.sync.webdav.password": {
+    "defaultMessage": "Password or app password",
+    "content": "パスワードまたはアプリパスワード"
+  },
+  "settings.sync.webdav.title": {
+    "defaultMessage": "Configure WebDAV storage",
+    "content": "WebDAVストレージを設定"
+  },
+  "settings.theme": {
+    "defaultMessage": "Theme",
+    "content": "テーマ"
+  },
+  "settings.title": {
+    "defaultMessage": "Settings",
+    "content": "設定"
+  },
+  "settings.version": {
+    "defaultMessage": "Version",
+    "content": "バージョン"
+  },
+  "startup.error.retry": {
+    "defaultMessage": "Retry",
+    "content": "再試行"
+  },
+  "startup.error.title": {
+    "defaultMessage": "Could not start Islet",
+    "content": "Isletを起動できませんでした"
+  },
+  "startup.experience.confirmDesc": {
+    "defaultMessage": "Experience mode keeps data only in memory. Refreshing, closing the app, or changing language will clear it.",
+    "content": "体験モードはデータをメモリ上にのみ保持します。更新、アプリの終了、または言語の変更で消去されます。"
+  },
+  "startup.experience.confirmTitle": {
+    "defaultMessage": "Enter experience mode?",
+    "content": "体験モードに入りますか？"
+  },
+  "startup.experience.enter": {
+    "defaultMessage": "Enter experience mode",
+    "content": "体験モードに入る"
+  },
+  "startup.experience.title": {
+    "defaultMessage": "Experience mode",
+    "content": "体験モード"
+  },
+  "startup.title": {
+    "defaultMessage": "Choose startup mode",
+    "content": "起動モードを選択"
+  },
+  "tab.calendar": {
+    "defaultMessage": "Calendar",
+    "content": "カレンダー"
+  },
+  "tab.diary": {
+    "defaultMessage": "Diary",
+    "content": "日記"
+  },
+  "tab.settings": {
+    "defaultMessage": "My",
+    "content": "マイ"
+  },
+  "theme.dark": {
+    "defaultMessage": "Dark",
+    "content": "ダーク"
+  },
+  "theme.light": {
+    "defaultMessage": "Light",
+    "content": "ライト"
+  }
+}
