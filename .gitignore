@@ -19,3 +19,4 @@ android/**/*.apk
 android/**/*.aab
 android/**/*.aar
 android/**/*.ap_
+.vfox/
