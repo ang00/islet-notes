@@ -803,5 +803,13 @@
   "theme.light": {
     "defaultMessage": "Light",
     "content": "Light"
+  },
+  "diary.pin": {
+    "defaultMessage": "Pin",
+    "content": "Pin"
+  },
+  "diary.unpin": {
+    "defaultMessage": "Unpin",
+    "content": "Unpin"
   }
 }

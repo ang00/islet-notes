@@ -803,5 +803,13 @@
   "theme.light": {
     "content": "淺色",
     "defaultMessage": "Light"
+  },
+  "diary.pin": {
+    "content": "置頂",
+    "defaultMessage": "Pin"
+  },
+  "diary.unpin": {
+    "content": "取消置頂",
+    "defaultMessage": "Unpin"
   }
 }

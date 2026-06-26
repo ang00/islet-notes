@@ -7,6 +7,7 @@ export interface NotebookRecord {
   createdAt: number;
   updatedAt: number;
   deletedAt?: number;
+  pinnedAt?: number;
 }
 
 export interface ProfileRecord {

@@ -21,6 +21,8 @@ export interface IDiaryService {
   syncNow(): Promise<void>;
   addNotebook(name: string): string;
   softDeleteNotebook(notebookId: string): void;
+  pinNotebook(notebookId: string): void;
+  unpinNotebook(notebookId: string): void;
   updateNotebookName(notebookId: string, name: string): void;
   updateNotebookAvatar(notebookId: string, avatarAttachmentId: string | undefined): void;
   updateProfileName(name: string): void;

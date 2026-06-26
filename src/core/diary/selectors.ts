@@ -71,6 +71,10 @@ export function getSortedNotebooks(model: DiaryModelData): NotebookRecord[] {
   }
 
   return [...model.notebooks].sort((a, b) => {
+    const aPinned = a.pinnedAt ? 1 : 0;
+    const bPinned = b.pinnedAt ? 1 : 0;
+    if (aPinned !== bPinned) return bPinned - aPinned;
+
     const aLastEntryAt = lastEntryCreatedAtByNotebook.get(a.id);
     const bLastEntryAt = lastEntryCreatedAtByNotebook.get(b.id);
     const aHasEntry = aLastEntryAt !== undefined;

@@ -803,5 +803,13 @@
   "theme.light": {
     "defaultMessage": "Light",
     "content": "라이트"
+  },
+  "diary.pin": {
+    "content": "고정",
+    "defaultMessage": "Pin"
+  },
+  "diary.unpin": {
+    "content": "고정 해제",
+    "defaultMessage": "Unpin"
   }
 }

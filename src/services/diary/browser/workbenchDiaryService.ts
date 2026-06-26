@@ -137,6 +137,22 @@ export class WorkbenchDiaryService implements IDiaryService {
     }
   }
 
+  pinNotebook(notebookId: string): void {
+    this.diaryModel.pinNotebook(notebookId);
+    if (this.dataModel) {
+      this.dataModel.modelData = this.diaryModel.toJSON();
+      this._onStateChange.fire();
+    }
+  }
+
+  unpinNotebook(notebookId: string): void {
+    this.diaryModel.unpinNotebook(notebookId);
+    if (this.dataModel) {
+      this.dataModel.modelData = this.diaryModel.toJSON();
+      this._onStateChange.fire();
+    }
+  }
+
   updateNotebookName(notebookId: string, name: string): void {
     this.diaryModel.updateNotebookName(notebookId, name);
   }

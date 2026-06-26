@@ -115,6 +115,28 @@ export class DiaryModel {
     this.doc.commit();
   }
 
+  pinNotebook(notebookId: string) {
+    const existing = this.getNotebook(notebookId);
+    if (!existing || existing.deletedAt) return;
+    this.notebooksMap.set(notebookId, {
+      ...existing,
+      pinnedAt: Date.now(),
+      updatedAt: Date.now(),
+    });
+    this.doc.commit();
+  }
+
+  unpinNotebook(notebookId: string) {
+    const existing = this.getNotebook(notebookId);
+    if (!existing || existing.deletedAt) return;
+    this.notebooksMap.set(notebookId, {
+      ...existing,
+      pinnedAt: undefined,
+      updatedAt: Date.now(),
+    });
+    this.doc.commit();
+  }
+
   addTextEntry(options: CreateTextEntryOptions): string {
     const now = options.createdAt ?? Date.now();
     const id = nanoid();
