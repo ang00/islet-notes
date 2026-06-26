@@ -12,7 +12,8 @@ import { IFileAssetService } from '@/services/fileAsset/common/fileAssetService'
 import { INavigationService } from '@/services/navigationService/common/navigationService';
 import React, { useState, useMemo, useCallback } from 'react';
 import { useService } from '@/hooks/use-service';
-import { Search, X } from 'lucide-react';
+import { Search, X, ChevronRight } from 'lucide-react';
+import type { NotebookRecord } from '@/core/diary/type';
 
 export function DiariesPage() {
   const model = useDiaryModel();
@@ -29,6 +30,7 @@ export function DiariesPage() {
   const [showSearch, setShowSearch] = useState(false);
   const [groupFilter, setGroupFilter] = useState<string | undefined>();
   const [tagFilter, setTagFilter] = useState<string | undefined>();
+  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
 
   const allGroups = model.groups ?? [];
   const allTags = model.tags ?? [];
@@ -45,6 +47,39 @@ export function DiariesPage() {
   }, []);
 
   const hasFilter = !!searchQuery || !!groupFilter || !!tagFilter;
+
+  const isSearching = showSearch && hasFilter;
+
+  const toggleGroup = useCallback((group: string) => {
+    setCollapsedGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(group)) {
+        next.delete(group);
+      } else {
+        next.add(group);
+      }
+      return next;
+    });
+  }, []);
+
+  const groupedNotebooks = useMemo(() => {
+    if (isSearching) return null;
+    const groups = new Map<string, NotebookRecord[]>();
+    const ungrouped: NotebookRecord[] = [];
+    for (const nb of filteredNotebooks) {
+      if (nb.group) {
+        const list = groups.get(nb.group);
+        if (list) {
+          list.push(nb);
+        } else {
+          groups.set(nb.group, [nb]);
+        }
+      } else {
+        ungrouped.push(nb);
+      }
+    }
+    return { groups, ungrouped };
+  }, [filteredNotebooks, isSearching]);
 
   return (
     <div className={styles.Page.Root} data-test-id={DiaryList.page}>
@@ -147,20 +182,68 @@ export function DiariesPage() {
             )}
           </div>
         )}
-        <div className={styles.Cell.InsetGroup} data-test-id={DiaryList.list}>
+        <div className={cx(isSearching ? '' : 'flex flex-col gap-3')} data-test-id={DiaryList.list}>
           {filteredNotebooks.length === 0 ? (
             <div className='flex min-h-[120px] items-center justify-center text-center text-muted'>
               {localize('diary.noResults', 'No results')}
             </div>
+          ) : isSearching || !groupedNotebooks ? (
+            <div className={styles.Cell.InsetGroup}>
+              {filteredNotebooks.map((notebook) => (
+                <NotebookRow
+                  key={notebook.id}
+                  model={model}
+                  notebook={notebook}
+                  onClick={() => navigationService.navigate({ path: `/diary/${notebook.id}` })}
+                />
+              ))}
+            </div>
           ) : (
-            filteredNotebooks.map((notebook) => (
-              <NotebookRow
-                key={notebook.id}
-                model={model}
-                notebook={notebook}
-                onClick={() => navigationService.navigate({ path: `/diary/${notebook.id}` })}
-              />
-            ))
+            <>
+              {[...groupedNotebooks.groups.entries()].map(([groupName, groupNotebooks]) => {
+                const isCollapsed = collapsedGroups.has(groupName);
+                return (
+                  <div key={groupName} className={styles.Cell.InsetGroup}>
+                    <button
+                      type='button'
+                      className='flex w-full items-center gap-2 px-4 py-3 text-left active:bg-soft'
+                      onClick={() => toggleGroup(groupName)}
+                    >
+                      <ChevronRight
+                        size={16}
+                        strokeWidth={2}
+                        className={cx(
+                          'flex-none text-muted transition-transform duration-200',
+                          isCollapsed ? '' : 'rotate-90',
+                        )}
+                      />
+                      <span className='flex-1 text-[15px] font-medium leading-5 text-ink'>{groupName}</span>
+                      <span className='text-[13px] leading-5 text-muted'>{groupNotebooks.length}</span>
+                    </button>
+                    {!isCollapsed && groupNotebooks.map((notebook) => (
+                      <NotebookRow
+                        key={notebook.id}
+                        model={model}
+                        notebook={notebook}
+                        onClick={() => navigationService.navigate({ path: `/diary/${notebook.id}` })}
+                      />
+                    ))}
+                  </div>
+                );
+              })}
+              {groupedNotebooks.ungrouped.length > 0 && (
+                <div className={styles.Cell.InsetGroup}>
+                  {groupedNotebooks.ungrouped.map((notebook) => (
+                    <NotebookRow
+                      key={notebook.id}
+                      model={model}
+                      notebook={notebook}
+                      onClick={() => navigationService.navigate({ path: `/diary/${notebook.id}` })}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </div>
       </main>
