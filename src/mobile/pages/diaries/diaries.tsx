@@ -14,12 +14,13 @@ import { IDiaryService } from '@/services/diary/common/diaryService';
 import { IFileAssetService } from '@/services/fileAsset/common/fileAssetService';
 import { IHostService } from '@/services/native/common/hostService';
 import { INavigationService } from '@/services/navigationService/common/navigationService';
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 import { useService } from '@/hooks/use-service';
 import { Search, X, ChevronRight } from 'lucide-react';
 import type { NotebookRecord } from '@/core/diary/type';
 
 const PIN_PREF_KEY = 'islet.pinHash';
+const PULL_THRESHOLD = 50;
 
 export function DiariesPage() {
   const model = useDiaryModel();
@@ -40,6 +41,11 @@ export function DiariesPage() {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [pinNotebookId, setPinNotebookId] = useState<string | null>(null);
 
+  const mainRef = useRef<HTMLDivElement>(null);
+  const pullStartRef = useRef(0);
+  const pullingRef = useRef(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
   const allGroups = model.groups ?? [];
   const allTags = model.tags ?? [];
 
@@ -57,6 +63,43 @@ export function DiariesPage() {
   const hasFilter = !!searchQuery || !!groupFilter || !!tagFilter;
 
   const isSearching = showSearch && hasFilter;
+
+  const openSearch = useCallback(() => {
+    setShowSearch(true);
+    requestAnimationFrame(() => searchInputRef.current?.focus());
+  }, []);
+
+  const closeSearch = useCallback(() => {
+    clearFilters();
+    setShowSearch(false);
+  }, [clearFilters]);
+
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent) => {
+      if (showSearch) return;
+      const main = mainRef.current;
+      if (!main || main.scrollTop > 0) return;
+      pullingRef.current = true;
+      pullStartRef.current = e.touches[0].clientY;
+    },
+    [showSearch],
+  );
+
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent) => {
+      if (!pullingRef.current) return;
+      const delta = e.touches[0].clientY - pullStartRef.current;
+      if (delta > PULL_THRESHOLD) {
+        pullingRef.current = false;
+        openSearch();
+      }
+    },
+    [openSearch],
+  );
+
+  const handleTouchEnd = useCallback(() => {
+    pullingRef.current = false;
+  }, []);
 
   const toggleGroup = useCallback((group: string) => {
     setCollapsedGroups((prev) => {
@@ -141,29 +184,31 @@ export function DiariesPage() {
           testId: DiaryList.sync,
           onClick: () => void diaryService.syncNow(),
         }}
-        right={{
+        right={showSearch ? {
           type: 'button',
-          label: showSearch
-            ? localize('common.close', 'Close')
-            : localize('common.search', 'Search'),
-          testId: DiaryList.sync,
-          onClick: () => {
-            if (showSearch) {
-              clearFilters();
-            }
-            setShowSearch(!showSearch);
-          },
-        }}
+          label: localize('common.cancel', 'Cancel'),
+          onClick: closeSearch,
+        } : undefined}
       />
       <main
+        ref={mainRef}
         className={cx(styles.Page.ContentTabbed, styles.DiaryListPage.Content)}
         data-test-id={DiaryList.content}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
-        {showSearch && (
-          <div className='sticky top-0 z-20 bg-canvas px-4 pt-2 pb-1'>
+        <div
+          className={cx(
+            'overflow-hidden transition-all duration-300 ease-out',
+            showSearch ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0',
+          )}
+        >
+          <div className='px-4 pt-2 pb-1'>
             <div className='relative'>
               <Search size={16} className='pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-placeholder' strokeWidth={1.8} />
               <input
+                ref={searchInputRef}
                 type='text'
                 className={cx(
                   'w-full rounded-lg bg-surface py-2 pl-9 pr-8 text-ink placeholder:text-placeholder outline-none',
@@ -172,7 +217,6 @@ export function DiariesPage() {
                 placeholder={localize('diary.searchNotebooks', 'Search notebooks, groups, tags...')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                autoFocus
               />
               {searchQuery && (
                 <button
@@ -227,6 +271,18 @@ export function DiariesPage() {
                 )}
               </div>
             )}
+          </div>
+        </div>
+        {!showSearch && (
+          <div
+            className='flex cursor-pointer justify-center pt-0.5 pb-0'
+            onTouchStart={(e) => {
+              // Let the main handler manage pull, but also allow tap to open
+              e.stopPropagation();
+            }}
+            onClick={openSearch}
+          >
+            <div className='h-1 w-8 rounded-full bg-border' />
           </div>
         )}
         <div className={cx(isSearching ? '' : 'flex flex-col gap-3')} data-test-id={DiaryList.list}>
