@@ -70,7 +70,7 @@ export function SettingsPinPage() {
     switch (pinFlow.step) {
       case 'set-enter':
         return (
-          <PinDialog
+          <PinDialog key='set-enter'
             title={localize('settings.enterNewPin', 'Enter new 4-digit PIN')}
             onConfirm={async (pin) => {
               setPinFlow({ step: 'set-confirm', firstPin: pin });
@@ -81,7 +81,7 @@ export function SettingsPinPage() {
         );
       case 'set-confirm':
         return (
-          <PinDialog
+          <PinDialog key='set-confirm'
             title={localize('settings.confirmPin', 'Confirm PIN')}
             errorMessage={localize('settings.pinMismatch', 'PINs do not match')}
             onConfirm={async (pin) => {
@@ -98,7 +98,7 @@ export function SettingsPinPage() {
         );
       case 'change-verify': {
         return (
-          <PinDialog
+          <PinDialog key='change-verify'
             title={localize('settings.enterPin', 'Enter current PIN')}
             onConfirm={async (pin) => {
               const storedHash = await getStoredPinHash(hostService);
@@ -114,7 +114,7 @@ export function SettingsPinPage() {
       }
       case 'change-enter':
         return (
-          <PinDialog
+          <PinDialog key='change-enter'
             title={localize('settings.enterNewPin', 'Enter new 4-digit PIN')}
             onConfirm={async (pin) => {
               setPinFlow({ step: 'change-confirm', newPin: pin });
@@ -125,7 +125,7 @@ export function SettingsPinPage() {
         );
       case 'change-confirm':
         return (
-          <PinDialog
+          <PinDialog key='change-confirm'
             title={localize('settings.confirmPin', 'Confirm PIN')}
             errorMessage={localize('settings.pinMismatch', 'PINs do not match')}
             onConfirm={async (pin) => {
@@ -142,7 +142,7 @@ export function SettingsPinPage() {
         );
       case 'remove-verify':
         return (
-          <PinDialog
+          <PinDialog key='remove-verify'
             title={localize('settings.enterPin', 'Enter PIN')}
             onConfirm={async (pin) => {
               const storedHash = await getStoredPinHash(hostService);
