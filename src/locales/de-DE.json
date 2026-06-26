@@ -811,5 +811,29 @@
   "diary.unpin": {
     "content": "Loslösen",
     "defaultMessage": "Unpin"
+  },
+  "diary.addGroup": {
+    "content": "Gruppe hinzufügen",
+    "defaultMessage": "Add group"
+  },
+  "diary.tag": {
+    "content": "Tag",
+    "defaultMessage": "Tag"
+  },
+  "diary.groupNamePlaceholder": {
+    "content": "Gruppenname",
+    "defaultMessage": "Group name"
+  },
+  "diary.tagPlaceholder": {
+    "content": "Tags eingeben",
+    "defaultMessage": "Enter tags"
+  },
+  "diary.groupAdded": {
+    "content": "Gruppe hinzugefügt",
+    "defaultMessage": "Group added"
+  },
+  "diary.tagsSaved": {
+    "content": "Tags gespeichert",
+    "defaultMessage": "Tags saved"
   }
 }

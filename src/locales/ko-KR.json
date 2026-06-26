@@ -811,5 +811,29 @@
   "diary.unpin": {
     "content": "고정 해제",
     "defaultMessage": "Unpin"
+  },
+  "diary.addGroup": {
+    "content": "그룹 추가",
+    "defaultMessage": "Add group"
+  },
+  "diary.tag": {
+    "content": "태그",
+    "defaultMessage": "Tag"
+  },
+  "diary.groupNamePlaceholder": {
+    "content": "그룹 이름",
+    "defaultMessage": "Group name"
+  },
+  "diary.tagPlaceholder": {
+    "content": "태그 입력",
+    "defaultMessage": "Enter tags"
+  },
+  "diary.groupAdded": {
+    "content": "그룹 추가됨",
+    "defaultMessage": "Group added"
+  },
+  "diary.tagsSaved": {
+    "content": "태그 저장됨",
+    "defaultMessage": "Tags saved"
   }
 }

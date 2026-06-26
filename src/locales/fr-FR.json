@@ -811,5 +811,29 @@
   "diary.unpin": {
     "content": "Désépingler",
     "defaultMessage": "Unpin"
+  },
+  "diary.addGroup": {
+    "content": "Ajouter un groupe",
+    "defaultMessage": "Add group"
+  },
+  "diary.tag": {
+    "content": "Étiquette",
+    "defaultMessage": "Tag"
+  },
+  "diary.groupNamePlaceholder": {
+    "content": "Nom du groupe",
+    "defaultMessage": "Group name"
+  },
+  "diary.tagPlaceholder": {
+    "content": "Saisir des étiquettes",
+    "defaultMessage": "Enter tags"
+  },
+  "diary.groupAdded": {
+    "content": "Groupe ajouté",
+    "defaultMessage": "Group added"
+  },
+  "diary.tagsSaved": {
+    "content": "Étiquettes enregistrées",
+    "defaultMessage": "Tags saved"
   }
 }

@@ -811,5 +811,29 @@
   "diary.unpin": {
     "content": "ピン留め解除",
     "defaultMessage": "Unpin"
+  },
+  "diary.addGroup": {
+    "content": "グループ追加",
+    "defaultMessage": "Add group"
+  },
+  "diary.tag": {
+    "content": "タグ",
+    "defaultMessage": "Tag"
+  },
+  "diary.groupNamePlaceholder": {
+    "content": "グループ名",
+    "defaultMessage": "Group name"
+  },
+  "diary.tagPlaceholder": {
+    "content": "タグを入力",
+    "defaultMessage": "Enter tags"
+  },
+  "diary.groupAdded": {
+    "content": "グループを追加しました",
+    "defaultMessage": "Group added"
+  },
+  "diary.tagsSaved": {
+    "content": "タグを保存しました",
+    "defaultMessage": "Tags saved"
   }
 }

@@ -811,5 +811,29 @@
   "diary.unpin": {
     "content": "取消置頂",
     "defaultMessage": "Unpin"
+  },
+  "diary.addGroup": {
+    "content": "添加分組",
+    "defaultMessage": "Add group"
+  },
+  "diary.tag": {
+    "content": "標籤",
+    "defaultMessage": "Tag"
+  },
+  "diary.groupNamePlaceholder": {
+    "content": "分組名稱",
+    "defaultMessage": "Group name"
+  },
+  "diary.tagPlaceholder": {
+    "content": "輸入標籤",
+    "defaultMessage": "Enter tags"
+  },
+  "diary.groupAdded": {
+    "content": "已添加分組",
+    "defaultMessage": "Group added"
+  },
+  "diary.tagsSaved": {
+    "content": "標籤已儲存",
+    "defaultMessage": "Tags saved"
   }
 }
