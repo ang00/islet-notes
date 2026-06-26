@@ -4,10 +4,12 @@ import { localize } from '@/nls';
 import { BottomTabBar } from '@/mobile/components/BottomTabBar';
 import { NotebookRow } from '@/mobile/components/pages/diaries/NotebookRow';
 import { PageHeader } from '@/mobile/components/PageHeader';
+import { PinDialog } from '@/mobile/components/PinDialog/PinDialog';
 import { useDiaryModel } from '@/mobile/hooks/useDiaryModel';
 import { DiaryList } from '@/mobile/test.id';
 import { cx, styles } from '@/mobile/styles/ui';
 import { hashPin } from '@/base/crypto/pin';
+import { unlockNotebookSession } from '@/base/common/sessionUnlock';
 import { IDiaryService } from '@/services/diary/common/diaryService';
 import { IFileAssetService } from '@/services/fileAsset/common/fileAssetService';
 import { IHostService } from '@/services/native/common/hostService';
@@ -15,8 +17,6 @@ import { INavigationService } from '@/services/navigationService/common/navigati
 import React, { useState, useMemo, useCallback } from 'react';
 import { useService } from '@/hooks/use-service';
 import { Search, X, ChevronRight } from 'lucide-react';
-import { useDialog } from '@/mobile/overlay/dialog/useDialog';
-import { useTextInputDialog } from '@/mobile/overlay/textInputDialog/useTextInputDialog';
 import type { NotebookRecord } from '@/core/diary/type';
 
 const PIN_PREF_KEY = 'islet.pinHash';
@@ -27,8 +27,6 @@ export function DiariesPage() {
   const diaryService = useService(IDiaryService);
   const fileAssetService = useService(IFileAssetService);
   const hostService = useService(IHostService);
-  const showDialog = useDialog();
-  const showTextInputDialog = useTextInputDialog();
   useWatchEvent(diaryService.onSyncStateChange);
   useWatchEvent(fileAssetService.onDidChangeConfig);
   const notebooks = getSortedNotebooks(model);
@@ -40,6 +38,7 @@ export function DiariesPage() {
   const [groupFilter, setGroupFilter] = useState<string | undefined>();
   const [tagFilter, setTagFilter] = useState<string | undefined>();
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+  const [pinNotebookId, setPinNotebookId] = useState<string | null>(null);
 
   const allGroups = model.groups ?? [];
   const allTags = model.tags ?? [];
@@ -82,30 +81,32 @@ export function DiariesPage() {
           navigationService.navigate({ path: `/diary/${notebook.id}` });
           return;
         }
-        showTextInputDialog({
-          title: localize('settings.enterPin', 'Enter PIN'),
-          value: '',
-          placeholder: localize('settings.enterPin', 'Enter PIN'),
-          saveLabel: localize('common.confirm', 'Confirm'),
-          cancelLabel: localize('common.cancel', 'Cancel'),
-          onSave: async (value) => {
-            const inputHash = await hashPin(value.trim());
-            if (inputHash === storedHash) {
-              diaryService.unlockNotebook(notebook.id);
-              navigationService.navigate({ path: `/diary/${notebook.id}` });
-            } else {
-              showDialog({
-                message: localize('settings.pinWrong', 'Wrong PIN'),
-                confirmLabel: localize('common.ok', 'OK'),
-                cancelLabel: localize('common.cancel', 'Cancel'),
-                onConfirm: () => {},
-              });
-            }
-          },
-        });
+        setPinNotebookId(notebook.id);
       });
     },
-    [navigationService, hostService, diaryService, showTextInputDialog, showDialog],
+    [navigationService, hostService],
+  );
+
+  const handlePinConfirm = useCallback(
+    async (pin: string): Promise<boolean> => {
+      const notebookId = pinNotebookId;
+      if (!notebookId) return false;
+      const storedHash = await hostService.getPreference<string>(PIN_PREF_KEY);
+      if (!storedHash) {
+        setPinNotebookId(null);
+        navigationService.navigate({ path: `/diary/${notebookId}` });
+        return true;
+      }
+      const inputHash = await hashPin(pin);
+      if (inputHash === storedHash) {
+        unlockNotebookSession(notebookId);
+        setPinNotebookId(null);
+        navigationService.navigate({ path: `/diary/${notebookId}` });
+        return true;
+      }
+      return false;
+    },
+    [pinNotebookId, hostService, navigationService],
   );
 
   const groupedNotebooks = useMemo(() => {
@@ -294,6 +295,13 @@ export function DiariesPage() {
         </div>
       </main>
       <BottomTabBar active='diary' />
+      {pinNotebookId && (
+        <PinDialog
+          title={localize('settings.enterPin', 'Enter PIN')}
+          onConfirm={handlePinConfirm}
+          onCancel={() => setPinNotebookId(null)}
+        />
+      )}
     </div>
   );
 }

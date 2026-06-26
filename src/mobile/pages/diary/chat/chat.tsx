@@ -8,6 +8,7 @@ import {
   ChatMessage,
   EntryHighlightProvider,
 } from '@/mobile/components/pages/diary-chat/chat/main';
+import { PinDialog } from '@/mobile/components/PinDialog/PinDialog';
 import { useDiaryChatChromeHeight } from '@/mobile/hooks/pages/diary-chat/useDiaryChatChromeHeight';
 import { useDiaryChatVirtualList } from '@/mobile/hooks/pages/diary-chat/useDiaryChatVirtualList';
 import { useDiaryModel } from '@/mobile/hooks/useDiaryModel';
@@ -16,6 +17,9 @@ import { useWindowSize } from '@/mobile/hooks/useWindowSize';
 import { cx, styles } from '@/mobile/styles/ui';
 import { DiaryChat } from '@/mobile/test.id';
 import { localize } from '@/nls';
+import { hashPin } from '@/base/crypto/pin';
+import { isUnlockedInSession, unlockNotebookSession } from '@/base/common/sessionUnlock';
+import { IHostService } from '@/services/native/common/hostService';
 import { INavigationService } from '@/services/navigationService/common/navigationService';
 import { ISpeechRecognitionService } from '@/services/speechRecognition/common/speechRecognitionService';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
@@ -28,6 +32,7 @@ export function DiaryChatPage() {
   const targetEntryId = searchParams.get('targetEntryId') ?? undefined;
   const model = useDiaryModel();
   const navigationService = useService(INavigationService);
+  const hostService = useService(IHostService);
   const speechRecognitionService = useService(ISpeechRecognitionService);
   useWatchEvent(speechRecognitionService.onDidChangeTranscribing);
   const transcribingVersion = speechRecognitionService.getTranscribingVersion();
@@ -74,7 +79,22 @@ export function DiaryChatPage() {
   });
 
   if (!notebook || !notebookId) return <Navigate to='/diaries' replace />;
-  if (notebook.lockedAt) return <Navigate to='/diaries' replace />;
+  if (notebook.lockedAt && !isUnlockedInSession(notebookId)) {
+    return (
+      <PinDialog
+        title={localize('settings.enterPin', 'Enter PIN')}
+        onConfirm={async (pin) => {
+          const storedHash = await hostService.getPreference<string>('islet.pinHash');
+          if (storedHash && (await hashPin(pin)) === storedHash) {
+            unlockNotebookSession(notebookId!);
+            return true;
+          }
+          return false;
+        }}
+        onCancel={() => navigationService.navigate({ path: '/diaries' })}
+      />
+    );
+  }
 
   return (
     <div
