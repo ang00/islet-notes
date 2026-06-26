@@ -907,5 +907,73 @@
   "settings.removeGroup": {
     "defaultMessage": "Remove group",
     "content": "그룹 제거"
+  },
+  "settings.pin": {
+    "defaultMessage": "PIN Lock",
+    "content": "PIN 잠금"
+  },
+  "settings.setPin": {
+    "defaultMessage": "Set PIN",
+    "content": "PIN 설정"
+  },
+  "settings.changePin": {
+    "defaultMessage": "Change PIN",
+    "content": "PIN 변경"
+  },
+  "settings.removePin": {
+    "defaultMessage": "Remove PIN",
+    "content": "PIN 제거"
+  },
+  "settings.enterPin": {
+    "defaultMessage": "Enter PIN",
+    "content": "PIN 입력"
+  },
+  "settings.confirmPin": {
+    "defaultMessage": "Confirm PIN",
+    "content": "PIN 확인"
+  },
+  "settings.enterNewPin": {
+    "defaultMessage": "Enter new 4-digit PIN",
+    "content": "새 4자리 PIN 입력"
+  },
+  "settings.pinMismatch": {
+    "defaultMessage": "PINs do not match",
+    "content": "PIN이 일치하지 않습니다"
+  },
+  "settings.pinWrong": {
+    "defaultMessage": "Wrong PIN",
+    "content": "PIN이 잘못되었습니다"
+  },
+  "settings.pinSet": {
+    "defaultMessage": "PIN has been set",
+    "content": "PIN이 설정되었습니다"
+  },
+  "settings.pinChanged": {
+    "defaultMessage": "PIN has been changed",
+    "content": "PIN이 변경되었습니다"
+  },
+  "settings.pinRemoved": {
+    "defaultMessage": "PIN has been removed",
+    "content": "PIN이 제거되었습니다"
+  },
+  "settings.pinInvalid": {
+    "defaultMessage": "PIN must be 4 digits",
+    "content": "PIN은 4자리 숫자여야 합니다"
+  },
+  "settings.removePinConfirm": {
+    "defaultMessage": "Remove PIN? Locked notebooks will no longer be protected.",
+    "content": "PIN을 제거하시겠습니까? 잠긴 노트북이 더 이상 보호되지 않습니다."
+  },
+  "diary.lock": {
+    "defaultMessage": "Lock",
+    "content": "잠금"
+  },
+  "common.confirm": {
+    "defaultMessage": "Confirm",
+    "content": "확인"
+  },
+  "common.ok": {
+    "defaultMessage": "OK",
+    "content": "확인"
   }
 }

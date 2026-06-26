@@ -192,6 +192,12 @@ export const routes: PageRoute[] = [
     component: 'SettingsGroupTagPage',
     fallback: '/settings',
   },
+  {
+    url: '/settings/pin',
+    file: './pages/settings/pin/pin',
+    component: 'SettingsPinPage',
+    fallback: '/settings',
+  },
 ];
 
 export function getBackFallbackPath(pathname: string): string | undefined {

@@ -10,6 +10,7 @@ export interface NotebookRecord {
   pinnedAt?: number;
   group?: string;
   tags?: string[];
+  lockedAt?: number;
 }
 
 export interface ProfileRecord {

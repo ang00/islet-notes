@@ -23,6 +23,8 @@ export interface IDiaryService {
   softDeleteNotebook(notebookId: string): void;
   pinNotebook(notebookId: string): void;
   unpinNotebook(notebookId: string): void;
+  lockNotebook(notebookId: string): void;
+  unlockNotebook(notebookId: string): void;
   updateNotebookName(notebookId: string, name: string): void;
   updateNotebookAvatar(notebookId: string, avatarAttachmentId: string | undefined): void;
   updateProfileName(name: string): void;

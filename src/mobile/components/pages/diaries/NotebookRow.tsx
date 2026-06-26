@@ -150,6 +150,11 @@ export function NotebookRow({ model, notebook, onClick }: NotebookRowProps) {
             onClick: handlePin,
           },
           {
+            label: localize('diary.lock', 'Lock'),
+            color: '#f59e0b',
+            onClick: () => diaryService.lockNotebook(notebook.id),
+          },
+          {
             label: localize('common.delete', 'Delete'),
             color: '#ef4444',
             onClick: handleDelete,

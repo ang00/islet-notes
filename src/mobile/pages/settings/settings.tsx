@@ -82,6 +82,10 @@ export function SettingsPage() {
             onClick: () => navigationService.navigate({ path: '/settings/group-tag' }),
           },
           {
+            label: localize('settings.pin', 'PIN Lock'),
+            onClick: () => navigationService.navigate({ path: '/settings/pin' }),
+          },
+          {
             label: localize('settings.theme', 'Theme'),
             testId: Settings.theme,
             onClick: () => navigationService.navigate({ path: '/settings/theme' }),

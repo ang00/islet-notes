@@ -297,3 +297,11 @@ export const GroupTagSettings = {
   edit: 'group-tag-settings.edit',
   delete: 'group-tag-settings.delete',
 } as const;
+
+export const PinSettings = {
+  page: 'pin-settings.page',
+  content: 'pin-settings.content',
+  set: 'pin-settings.set',
+  change: 'pin-settings.change',
+  remove: 'pin-settings.remove',
+} as const;

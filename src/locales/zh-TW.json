@@ -907,5 +907,73 @@
   "settings.removeGroup": {
     "defaultMessage": "Remove group",
     "content": "移除分組"
+  },
+  "settings.pin": {
+    "defaultMessage": "PIN Lock",
+    "content": "密碼鎖"
+  },
+  "settings.setPin": {
+    "defaultMessage": "Set PIN",
+    "content": "設定密碼"
+  },
+  "settings.changePin": {
+    "defaultMessage": "Change PIN",
+    "content": "修改密碼"
+  },
+  "settings.removePin": {
+    "defaultMessage": "Remove PIN",
+    "content": "移除密碼"
+  },
+  "settings.enterPin": {
+    "defaultMessage": "Enter PIN",
+    "content": "輸入密碼"
+  },
+  "settings.confirmPin": {
+    "defaultMessage": "Confirm PIN",
+    "content": "確認密碼"
+  },
+  "settings.enterNewPin": {
+    "defaultMessage": "Enter new 4-digit PIN",
+    "content": "輸入新的4位數字密碼"
+  },
+  "settings.pinMismatch": {
+    "defaultMessage": "PINs do not match",
+    "content": "密碼不一致"
+  },
+  "settings.pinWrong": {
+    "defaultMessage": "Wrong PIN",
+    "content": "密碼錯誤"
+  },
+  "settings.pinSet": {
+    "defaultMessage": "PIN has been set",
+    "content": "密碼已設定"
+  },
+  "settings.pinChanged": {
+    "defaultMessage": "PIN has been changed",
+    "content": "密碼已修改"
+  },
+  "settings.pinRemoved": {
+    "defaultMessage": "PIN has been removed",
+    "content": "密碼已移除"
+  },
+  "settings.pinInvalid": {
+    "defaultMessage": "PIN must be 4 digits",
+    "content": "密碼必須是4位數字"
+  },
+  "settings.removePinConfirm": {
+    "defaultMessage": "Remove PIN? Locked notebooks will no longer be protected.",
+    "content": "移除密碼？已鎖定的筆記本將不再受保護。"
+  },
+  "diary.lock": {
+    "defaultMessage": "Lock",
+    "content": "鎖定"
+  },
+  "common.confirm": {
+    "defaultMessage": "Confirm",
+    "content": "確認"
+  },
+  "common.ok": {
+    "defaultMessage": "OK",
+    "content": "確定"
   }
 }

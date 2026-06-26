@@ -11,6 +11,7 @@ import { CoverThumb } from '@/mobile/components/CoverThumb';
 import { DiaryList } from '@/mobile/test.id';
 import { styles } from '@/mobile/styles/ui';
 import { localize } from '@/nls';
+import { Lock } from 'lucide-react';
 import React from 'react';
 
 interface NotebookItemProps {
@@ -49,6 +50,9 @@ export function NotebookItem({ model, notebook, onClick }: NotebookItemProps) {
           <span className={styles.NotebookItem.Name} data-test-id={DiaryList.notebookName}>
             {notebook.name}
           </span>
+          {notebook.lockedAt && (
+            <Lock size={14} className='ml-1.5 flex-none text-amber-500' strokeWidth={2.5} />
+          )}
         </div>
         <div className={styles.NotebookItem.Summary}>
           {summary || localize('diary.notebook.emptySummary', 'No entries yet')}

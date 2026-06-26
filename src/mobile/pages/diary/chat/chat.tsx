@@ -74,6 +74,7 @@ export function DiaryChatPage() {
   });
 
   if (!notebook || !notebookId) return <Navigate to='/diaries' replace />;
+  if (notebook.lockedAt) return <Navigate to='/diaries' replace />;
 
   return (
     <div

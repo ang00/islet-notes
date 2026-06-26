@@ -907,5 +907,73 @@
   "settings.removeGroup": {
     "defaultMessage": "Remove group",
     "content": "Gruppe entfernen"
+  },
+  "settings.pin": {
+    "defaultMessage": "PIN Lock",
+    "content": "PIN-Sperre"
+  },
+  "settings.setPin": {
+    "defaultMessage": "Set PIN",
+    "content": "PIN festlegen"
+  },
+  "settings.changePin": {
+    "defaultMessage": "Change PIN",
+    "content": "PIN ändern"
+  },
+  "settings.removePin": {
+    "defaultMessage": "Remove PIN",
+    "content": "PIN entfernen"
+  },
+  "settings.enterPin": {
+    "defaultMessage": "Enter PIN",
+    "content": "PIN eingeben"
+  },
+  "settings.confirmPin": {
+    "defaultMessage": "Confirm PIN",
+    "content": "PIN bestätigen"
+  },
+  "settings.enterNewPin": {
+    "defaultMessage": "Enter new 4-digit PIN",
+    "content": "Neue 4-stellige PIN eingeben"
+  },
+  "settings.pinMismatch": {
+    "defaultMessage": "PINs do not match",
+    "content": "PINs stimmen nicht überein"
+  },
+  "settings.pinWrong": {
+    "defaultMessage": "Wrong PIN",
+    "content": "Falsche PIN"
+  },
+  "settings.pinSet": {
+    "defaultMessage": "PIN has been set",
+    "content": "PIN wurde festgelegt"
+  },
+  "settings.pinChanged": {
+    "defaultMessage": "PIN has been changed",
+    "content": "PIN wurde geändert"
+  },
+  "settings.pinRemoved": {
+    "defaultMessage": "PIN has been removed",
+    "content": "PIN wurde entfernt"
+  },
+  "settings.pinInvalid": {
+    "defaultMessage": "PIN must be 4 digits",
+    "content": "PIN muss 4 Ziffern sein"
+  },
+  "settings.removePinConfirm": {
+    "defaultMessage": "Remove PIN? Locked notebooks will no longer be protected.",
+    "content": "PIN entfernen? Geschützte Notizbücher sind nicht mehr geschützt."
+  },
+  "diary.lock": {
+    "defaultMessage": "Lock",
+    "content": "Sperren"
+  },
+  "common.confirm": {
+    "defaultMessage": "Confirm",
+    "content": "Bestätigen"
+  },
+  "common.ok": {
+    "defaultMessage": "OK",
+    "content": "OK"
   }
 }

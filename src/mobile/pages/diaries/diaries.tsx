@@ -7,19 +7,28 @@ import { PageHeader } from '@/mobile/components/PageHeader';
 import { useDiaryModel } from '@/mobile/hooks/useDiaryModel';
 import { DiaryList } from '@/mobile/test.id';
 import { cx, styles } from '@/mobile/styles/ui';
+import { hashPin } from '@/base/crypto/pin';
 import { IDiaryService } from '@/services/diary/common/diaryService';
 import { IFileAssetService } from '@/services/fileAsset/common/fileAssetService';
+import { IHostService } from '@/services/native/common/hostService';
 import { INavigationService } from '@/services/navigationService/common/navigationService';
 import React, { useState, useMemo, useCallback } from 'react';
 import { useService } from '@/hooks/use-service';
 import { Search, X, ChevronRight } from 'lucide-react';
+import { useDialog } from '@/mobile/overlay/dialog/useDialog';
+import { useTextInputDialog } from '@/mobile/overlay/textInputDialog/useTextInputDialog';
 import type { NotebookRecord } from '@/core/diary/type';
+
+const PIN_PREF_KEY = 'islet.pinHash';
 
 export function DiariesPage() {
   const model = useDiaryModel();
   const navigationService = useService(INavigationService);
   const diaryService = useService(IDiaryService);
   const fileAssetService = useService(IFileAssetService);
+  const hostService = useService(IHostService);
+  const showDialog = useDialog();
+  const showTextInputDialog = useTextInputDialog();
   useWatchEvent(diaryService.onSyncStateChange);
   useWatchEvent(fileAssetService.onDidChangeConfig);
   const notebooks = getSortedNotebooks(model);
@@ -61,6 +70,43 @@ export function DiariesPage() {
       return next;
     });
   }, []);
+
+  const handleNotebookClick = useCallback(
+    (notebook: NotebookRecord) => {
+      if (!notebook.lockedAt) {
+        navigationService.navigate({ path: `/diary/${notebook.id}` });
+        return;
+      }
+      hostService.getPreference<string>(PIN_PREF_KEY).then((storedHash) => {
+        if (!storedHash) {
+          navigationService.navigate({ path: `/diary/${notebook.id}` });
+          return;
+        }
+        showTextInputDialog({
+          title: localize('settings.enterPin', 'Enter PIN'),
+          value: '',
+          placeholder: localize('settings.enterPin', 'Enter PIN'),
+          saveLabel: localize('common.confirm', 'Confirm'),
+          cancelLabel: localize('common.cancel', 'Cancel'),
+          onSave: async (value) => {
+            const inputHash = await hashPin(value.trim());
+            if (inputHash === storedHash) {
+              diaryService.unlockNotebook(notebook.id);
+              navigationService.navigate({ path: `/diary/${notebook.id}` });
+            } else {
+              showDialog({
+                message: localize('settings.pinWrong', 'Wrong PIN'),
+                confirmLabel: localize('common.ok', 'OK'),
+                cancelLabel: localize('common.cancel', 'Cancel'),
+                onConfirm: () => {},
+              });
+            }
+          },
+        });
+      });
+    },
+    [navigationService, hostService, diaryService, showTextInputDialog, showDialog],
+  );
 
   const groupedNotebooks = useMemo(() => {
     if (isSearching) return null;
@@ -194,7 +240,7 @@ export function DiariesPage() {
                   key={notebook.id}
                   model={model}
                   notebook={notebook}
-                  onClick={() => navigationService.navigate({ path: `/diary/${notebook.id}` })}
+                  onClick={() => handleNotebookClick(notebook)}
                 />
               ))}
             </div>
@@ -225,7 +271,7 @@ export function DiariesPage() {
                         key={notebook.id}
                         model={model}
                         notebook={notebook}
-                        onClick={() => navigationService.navigate({ path: `/diary/${notebook.id}` })}
+                        onClick={() => handleNotebookClick(notebook)}
                       />
                     ))}
                   </div>
@@ -238,7 +284,7 @@ export function DiariesPage() {
                       key={notebook.id}
                       model={model}
                       notebook={notebook}
-                      onClick={() => navigationService.navigate({ path: `/diary/${notebook.id}` })}
+                      onClick={() => handleNotebookClick(notebook)}
                     />
                   ))}
                 </div>

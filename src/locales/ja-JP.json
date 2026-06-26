@@ -907,5 +907,73 @@
   "settings.removeGroup": {
     "defaultMessage": "Remove group",
     "content": "グループを削除"
+  },
+  "settings.pin": {
+    "defaultMessage": "PIN Lock",
+    "content": "PINロック"
+  },
+  "settings.setPin": {
+    "defaultMessage": "Set PIN",
+    "content": "PINを設定"
+  },
+  "settings.changePin": {
+    "defaultMessage": "Change PIN",
+    "content": "PINを変更"
+  },
+  "settings.removePin": {
+    "defaultMessage": "Remove PIN",
+    "content": "PINを削除"
+  },
+  "settings.enterPin": {
+    "defaultMessage": "Enter PIN",
+    "content": "PINを入力"
+  },
+  "settings.confirmPin": {
+    "defaultMessage": "Confirm PIN",
+    "content": "PINを確認"
+  },
+  "settings.enterNewPin": {
+    "defaultMessage": "Enter new 4-digit PIN",
+    "content": "新しい4桁のPINを入力"
+  },
+  "settings.pinMismatch": {
+    "defaultMessage": "PINs do not match",
+    "content": "PINが一致しません"
+  },
+  "settings.pinWrong": {
+    "defaultMessage": "Wrong PIN",
+    "content": "PINが間違っています"
+  },
+  "settings.pinSet": {
+    "defaultMessage": "PIN has been set",
+    "content": "PINが設定されました"
+  },
+  "settings.pinChanged": {
+    "defaultMessage": "PIN has been changed",
+    "content": "PINが変更されました"
+  },
+  "settings.pinRemoved": {
+    "defaultMessage": "PIN has been removed",
+    "content": "PINが削除されました"
+  },
+  "settings.pinInvalid": {
+    "defaultMessage": "PIN must be 4 digits",
+    "content": "PINは4桁の数字である必要があります"
+  },
+  "settings.removePinConfirm": {
+    "defaultMessage": "Remove PIN? Locked notebooks will no longer be protected.",
+    "content": "PINを削除しますか？ロックされたノートブックは保護されなくなります。"
+  },
+  "diary.lock": {
+    "defaultMessage": "Lock",
+    "content": "ロック"
+  },
+  "common.confirm": {
+    "defaultMessage": "Confirm",
+    "content": "確認"
+  },
+  "common.ok": {
+    "defaultMessage": "OK",
+    "content": "OK"
   }
 }
