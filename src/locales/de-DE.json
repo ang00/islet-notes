@@ -975,5 +975,29 @@
   "common.ok": {
     "defaultMessage": "OK",
     "content": "OK"
+  },
+  "common.all": {
+    "defaultMessage": "All",
+    "content": "Alle"
+  },
+  "search.content": {
+    "defaultMessage": "Content",
+    "content": "Inhalt"
+  },
+  "search.group": {
+    "defaultMessage": "Groups",
+    "content": "Gruppen"
+  },
+  "search.tag": {
+    "defaultMessage": "Tags",
+    "content": "Tags"
+  },
+  "common.synced": {
+    "defaultMessage": "Synced",
+    "content": "Synchronisiert"
+  },
+  "common.syncFailed": {
+    "defaultMessage": "Sync failed",
+    "content": "Synchronisierung fehlgeschlagen"
   }
 }

@@ -975,5 +975,29 @@
   "common.ok": {
     "defaultMessage": "OK",
     "content": "確定"
+  },
+  "common.all": {
+    "defaultMessage": "All",
+    "content": "全部"
+  },
+  "search.content": {
+    "defaultMessage": "Content",
+    "content": "內容"
+  },
+  "search.group": {
+    "defaultMessage": "Groups",
+    "content": "分組"
+  },
+  "search.tag": {
+    "defaultMessage": "Tags",
+    "content": "標籤"
+  },
+  "common.synced": {
+    "defaultMessage": "Synced",
+    "content": "同步成功"
+  },
+  "common.syncFailed": {
+    "defaultMessage": "Sync failed",
+    "content": "同步失敗"
   }
 }

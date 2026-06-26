@@ -28,13 +28,10 @@ export function SwipeableRow({ children, actions }: SwipeableRowProps) {
   }, []);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    if (open) {
-      close();
-      return;
-    }
+    if (open) return;
     trackingRef.current = true;
     startXRef.current = e.touches[0].clientX;
-  }, [open, close]);
+  }, [open]);
 
   const handleTouchMove = useCallback(
     (e: React.TouchEvent) => {

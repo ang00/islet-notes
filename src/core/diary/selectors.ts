@@ -124,17 +124,35 @@ export function formatEntryTime(timestamp: number): string {
 export function searchNotebooks(
   notebooks: NotebookRecord[],
   query: string,
-  groupFilter?: string,
-  tagFilter?: string,
+  model?: DiaryModelData,
+  scope?: 'all' | 'content' | 'group' | 'tag',
 ): NotebookRecord[] {
   return notebooks.filter((n) => {
-    if (groupFilter && n.group !== groupFilter) return false;
-    if (tagFilter && !n.tags?.includes(tagFilter)) return false;
-    if (!query) return true;
+    if (!query) {
+      if (scope === 'content') return false;
+      if (scope === 'group' && !n.group) return false;
+      if (scope === 'tag' && !n.tags?.length) return false;
+      return true;
+    }
     const q = query.toLowerCase();
-    if (n.name.toLowerCase().includes(q)) return true;
-    if (n.group?.toLowerCase().includes(q)) return true;
-    if (n.tags?.some((t) => t.toLowerCase().includes(q))) return true;
+
+    if (!scope || scope === 'all') {
+      if (n.name.toLowerCase().includes(q)) return true;
+      if (n.group?.toLowerCase().includes(q)) return true;
+      if (n.tags?.some((t) => t.toLowerCase().includes(q))) return true;
+      if (model && model.entries.some((e) => e.notebookId === n.id && !e.deletedAt && e.text?.toLowerCase().includes(q))) return true;
+      return false;
+    }
+
+    if (scope === 'content') {
+      return model ? model.entries.some((e) => e.notebookId === n.id && !e.deletedAt && e.text?.toLowerCase().includes(q)) : false;
+    }
+    if (scope === 'group') {
+      return !!n.group?.toLowerCase().includes(q);
+    }
+    if (scope === 'tag') {
+      return !!n.tags?.some((t) => t.toLowerCase().includes(q));
+    }
     return false;
   });
 }

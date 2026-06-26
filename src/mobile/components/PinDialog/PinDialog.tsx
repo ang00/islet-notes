@@ -6,9 +6,10 @@ interface PinDialogProps {
   title: string;
   onConfirm: (pin: string) => Promise<boolean> | boolean;
   onCancel: () => void;
+  errorMessage?: string;
 }
 
-export function PinDialog({ title, onConfirm, onCancel }: PinDialogProps) {
+export function PinDialog({ title, onConfirm, onCancel, errorMessage }: PinDialogProps) {
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -46,15 +47,29 @@ export function PinDialog({ title, onConfirm, onCancel }: PinDialogProps) {
         <p className='mb-5 text-center text-[16px] font-semibold leading-6 text-ink'>{title}</p>
         {error && (
           <p className='mb-3 text-center text-[13px] font-medium text-danger'>
-            {localize('settings.pinWrong', 'Wrong PIN')}
+            {errorMessage ?? localize('settings.pinWrong', 'Wrong PIN')}
           </p>
         )}
-        <div className='mb-6 flex justify-center gap-3'>
+        <div className='relative mb-6 flex justify-center gap-3'>
+          <input
+            ref={inputRef}
+            type='tel'
+            inputMode='numeric'
+            pattern='[0-9]*'
+            autoComplete='one-time-code'
+            className='absolute inset-0 h-full w-full opacity-0 text-[16px]'
+            style={{ caretColor: 'transparent' }}
+            value={value}
+            onChange={handleChange}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && confirming) handleConfirm();
+            }}
+          />
           {[0, 1, 2, 3].map((i) => (
             <div
               key={i}
               className={cx(
-                'flex h-12 w-12 items-center justify-center rounded-xl border-2 text-lg font-bold transition',
+                'pointer-events-none flex h-12 w-12 items-center justify-center rounded-xl border-2 text-lg font-bold transition',
                 value[i]
                   ? 'border-accent bg-accent/5 text-ink'
                   : 'border-border text-placeholder',
@@ -64,19 +79,6 @@ export function PinDialog({ title, onConfirm, onCancel }: PinDialogProps) {
             </div>
           ))}
         </div>
-        <input
-          ref={inputRef}
-          type='tel'
-          inputMode='numeric'
-          pattern='[0-9]*'
-          autoComplete='one-time-code'
-          className='sr-only'
-          value={value}
-          onChange={handleChange}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' && confirming) handleConfirm();
-          }}
-        />
         <div className='flex gap-3'>
           <button
             type='button'

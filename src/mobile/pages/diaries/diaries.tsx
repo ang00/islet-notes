@@ -6,10 +6,11 @@ import { NotebookRow } from '@/mobile/components/pages/diaries/NotebookRow';
 import { PageHeader } from '@/mobile/components/PageHeader';
 import { PinDialog } from '@/mobile/components/PinDialog/PinDialog';
 import { useDiaryModel } from '@/mobile/hooks/useDiaryModel';
+import { useSuccessToast } from '@/mobile/overlay/successToast/useSuccessToast';
 import { DiaryList } from '@/mobile/test.id';
 import { cx, styles } from '@/mobile/styles/ui';
 import { hashPin } from '@/base/crypto/pin';
-import { unlockNotebookSession } from '@/base/common/sessionUnlock';
+import { isUnlockedInSession, unlockNotebookSession } from '@/base/common/sessionUnlock';
 import { IDiaryService } from '@/services/diary/common/diaryService';
 import { IFileAssetService } from '@/services/fileAsset/common/fileAssetService';
 import { IHostService } from '@/services/native/common/hostService';
@@ -21,6 +22,13 @@ import type { NotebookRecord } from '@/core/diary/type';
 
 const PIN_PREF_KEY = 'islet.pinHash';
 const PULL_THRESHOLD = 50;
+const SCOPE_CHIPS = [
+  { key: 'all', labelKey: 'common.all', labelDefault: 'All' },
+  { key: 'content', labelKey: 'search.content', labelDefault: 'Content' },
+  { key: 'group', labelKey: 'search.group', labelDefault: 'Groups' },
+  { key: 'tag', labelKey: 'search.tag', labelDefault: 'Tags' },
+] as const;
+type SearchScope = (typeof SCOPE_CHIPS)[number]['key'];
 
 export function DiariesPage() {
   const model = useDiaryModel();
@@ -33,11 +41,11 @@ export function DiariesPage() {
   const notebooks = getSortedNotebooks(model);
   const syncEnabled = !!fileAssetService.getSyncConfig()?.recoveryKey;
   const isSyncing = diaryService.isSyncing;
+  const showSuccessToast = useSuccessToast();
 
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
-  const [groupFilter, setGroupFilter] = useState<string | undefined>();
-  const [tagFilter, setTagFilter] = useState<string | undefined>();
+  const [searchScope, setSearchScope] = useState<SearchScope>('all');
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [pinNotebookId, setPinNotebookId] = useState<string | null>(null);
 
@@ -46,26 +54,22 @@ export function DiariesPage() {
   const pullingRef = useRef(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
-  const allGroups = model.groups ?? [];
-  const allTags = model.tags ?? [];
-
   const filteredNotebooks = useMemo(
-    () => searchNotebooks(notebooks, searchQuery, groupFilter, tagFilter),
-    [notebooks, searchQuery, groupFilter, tagFilter],
+    () => searchNotebooks(notebooks, searchQuery, model, searchScope),
+    [notebooks, searchQuery, model, searchScope],
   );
 
   const clearFilters = useCallback(() => {
     setSearchQuery('');
-    setGroupFilter(undefined);
-    setTagFilter(undefined);
   }, []);
 
-  const hasFilter = !!searchQuery || !!groupFilter || !!tagFilter;
+  const hasFilter = !!searchQuery;
 
   const isSearching = showSearch && hasFilter;
 
   const openSearch = useCallback(() => {
     setShowSearch(true);
+    setSearchScope('all');
     requestAnimationFrame(() => searchInputRef.current?.focus());
   }, []);
 
@@ -115,7 +119,7 @@ export function DiariesPage() {
 
   const handleNotebookClick = useCallback(
     (notebook: NotebookRecord) => {
-      if (!notebook.lockedAt) {
+      if (!notebook.lockedAt || isUnlockedInSession(notebook.id)) {
         navigationService.navigate({ path: `/diary/${notebook.id}` });
         return;
       }
@@ -182,7 +186,14 @@ export function DiariesPage() {
           hide: !syncEnabled,
           loading: isSyncing,
           testId: DiaryList.sync,
-          onClick: () => void diaryService.syncNow(),
+          onClick: async () => {
+            try {
+              await diaryService.syncNow();
+              showSuccessToast({ message: localize('common.synced', 'Synced'), icon: 'check' });
+            } catch {
+              showSuccessToast({ message: localize('common.syncFailed', 'Sync failed'), icon: 'none' });
+            }
+          },
         }}
         right={showSearch ? {
           type: 'button',
@@ -190,6 +201,64 @@ export function DiariesPage() {
           onClick: closeSearch,
         } : undefined}
       />
+      <div
+        className={cx(
+          'overflow-hidden transition-all duration-300 ease-out',
+          showSearch ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0',
+        )}
+      >
+        <div className='px-4 pt-2 pb-1'>
+          <div className='relative'>
+            <Search size={16} className='pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-placeholder' strokeWidth={1.8} />
+            <input
+              ref={searchInputRef}
+              type='text'
+              className={cx(
+                'w-full rounded-lg bg-surface py-2 pl-9 pr-8 text-ink placeholder:text-placeholder outline-none',
+                'text-[15px] font-medium leading-5',
+              )}
+              placeholder={localize('diary.searchNotebooks', 'Search notebooks, groups, tags...')}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            {searchQuery && (
+              <button
+                type='button'
+                className='absolute right-2 top-1/2 -translate-y-1/2 text-placeholder'
+                onClick={() => setSearchQuery('')}
+              >
+                <X size={16} strokeWidth={1.8} />
+              </button>
+            )}
+          </div>
+          <div className='mt-2 flex gap-2 overflow-x-auto pb-1'>
+            {SCOPE_CHIPS.map((chip) => (
+              <button
+                key={chip.key}
+                type='button'
+                className={cx(
+                  'flex-none rounded-full px-3 py-1 text-[13px] leading-5 transition',
+                  searchScope === chip.key
+                    ? 'bg-accent text-white'
+                    : 'bg-surface text-muted active:bg-soft',
+                )}
+                onClick={() => setSearchScope(chip.key)}
+              >
+                {localize(chip.labelKey, chip.labelDefault)}
+              </button>
+            ))}
+            {hasFilter && (
+              <button
+                type='button'
+                className='flex-none rounded-full bg-danger/10 px-3 py-1 text-[13px] leading-5 text-danger'
+                onClick={clearFilters}
+              >
+                {localize('common.clear', 'Clear')}
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
       <main
         ref={mainRef}
         className={cx(styles.Page.ContentTabbed, styles.DiaryListPage.Content)}
@@ -198,81 +267,6 @@ export function DiariesPage() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div
-          className={cx(
-            'overflow-hidden transition-all duration-300 ease-out',
-            showSearch ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0',
-          )}
-        >
-          <div className='px-4 pt-2 pb-1'>
-            <div className='relative'>
-              <Search size={16} className='pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-placeholder' strokeWidth={1.8} />
-              <input
-                ref={searchInputRef}
-                type='text'
-                className={cx(
-                  'w-full rounded-lg bg-surface py-2 pl-9 pr-8 text-ink placeholder:text-placeholder outline-none',
-                  'text-[15px] font-medium leading-5',
-                )}
-                placeholder={localize('diary.searchNotebooks', 'Search notebooks, groups, tags...')}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              {searchQuery && (
-                <button
-                  type='button'
-                  className='absolute right-2 top-1/2 -translate-y-1/2 text-placeholder'
-                  onClick={() => setSearchQuery('')}
-                >
-                  <X size={16} strokeWidth={1.8} />
-                </button>
-              )}
-            </div>
-            {(allGroups.length > 0 || allTags.length > 0) && (
-              <div className='mt-2 flex gap-2 overflow-x-auto pb-1'>
-                {allGroups.map((g) => (
-                  <button
-                    key={g}
-                    type='button'
-                    className={cx(
-                      'flex-none rounded-full px-3 py-1 text-[13px] leading-5 transition',
-                      groupFilter === g
-                        ? 'bg-accent text-white'
-                        : 'bg-surface text-muted active:bg-soft',
-                    )}
-                    onClick={() => setGroupFilter(groupFilter === g ? undefined : g)}
-                  >
-                    {g}
-                  </button>
-                ))}
-                {allTags.map((t) => (
-                  <button
-                    key={t}
-                    type='button'
-                    className={cx(
-                      'flex-none rounded-full px-3 py-1 text-[13px] leading-5 transition',
-                      tagFilter === t
-                        ? 'bg-accent text-white'
-                        : 'bg-surface text-muted active:bg-soft',
-                    )}
-                    onClick={() => setTagFilter(tagFilter === t ? undefined : t)}
-                  >
-                    #{t}
-                  </button>
-                ))}
-                {hasFilter && (
-                  <button
-                    type='button'
-                    className='flex-none rounded-full bg-danger/10 px-3 py-1 text-[13px] leading-5 text-danger'
-                    onClick={clearFilters}
-                  >
-                    {localize('common.clear', 'Clear')}
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
         {!showSearch && (
           <div
             className='flex cursor-pointer justify-center pt-0.5 pb-0'

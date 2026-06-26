@@ -2,12 +2,12 @@ import { hashPin } from '@/base/crypto/pin';
 import { localize } from '@/nls';
 import { CellListGroup } from '@/mobile/components/CellList';
 import { HeaderPage } from '@/mobile/components/layout/HeaderPage';
+import { PinDialog } from '@/mobile/components/PinDialog/PinDialog';
 import { useDialog } from '@/mobile/overlay/dialog/useDialog';
-import { useTextInputDialog } from '@/mobile/overlay/textInputDialog/useTextInputDialog';
 import { useSuccessToast } from '@/mobile/overlay/successToast/useSuccessToast';
 import { useService } from '@/hooks/use-service';
 import { IHostService } from '@/services/native/common/hostService';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 const PIN_KEY = 'islet.pinHash';
 
@@ -23,151 +23,144 @@ async function clearStoredPinHash(hostService: IHostService): Promise<void> {
   await hostService.clearPreference(PIN_KEY);
 }
 
+type PinFlow =
+  | { step: 'set-enter' }
+  | { step: 'set-confirm'; firstPin: string }
+  | { step: 'change-verify' }
+  | { step: 'change-enter' }
+  | { step: 'change-confirm'; newPin: string }
+  | { step: 'remove-verify' }
+  ;
+
 export function SettingsPinPage() {
   const hostService = useService(IHostService);
-  const showTextInputDialog = useTextInputDialog();
   const showDialog = useDialog();
   const showSuccessToast = useSuccessToast();
   const [hasPin, setHasPin] = useState(false);
+  const [pinFlow, setPinFlow] = useState<PinFlow | null>(null);
 
   useEffect(() => {
     getStoredPinHash(hostService).then((hash) => setHasPin(!!hash));
   }, [hostService]);
 
-  const refreshPinState = () => {
+  const refreshPinState = useCallback(() => {
     getStoredPinHash(hostService).then((hash) => setHasPin(!!hash));
-  };
+  }, [hostService]);
 
-  const verifyPin = async (): Promise<string | null> => {
-    const storedHash = await getStoredPinHash(hostService);
-    if (!storedHash) return null;
-    return new Promise((resolve) => {
-      showTextInputDialog({
-        title: localize('settings.enterPin', 'Enter current PIN'),
-        value: '',
-        placeholder: localize('settings.enterPin', 'Enter current PIN'),
-        saveLabel: localize('common.confirm', 'Confirm'),
-        cancelLabel: localize('common.cancel', 'Cancel'),
-        onSave: async (value) => {
-          const inputHash = await hashPin(value.trim());
-          if (inputHash === storedHash) {
-            resolve(value.trim());
-          } else {
-            showDialog({
-              message: localize('settings.pinWrong', 'Wrong PIN'),
-              confirmLabel: localize('common.ok', 'OK'),
-              cancelLabel: localize('common.cancel', 'Cancel'),
-              onConfirm: () => resolve(null),
-            });
-          }
-        },
-      });
-    });
-  };
+  const handleSetPin = useCallback(() => {
+    setPinFlow({ step: 'set-enter' });
+  }, []);
 
-  const handleSetPin = () => {
-    showTextInputDialog({
-      title: localize('settings.enterNewPin', 'Set a 4-digit PIN'),
-      value: '',
-      placeholder: localize('settings.enterNewPin', 'Enter 4 digits'),
-      saveLabel: localize('common.next', 'Next'),
-      cancelLabel: localize('common.cancel', 'Cancel'),
-      onSave: async (value) => {
-        const pin = value.trim();
-        if (pin.length !== 4 || !/^\d{4}$/.test(pin)) {
-          showDialog({
-            message: localize('settings.pinInvalid', 'PIN must be 4 digits'),
-            confirmLabel: localize('common.ok', 'OK'),
-            cancelLabel: localize('common.cancel', 'Cancel'),
-            onConfirm: () => {},
-          });
-          return;
-        }
-        showTextInputDialog({
-          title: localize('settings.confirmPin', 'Confirm PIN'),
-          value: '',
-          placeholder: localize('settings.confirmPin', 'Enter again'),
-          saveLabel: localize('common.save', 'Save'),
-          cancelLabel: localize('common.cancel', 'Cancel'),
-          onSave: async (confirmValue) => {
-            if (confirmValue.trim() !== pin) {
-              showDialog({
-                message: localize('settings.pinMismatch', 'PINs do not match'),
-                confirmLabel: localize('common.ok', 'OK'),
-                cancelLabel: localize('common.cancel', 'Cancel'),
-                onConfirm: () => {},
-              });
-              return;
-            }
-            const hash = await hashPin(pin);
-            await setStoredPinHash(hostService, hash);
-            showSuccessToast({ message: localize('settings.pinSet', 'PIN has been set') });
-            refreshPinState();
-          },
-        });
-      },
-    });
-  };
+  const handleChangePin = useCallback(() => {
+    setPinFlow({ step: 'change-verify' });
+  }, []);
 
-  const handleChangePin = async () => {
-    const oldPin = await verifyPin();
-    if (!oldPin) return;
-    showTextInputDialog({
-      title: localize('settings.enterNewPin', 'Enter new 4-digit PIN'),
-      value: '',
-      placeholder: localize('settings.enterNewPin', 'Enter 4 digits'),
-      saveLabel: localize('common.next', 'Next'),
-      cancelLabel: localize('common.cancel', 'Cancel'),
-      onSave: async (value) => {
-        const newPin = value.trim();
-        if (newPin.length !== 4 || !/^\d{4}$/.test(newPin)) {
-          showDialog({
-            message: localize('settings.pinInvalid', 'PIN must be 4 digits'),
-            confirmLabel: localize('common.ok', 'OK'),
-            cancelLabel: localize('common.cancel', 'Cancel'),
-            onConfirm: () => {},
-          });
-          return;
-        }
-        showTextInputDialog({
-          title: localize('settings.confirmPin', 'Confirm PIN'),
-          value: '',
-          placeholder: localize('settings.confirmPin', 'Enter again'),
-          saveLabel: localize('common.save', 'Save'),
-          cancelLabel: localize('common.cancel', 'Cancel'),
-          onSave: async (confirmValue) => {
-            if (confirmValue.trim() !== newPin) {
-              showDialog({
-                message: localize('settings.pinMismatch', 'PINs do not match'),
-                confirmLabel: localize('common.ok', 'OK'),
-                cancelLabel: localize('common.cancel', 'Cancel'),
-                onConfirm: () => {},
-              });
-              return;
-            }
-            const hash = await hashPin(newPin);
-            await setStoredPinHash(hostService, hash);
-            showSuccessToast({ message: localize('settings.pinChanged', 'PIN has been changed') });
-            refreshPinState();
-          },
-        });
-      },
-    });
-  };
-
-  const handleRemovePin = () => {
+  const handleRemovePin = useCallback(() => {
     showDialog({
       message: localize('settings.removePinConfirm', 'Remove PIN? Locked notebooks will no longer be protected.'),
       confirmLabel: localize('common.delete', 'Remove'),
       cancelLabel: localize('common.cancel', 'Cancel'),
-      onConfirm: async () => {
-        const oldPin = await verifyPin();
-        if (!oldPin) return;
-        await clearStoredPinHash(hostService);
-        showSuccessToast({ message: localize('settings.pinRemoved', 'PIN has been removed') });
-        refreshPinState();
-      },
+      onConfirm: () => setPinFlow({ step: 'remove-verify' }),
     });
+  }, [showDialog]);
+
+  const renderPinDialog = () => {
+    if (!pinFlow) return null;
+
+    switch (pinFlow.step) {
+      case 'set-enter':
+        return (
+          <PinDialog
+            title={localize('settings.enterNewPin', 'Enter new 4-digit PIN')}
+            onConfirm={async (pin) => {
+              setPinFlow({ step: 'set-confirm', firstPin: pin });
+              return true;
+            }}
+            onCancel={() => setPinFlow(null)}
+          />
+        );
+      case 'set-confirm':
+        return (
+          <PinDialog
+            title={localize('settings.confirmPin', 'Confirm PIN')}
+            errorMessage={localize('settings.pinMismatch', 'PINs do not match')}
+            onConfirm={async (pin) => {
+              if (pin !== pinFlow.firstPin) return false;
+              const hash = await hashPin(pin);
+              await setStoredPinHash(hostService, hash);
+              setPinFlow(null);
+              showSuccessToast({ message: localize('settings.pinSet', 'PIN has been set') });
+              refreshPinState();
+              return true;
+            }}
+            onCancel={() => setPinFlow(null)}
+          />
+        );
+      case 'change-verify': {
+        return (
+          <PinDialog
+            title={localize('settings.enterPin', 'Enter current PIN')}
+            onConfirm={async (pin) => {
+              const storedHash = await getStoredPinHash(hostService);
+              if (!storedHash) return false;
+              const inputHash = await hashPin(pin);
+              if (inputHash !== storedHash) return false;
+              setPinFlow({ step: 'change-enter' });
+              return true;
+            }}
+            onCancel={() => setPinFlow(null)}
+          />
+        );
+      }
+      case 'change-enter':
+        return (
+          <PinDialog
+            title={localize('settings.enterNewPin', 'Enter new 4-digit PIN')}
+            onConfirm={async (pin) => {
+              setPinFlow({ step: 'change-confirm', newPin: pin });
+              return true;
+            }}
+            onCancel={() => setPinFlow(null)}
+          />
+        );
+      case 'change-confirm':
+        return (
+          <PinDialog
+            title={localize('settings.confirmPin', 'Confirm PIN')}
+            errorMessage={localize('settings.pinMismatch', 'PINs do not match')}
+            onConfirm={async (pin) => {
+              if (pin !== pinFlow.newPin) return false;
+              const hash = await hashPin(pin);
+              await setStoredPinHash(hostService, hash);
+              setPinFlow(null);
+              showSuccessToast({ message: localize('settings.pinChanged', 'PIN has been changed') });
+              refreshPinState();
+              return true;
+            }}
+            onCancel={() => setPinFlow(null)}
+          />
+        );
+      case 'remove-verify':
+        return (
+          <PinDialog
+            title={localize('settings.enterPin', 'Enter PIN')}
+            onConfirm={async (pin) => {
+              const storedHash = await getStoredPinHash(hostService);
+              if (!storedHash) return false;
+              const inputHash = await hashPin(pin);
+              if (inputHash !== storedHash) return false;
+              await clearStoredPinHash(hostService);
+              setPinFlow(null);
+              showSuccessToast({ message: localize('settings.pinRemoved', 'PIN has been removed') });
+              refreshPinState();
+              return true;
+            }}
+            onCancel={() => setPinFlow(null)}
+          />
+        );
+      default:
+        return null;
+    }
   };
 
   return (
@@ -197,6 +190,7 @@ export function SettingsPinPage() {
               ]),
         ]}
       />
+      {renderPinDialog()}
     </HeaderPage>
   );
 }

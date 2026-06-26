@@ -975,5 +975,29 @@
   "common.ok": {
     "defaultMessage": "OK",
     "content": "OK"
+  },
+  "common.all": {
+    "defaultMessage": "All",
+    "content": "全て"
+  },
+  "search.content": {
+    "defaultMessage": "Content",
+    "content": "コンテンツ"
+  },
+  "search.group": {
+    "defaultMessage": "Groups",
+    "content": "グループ"
+  },
+  "search.tag": {
+    "defaultMessage": "Tags",
+    "content": "タグ"
+  },
+  "common.synced": {
+    "defaultMessage": "Synced",
+    "content": "同期しました"
+  },
+  "common.syncFailed": {
+    "defaultMessage": "Sync failed",
+    "content": "同期に失敗しました"
   }
 }

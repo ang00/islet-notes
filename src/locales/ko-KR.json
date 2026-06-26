@@ -975,5 +975,29 @@
   "common.ok": {
     "defaultMessage": "OK",
     "content": "확인"
+  },
+  "common.all": {
+    "defaultMessage": "All",
+    "content": "전체"
+  },
+  "search.content": {
+    "defaultMessage": "Content",
+    "content": "내용"
+  },
+  "search.group": {
+    "defaultMessage": "Groups",
+    "content": "그룹"
+  },
+  "search.tag": {
+    "defaultMessage": "Tags",
+    "content": "태그"
+  },
+  "common.synced": {
+    "defaultMessage": "Synced",
+    "content": "동기화 성공"
+  },
+  "common.syncFailed": {
+    "defaultMessage": "Sync failed",
+    "content": "동기화 실패"
   }
 }

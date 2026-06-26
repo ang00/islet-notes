@@ -15,6 +15,6 @@ export function HomeRedirect() {
   const targetNotebook = getSortedNotebooks(model)[0];
 
   if (!canUseApp) return <Navigate to='/startup' replace />;
-  if (!targetNotebook) return <Navigate to='/diaries' replace />;
+  if (!targetNotebook || targetNotebook.lockedAt) return <Navigate to='/diaries' replace />;
   return <Navigate to={`/diary/${targetNotebook.id}`} replace />;
 }
