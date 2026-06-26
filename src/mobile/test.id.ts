@@ -288,3 +288,12 @@ export const CloudSync = {
   deleteBackedUp: 'cloud-sync.delete-backed-up',
   deleteConfirmAction: 'cloud-sync.delete-confirm-action',
 } as const;
+
+export const GroupTagSettings = {
+  page: 'group-tag-settings.page',
+  content: 'group-tag-settings.content',
+  search: 'group-tag-settings.search',
+  add: 'group-tag-settings.add',
+  edit: 'group-tag-settings.edit',
+  delete: 'group-tag-settings.delete',
+} as const;

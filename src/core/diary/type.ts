@@ -130,6 +130,8 @@ export interface DiaryModelData {
   entryMap: Map<string, DiaryEntryRecord>;
   attachments: AttachmentRecord[];
   attachmentMap: Map<string, AttachmentRecord>;
+  groups: string[];
+  tags: string[];
 }
 
 export interface CreateTextEntryOptions {

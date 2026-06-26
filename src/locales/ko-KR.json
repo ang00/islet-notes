@@ -835,5 +835,53 @@
   "diary.tagsSaved": {
     "content": "태그 저장됨",
     "defaultMessage": "Tags saved"
+  },
+  "settings.groupTagManagement": {
+    "content": "그룹 및 태그",
+    "defaultMessage": "Groups & Tags"
+  },
+  "settings.groups": {
+    "content": "그룹",
+    "defaultMessage": "Groups"
+  },
+  "settings.tags": {
+    "content": "태그",
+    "defaultMessage": "Tags"
+  },
+  "settings.addGroup": {
+    "content": "그룹 추가",
+    "defaultMessage": "Add group"
+  },
+  "settings.addTag": {
+    "content": "태그 추가",
+    "defaultMessage": "Add tag"
+  },
+  "settings.editGroup": {
+    "content": "그룹 편집",
+    "defaultMessage": "Edit group"
+  },
+  "settings.editTag": {
+    "content": "태그 편집",
+    "defaultMessage": "Edit tag"
+  },
+  "settings.deleteGroupConfirm": {
+    "content": "이 그룹을 삭제할까요?",
+    "defaultMessage": "Delete this group?"
+  },
+  "settings.deleteTagConfirm": {
+    "content": "이 태그를 삭제할까요?",
+    "defaultMessage": "Delete this tag?"
+  },
+  "settings.searchGroupsTags": {
+    "content": "그룹 및 태그 검색",
+    "defaultMessage": "Search groups and tags"
+  },
+  "settings.noGroups": {
+    "content": "그룹 없음",
+    "defaultMessage": "No groups"
+  },
+  "settings.noTags": {
+    "content": "태그 없음",
+    "defaultMessage": "No tags"
   }
 }

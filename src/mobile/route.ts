@@ -186,6 +186,12 @@ export const routes: PageRoute[] = [
     component: 'SettingsThemePage',
     fallback: '/settings',
   },
+  {
+    url: '/settings/group-tag',
+    file: './pages/settings/group-tag/group-tag',
+    component: 'SettingsGroupTagPage',
+    fallback: '/settings',
+  },
 ];
 
 export function getBackFallbackPath(pathname: string): string | undefined {

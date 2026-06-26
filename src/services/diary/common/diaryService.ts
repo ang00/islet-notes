@@ -37,6 +37,12 @@ export interface IDiaryService {
   moveEntryToNotebook(entryId: string, targetNotebookId: string): void;
   addAttachment(attachment: AttachmentRecord): void;
   softDeleteEntry(entryId: string): void;
+  addGroup(name: string): void;
+  renameGroup(oldName: string, newName: string): void;
+  deleteGroup(name: string): void;
+  addTag(name: string): void;
+  renameTag(oldName: string, newName: string): void;
+  deleteTag(name: string): void;
 }
 
 export const IDiaryService = createDecorator<IDiaryService>('IDiaryService');

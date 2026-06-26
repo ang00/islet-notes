@@ -835,5 +835,53 @@
   "diary.tagsSaved": {
     "defaultMessage": "Tags saved",
     "content": "Tags saved"
+  },
+  "settings.groupTagManagement": {
+    "defaultMessage": "Groups & Tags",
+    "content": "Groups & Tags"
+  },
+  "settings.groups": {
+    "defaultMessage": "Groups",
+    "content": "Groups"
+  },
+  "settings.tags": {
+    "defaultMessage": "Tags",
+    "content": "Tags"
+  },
+  "settings.addGroup": {
+    "defaultMessage": "Add group",
+    "content": "Add group"
+  },
+  "settings.addTag": {
+    "defaultMessage": "Add tag",
+    "content": "Add tag"
+  },
+  "settings.editGroup": {
+    "defaultMessage": "Edit group",
+    "content": "Edit group"
+  },
+  "settings.editTag": {
+    "defaultMessage": "Edit tag",
+    "content": "Edit tag"
+  },
+  "settings.deleteGroupConfirm": {
+    "defaultMessage": "Delete this group?",
+    "content": "Delete this group?"
+  },
+  "settings.deleteTagConfirm": {
+    "defaultMessage": "Delete this tag?",
+    "content": "Delete this tag?"
+  },
+  "settings.searchGroupsTags": {
+    "defaultMessage": "Search groups and tags",
+    "content": "Search groups and tags"
+  },
+  "settings.noGroups": {
+    "defaultMessage": "No groups",
+    "content": "No groups"
+  },
+  "settings.noTags": {
+    "defaultMessage": "No tags",
+    "content": "No tags"
   }
 }

@@ -835,5 +835,53 @@
   "diary.tagsSaved": {
     "content": "Étiquettes enregistrées",
     "defaultMessage": "Tags saved"
+  },
+  "settings.groupTagManagement": {
+    "content": "Groupes et étiquettes",
+    "defaultMessage": "Groups & Tags"
+  },
+  "settings.groups": {
+    "content": "Groupes",
+    "defaultMessage": "Groups"
+  },
+  "settings.tags": {
+    "content": "Étiquettes",
+    "defaultMessage": "Tags"
+  },
+  "settings.addGroup": {
+    "content": "Ajouter un groupe",
+    "defaultMessage": "Add group"
+  },
+  "settings.addTag": {
+    "content": "Ajouter une étiquette",
+    "defaultMessage": "Add tag"
+  },
+  "settings.editGroup": {
+    "content": "Modifier le groupe",
+    "defaultMessage": "Edit group"
+  },
+  "settings.editTag": {
+    "content": "Modifier l'étiquette",
+    "defaultMessage": "Edit tag"
+  },
+  "settings.deleteGroupConfirm": {
+    "content": "Supprimer ce groupe ?",
+    "defaultMessage": "Delete this group?"
+  },
+  "settings.deleteTagConfirm": {
+    "content": "Supprimer cette étiquette ?",
+    "defaultMessage": "Delete this tag?"
+  },
+  "settings.searchGroupsTags": {
+    "content": "Rechercher des groupes et étiquettes",
+    "defaultMessage": "Search groups and tags"
+  },
+  "settings.noGroups": {
+    "content": "Aucun groupe",
+    "defaultMessage": "No groups"
+  },
+  "settings.noTags": {
+    "content": "Aucune étiquette",
+    "defaultMessage": "No tags"
   }
 }

@@ -77,6 +77,11 @@ export function SettingsPage() {
             onClick: () => navigationService.navigate({ path: '/settings/language' }),
           },
           {
+            label: localize('settings.groupTagManagement', 'Groups & Tags'),
+            testId: Settings.preferences,
+            onClick: () => navigationService.navigate({ path: '/settings/group-tag' }),
+          },
+          {
             label: localize('settings.theme', 'Theme'),
             testId: Settings.theme,
             onClick: () => navigationService.navigate({ path: '/settings/theme' }),

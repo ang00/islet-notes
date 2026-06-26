@@ -17,6 +17,8 @@ const NOTEBOOK_ORDER = 'notebookOrder';
 const NOTEBOOKS = 'notebooks';
 const ENTRIES = 'entries';
 const ATTACHMENTS = 'attachments';
+const GROUPS = 'groups';
+const TAGS = 'tags';
 
 export class DiaryModel {
   private readonly _onModelChange = new Emitter<void>();
@@ -134,6 +136,64 @@ export class DiaryModel {
       pinnedAt: undefined,
       updatedAt: Date.now(),
     });
+    this.doc.commit();
+  }
+
+  addGroup(name: string): void {
+    const trimmed = name.trim();
+    if (!trimmed) return;
+    const existing = this.groupsList.toArray() as string[];
+    if (existing.includes(trimmed)) return;
+    this.groupsList.push(trimmed);
+    this.doc.commit();
+  }
+
+  renameGroup(oldName: string, newName: string): void {
+    const trimmed = newName.trim();
+    if (!trimmed || oldName === trimmed) return;
+    const list = this.groupsList;
+    const arr = list.toArray() as string[];
+    const idx = arr.indexOf(oldName);
+    if (idx === -1) return;
+    list.set(idx, trimmed);
+    this.doc.commit();
+  }
+
+  deleteGroup(name: string): void {
+    const list = this.groupsList;
+    const arr = list.toArray() as string[];
+    const idx = arr.indexOf(name);
+    if (idx === -1) return;
+    list.delete(idx, 1);
+    this.doc.commit();
+  }
+
+  addTag(name: string): void {
+    const trimmed = name.trim();
+    if (!trimmed) return;
+    const existing = this.tagsList.toArray() as string[];
+    if (existing.includes(trimmed)) return;
+    this.tagsList.push(trimmed);
+    this.doc.commit();
+  }
+
+  renameTag(oldName: string, newName: string): void {
+    const trimmed = newName.trim();
+    if (!trimmed || oldName === trimmed) return;
+    const list = this.tagsList;
+    const arr = list.toArray() as string[];
+    const idx = arr.indexOf(oldName);
+    if (idx === -1) return;
+    list.set(idx, trimmed);
+    this.doc.commit();
+  }
+
+  deleteTag(name: string): void {
+    const list = this.tagsList;
+    const arr = list.toArray() as string[];
+    const idx = arr.indexOf(name);
+    if (idx === -1) return;
+    list.delete(idx, 1);
     this.doc.commit();
   }
 
@@ -321,6 +381,8 @@ export class DiaryModel {
       entryMap: new Map(Object.entries(entriesRecord)),
       attachments,
       attachmentMap: new Map(Object.entries(attachmentsRecord)),
+      groups: this.groupsList.toArray() as string[],
+      tags: this.tagsList.toArray() as string[],
     };
   }
 
@@ -393,5 +455,13 @@ export class DiaryModel {
 
   private get attachmentsMap(): LoroMap<Record<string, unknown>> {
     return this.doc.getMap(ATTACHMENTS) as LoroMap<Record<string, unknown>>;
+  }
+
+  private get groupsList(): LoroMovableList<string> {
+    return this.doc.getMovableList(GROUPS) as LoroMovableList<string>;
+  }
+
+  private get tagsList(): LoroMovableList<string> {
+    return this.doc.getMovableList(TAGS) as LoroMovableList<string>;
   }
 }

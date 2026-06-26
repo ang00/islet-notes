@@ -835,5 +835,53 @@
   "diary.tagsSaved": {
     "content": "標籤已儲存",
     "defaultMessage": "Tags saved"
+  },
+  "settings.groupTagManagement": {
+    "content": "分組與標籤",
+    "defaultMessage": "Groups & Tags"
+  },
+  "settings.groups": {
+    "content": "分組",
+    "defaultMessage": "Groups"
+  },
+  "settings.tags": {
+    "content": "標籤",
+    "defaultMessage": "Tags"
+  },
+  "settings.addGroup": {
+    "content": "添加分組",
+    "defaultMessage": "Add group"
+  },
+  "settings.addTag": {
+    "content": "添加標籤",
+    "defaultMessage": "Add tag"
+  },
+  "settings.editGroup": {
+    "content": "編輯分組",
+    "defaultMessage": "Edit group"
+  },
+  "settings.editTag": {
+    "content": "編輯標籤",
+    "defaultMessage": "Edit tag"
+  },
+  "settings.deleteGroupConfirm": {
+    "content": "刪除此分組？",
+    "defaultMessage": "Delete this group?"
+  },
+  "settings.deleteTagConfirm": {
+    "content": "刪除此標籤？",
+    "defaultMessage": "Delete this tag?"
+  },
+  "settings.searchGroupsTags": {
+    "content": "搜索分組和標籤",
+    "defaultMessage": "Search groups and tags"
+  },
+  "settings.noGroups": {
+    "content": "暫無分組",
+    "defaultMessage": "No groups"
+  },
+  "settings.noTags": {
+    "content": "暫無標籤",
+    "defaultMessage": "No tags"
   }
 }

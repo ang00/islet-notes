@@ -209,6 +209,30 @@ export class WorkbenchDiaryService implements IDiaryService {
     this.diaryModel.softDeleteEntry(entryId);
   }
 
+  addGroup(name: string): void {
+    this.diaryModel.addGroup(name);
+  }
+
+  renameGroup(oldName: string, newName: string): void {
+    this.diaryModel.renameGroup(oldName, newName);
+  }
+
+  deleteGroup(name: string): void {
+    this.diaryModel.deleteGroup(name);
+  }
+
+  addTag(name: string): void {
+    this.diaryModel.addTag(name);
+  }
+
+  renameTag(oldName: string, newName: string): void {
+    this.diaryModel.renameTag(oldName, newName);
+  }
+
+  deleteTag(name: string): void {
+    this.diaryModel.deleteTag(name);
+  }
+
   private get diaryModel() {
     if (!this.dataModel) {
       throw new Error('Diary model is not initialized.');

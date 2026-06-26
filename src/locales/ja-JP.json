@@ -835,5 +835,53 @@
   "diary.tagsSaved": {
     "content": "タグを保存しました",
     "defaultMessage": "Tags saved"
+  },
+  "settings.groupTagManagement": {
+    "content": "グループとタグ",
+    "defaultMessage": "Groups & Tags"
+  },
+  "settings.groups": {
+    "content": "グループ",
+    "defaultMessage": "Groups"
+  },
+  "settings.tags": {
+    "content": "タグ",
+    "defaultMessage": "Tags"
+  },
+  "settings.addGroup": {
+    "content": "グループ追加",
+    "defaultMessage": "Add group"
+  },
+  "settings.addTag": {
+    "content": "タグ追加",
+    "defaultMessage": "Add tag"
+  },
+  "settings.editGroup": {
+    "content": "グループ編集",
+    "defaultMessage": "Edit group"
+  },
+  "settings.editTag": {
+    "content": "タグ編集",
+    "defaultMessage": "Edit tag"
+  },
+  "settings.deleteGroupConfirm": {
+    "content": "このグループを削除しますか？",
+    "defaultMessage": "Delete this group?"
+  },
+  "settings.deleteTagConfirm": {
+    "content": "このタグを削除しますか？",
+    "defaultMessage": "Delete this tag?"
+  },
+  "settings.searchGroupsTags": {
+    "content": "グループとタグを検索",
+    "defaultMessage": "Search groups and tags"
+  },
+  "settings.noGroups": {
+    "content": "グループなし",
+    "defaultMessage": "No groups"
+  },
+  "settings.noTags": {
+    "content": "タグなし",
+    "defaultMessage": "No tags"
   }
 }
