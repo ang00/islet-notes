@@ -883,5 +883,29 @@
   "settings.noTags": {
     "content": "태그 없음",
     "defaultMessage": "No tags"
+  },
+  "diary.searchNotebooks": {
+    "defaultMessage": "Search notebooks, groups, tags...",
+    "content": "노트북, 그룹, 태그 검색..."
+  },
+  "diary.noResults": {
+    "defaultMessage": "No results",
+    "content": "결과 없음"
+  },
+  "common.search": {
+    "defaultMessage": "Search",
+    "content": "검색"
+  },
+  "common.close": {
+    "defaultMessage": "Close",
+    "content": "닫기"
+  },
+  "common.clear": {
+    "defaultMessage": "Clear",
+    "content": "지우기"
+  },
+  "settings.removeGroup": {
+    "defaultMessage": "Remove group",
+    "content": "그룹 제거"
   }
 }

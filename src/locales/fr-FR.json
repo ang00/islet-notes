@@ -883,5 +883,29 @@
   "settings.noTags": {
     "content": "Aucune étiquette",
     "defaultMessage": "No tags"
+  },
+  "diary.searchNotebooks": {
+    "defaultMessage": "Search notebooks, groups, tags...",
+    "content": "Rechercher des notebooks, groupes, étiquettes..."
+  },
+  "diary.noResults": {
+    "defaultMessage": "No results",
+    "content": "Aucun résultat"
+  },
+  "common.search": {
+    "defaultMessage": "Search",
+    "content": "Rechercher"
+  },
+  "common.close": {
+    "defaultMessage": "Close",
+    "content": "Fermer"
+  },
+  "common.clear": {
+    "defaultMessage": "Clear",
+    "content": "Effacer"
+  },
+  "settings.removeGroup": {
+    "defaultMessage": "Remove group",
+    "content": "Supprimer le groupe"
   }
 }

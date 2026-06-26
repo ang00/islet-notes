@@ -8,6 +8,8 @@ export interface NotebookRecord {
   updatedAt: number;
   deletedAt?: number;
   pinnedAt?: number;
+  group?: string;
+  tags?: string[];
 }
 
 export interface ProfileRecord {

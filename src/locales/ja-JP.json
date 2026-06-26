@@ -883,5 +883,29 @@
   "settings.noTags": {
     "content": "タグなし",
     "defaultMessage": "No tags"
+  },
+  "diary.searchNotebooks": {
+    "defaultMessage": "Search notebooks, groups, tags...",
+    "content": "ノートブック、グループ、タグを検索..."
+  },
+  "diary.noResults": {
+    "defaultMessage": "No results",
+    "content": "結果なし"
+  },
+  "common.search": {
+    "defaultMessage": "Search",
+    "content": "検索"
+  },
+  "common.close": {
+    "defaultMessage": "Close",
+    "content": "閉じる"
+  },
+  "common.clear": {
+    "defaultMessage": "Clear",
+    "content": "クリア"
+  },
+  "settings.removeGroup": {
+    "defaultMessage": "Remove group",
+    "content": "グループを削除"
   }
 }

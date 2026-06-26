@@ -43,6 +43,8 @@ export interface IDiaryService {
   addTag(name: string): void;
   renameTag(oldName: string, newName: string): void;
   deleteTag(name: string): void;
+  setNotebookGroup(notebookId: string, group: string | undefined): void;
+  setNotebookTags(notebookId: string, tags: string[]): void;
 }
 
 export const IDiaryService = createDecorator<IDiaryService>('IDiaryService');

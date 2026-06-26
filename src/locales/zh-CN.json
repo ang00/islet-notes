@@ -883,5 +883,29 @@
   "settings.noTags": {
     "content": "暂无标签",
     "defaultMessage": "No tags"
+  },
+  "diary.searchNotebooks": {
+    "content": "搜索笔记本、分组、标签...",
+    "defaultMessage": "Search notebooks, groups, tags..."
+  },
+  "diary.noResults": {
+    "content": "无结果",
+    "defaultMessage": "No results"
+  },
+  "common.search": {
+    "content": "搜索",
+    "defaultMessage": "Search"
+  },
+  "common.close": {
+    "content": "关闭",
+    "defaultMessage": "Close"
+  },
+  "common.clear": {
+    "content": "清除",
+    "defaultMessage": "Clear"
+  },
+  "settings.removeGroup": {
+    "content": "移除分组",
+    "defaultMessage": "Remove group"
   }
 }

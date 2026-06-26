@@ -233,6 +233,14 @@ export class WorkbenchDiaryService implements IDiaryService {
     this.diaryModel.deleteTag(name);
   }
 
+  setNotebookGroup(notebookId: string, group: string | undefined): void {
+    this.diaryModel.setNotebookGroup(notebookId, group);
+  }
+
+  setNotebookTags(notebookId: string, tags: string[]): void {
+    this.diaryModel.setNotebookTags(notebookId, tags);
+  }
+
   private get diaryModel() {
     if (!this.dataModel) {
       throw new Error('Diary model is not initialized.');

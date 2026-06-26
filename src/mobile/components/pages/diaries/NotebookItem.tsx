@@ -53,6 +53,26 @@ export function NotebookItem({ model, notebook, onClick }: NotebookItemProps) {
         <div className={styles.NotebookItem.Summary}>
           {summary || localize('diary.notebook.emptySummary', 'No entries yet')}
         </div>
+        {(notebook.group || (notebook.tags && notebook.tags.length > 0)) && (
+          <div className='mt-1 flex flex-wrap items-center gap-1.5'>
+            {notebook.group && (
+              <span className='inline-flex items-center rounded bg-accent/10 px-1.5 py-0.5 text-[11px] font-medium text-accent'>
+                {notebook.group}
+              </span>
+            )}
+            {notebook.tags?.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className='inline-flex items-center rounded bg-soft px-1.5 py-0.5 text-[11px] text-muted'
+              >
+                {tag}
+              </span>
+            ))}
+            {(notebook.tags?.length ?? 0) > 3 && (
+              <span className='text-[11px] text-muted'>+{notebook.tags!.length - 3}</span>
+            )}
+          </div>
+        )}
       </div>
       <span className={styles.NotebookItem.Time}>
         {updatedAt > 0 &&

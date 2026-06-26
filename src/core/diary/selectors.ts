@@ -120,3 +120,21 @@ export function formatEntryTime(timestamp: number): string {
   }
   return format(date, 'yyyy-MM-dd HH:mm', { locale });
 }
+
+export function searchNotebooks(
+  notebooks: NotebookRecord[],
+  query: string,
+  groupFilter?: string,
+  tagFilter?: string,
+): NotebookRecord[] {
+  return notebooks.filter((n) => {
+    if (groupFilter && n.group !== groupFilter) return false;
+    if (tagFilter && !n.tags?.includes(tagFilter)) return false;
+    if (!query) return true;
+    const q = query.toLowerCase();
+    if (n.name.toLowerCase().includes(q)) return true;
+    if (n.group?.toLowerCase().includes(q)) return true;
+    if (n.tags?.some((t) => t.toLowerCase().includes(q))) return true;
+    return false;
+  });
+}

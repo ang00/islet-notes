@@ -139,6 +139,28 @@ export class DiaryModel {
     this.doc.commit();
   }
 
+  setNotebookGroup(notebookId: string, group: string | undefined) {
+    const existing = this.getNotebook(notebookId);
+    if (!existing || existing.deletedAt) return;
+    this.notebooksMap.set(notebookId, {
+      ...existing,
+      group: group || undefined,
+      updatedAt: Date.now(),
+    });
+    this.doc.commit();
+  }
+
+  setNotebookTags(notebookId: string, tags: string[]) {
+    const existing = this.getNotebook(notebookId);
+    if (!existing || existing.deletedAt) return;
+    this.notebooksMap.set(notebookId, {
+      ...existing,
+      tags: tags.length > 0 ? tags : undefined,
+      updatedAt: Date.now(),
+    });
+    this.doc.commit();
+  }
+
   addGroup(name: string): void {
     const trimmed = name.trim();
     if (!trimmed) return;

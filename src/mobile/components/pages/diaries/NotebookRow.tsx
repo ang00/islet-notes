@@ -1,5 +1,6 @@
 import { useService } from '@/hooks/use-service';
 import { useLongPress } from '@/mobile/hooks/useLongPress';
+import { useActionSheet } from '@/mobile/overlay/actionSheet/useActionSheet';
 import { useDialog } from '@/mobile/overlay/dialog/useDialog';
 import { useLongPressMenu } from '@/mobile/overlay/longPressMenu/useLongPressMenu';
 import { useSuccessToast } from '@/mobile/overlay/successToast/useSuccessToast';
@@ -23,6 +24,7 @@ export function NotebookRow({ model, notebook, onClick }: NotebookRowProps) {
   const diaryService = useService(IDiaryService);
   const hostService = useService(IHostService);
   const showLongPressMenu = useLongPressMenu();
+  const showActionSheet = useActionSheet();
   const showTextInputDialog = useTextInputDialog();
   const showSuccessToast = useSuccessToast();
   const showDialog = useDialog();
@@ -60,17 +62,32 @@ export function NotebookRow({ model, notebook, onClick }: NotebookRowProps) {
           label: localize('diary.addGroup', 'Add group'),
           icon: FolderPlus,
           run: () => {
-            showTextInputDialog({
+            const availableGroups = model.groups ?? [];
+            const currentGroup = notebook.group;
+            const actions = availableGroups
+              .filter((g) => g !== currentGroup)
+              .map((g) => ({
+                id: g,
+                label: g,
+                run: () => {
+                  diaryService.setNotebookGroup(notebook.id, g);
+                  showSuccessToast({ message: localize('common.saved', 'Saved') });
+                },
+              }));
+            if (currentGroup) {
+              actions.unshift({
+                id: 'remove-group',
+                label: localize('settings.removeGroup', 'Remove group'),
+                run: () => {
+                  diaryService.setNotebookGroup(notebook.id, undefined);
+                  showSuccessToast({ message: localize('common.saved', 'Saved') });
+                },
+              });
+            }
+            showActionSheet({
               title: localize('diary.addGroup', 'Add group'),
-              value: '',
-              placeholder: localize('diary.groupNamePlaceholder', 'Group name'),
-              saveLabel: localize('common.save', 'Save'),
+              actions,
               cancelLabel: localize('common.cancel', 'Cancel'),
-              onSave: (value) => {
-                if (value.trim()) {
-                  showSuccessToast({ message: localize('diary.groupAdded', 'Group added') });
-                }
-              },
             });
           },
         },
@@ -79,23 +96,47 @@ export function NotebookRow({ model, notebook, onClick }: NotebookRowProps) {
           label: localize('diary.tag', 'Tag'),
           icon: Tag,
           run: () => {
+            const currentTags = notebook.tags?.join(', ') ?? '';
             showTextInputDialog({
               title: localize('diary.tag', 'Tag'),
-              value: '',
-              placeholder: localize('diary.tagPlaceholder', 'Enter tags'),
+              value: currentTags,
+              placeholder: localize('diary.tagPlaceholder', 'Enter tags (comma separated)'),
               saveLabel: localize('common.save', 'Save'),
               cancelLabel: localize('common.cancel', 'Cancel'),
               onSave: (value) => {
-                if (value.trim()) {
-                  showSuccessToast({ message: localize('diary.tagsSaved', 'Tags saved') });
+                const tags = value
+                  .split(',')
+                  .map((t) => t.trim())
+                  .filter(Boolean);
+                diaryService.setNotebookTags(notebook.id, tags);
+                if (tags.length > 0) {
+                  tags.forEach((t) => {
+                    const allTags = model.tags ?? [];
+                    if (!allTags.includes(t)) {
+                      diaryService.addTag(t);
+                    }
+                  });
                 }
+                showSuccessToast({ message: localize('common.saved', 'Saved') });
               },
             });
           },
         },
       ],
     });
-  }, [hostService, showLongPressMenu, showTextInputDialog, showSuccessToast]);
+  }, [
+    hostService,
+    showLongPressMenu,
+    showActionSheet,
+    showTextInputDialog,
+    showSuccessToast,
+    diaryService,
+    notebook.id,
+    notebook.group,
+    notebook.tags,
+    model.groups,
+    model.tags,
+  ]);
 
   const { longPressEvents } = useLongPress<HTMLDivElement>(openMenu);
 
