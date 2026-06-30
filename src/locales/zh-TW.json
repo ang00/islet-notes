@@ -692,6 +692,10 @@
     "content": "無",
     "defaultMessage": "None"
   },
+  "settings.sync.notYet": {
+    "defaultMessage": "Not yet",
+    "content": "尚未同步"
+  },
   "settings.sync.recoveryKey": {
     "content": "復原金鑰",
     "defaultMessage": "Recovery key"

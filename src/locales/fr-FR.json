@@ -692,6 +692,10 @@
     "defaultMessage": "None",
     "content": "Aucun"
   },
+  "settings.sync.notYet": {
+    "defaultMessage": "Not yet",
+    "content": "Pas encore"
+  },
   "settings.sync.recoveryKey": {
     "defaultMessage": "Recovery key",
     "content": "Clé de récupération"

@@ -1,5 +1,6 @@
 import { SyncConfigRecord } from '@/core/diary/type';
 import { useService } from '@/hooks/use-service';
+import { useWatchEvent } from '@/hooks/use-watch-event';
 import { CellListGroup, type CellListItem } from '@/mobile/components/CellList';
 import { PageHeader } from '@/mobile/components/PageHeader';
 import { useDiaryModel } from '@/mobile/hooks/useDiaryModel';
@@ -15,11 +16,12 @@ export function SyncManagementPage({ config }: { config: SyncConfigRecord }) {
   const model = useDiaryModel();
   const navigationService = useService(INavigationService);
   const diaryService = useService(IDiaryService);
+  useWatchEvent(diaryService.onSyncStateChange);
   const [lastSyncTime, setLastSyncTime] = useState<number | undefined>();
 
   useEffect(() => {
     diaryService.getLastSyncTime().then(setLastSyncTime);
-  }, [diaryService]);
+  }, [diaryService, diaryService.isSyncing]);
 
   return (
     <>
@@ -43,14 +45,13 @@ export function SyncManagementPage({ config }: { config: SyncConfigRecord }) {
               testId: CloudSync.storageSummary,
               onClick: () => navigationService.navigate({ path: '/settings/s3/storage' }),
             },
-            ...(lastSyncTime
-              ? [
-                  {
-                    label: localize('settings.sync.lastSync', 'Last sync'),
-                    right: { type: 'value' as const, text: formatRelativeTime(lastSyncTime) },
-                  },
-                ]
-              : []),
+            {
+              label: localize('settings.sync.lastSync', 'Last sync'),
+              right: {
+                type: 'value' as const,
+                text: lastSyncTime ? formatRelativeTime(lastSyncTime) : localize('settings.sync.notYet', 'Not yet'),
+              },
+            },
           ]}
         />
 
