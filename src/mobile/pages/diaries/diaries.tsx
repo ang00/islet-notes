@@ -193,9 +193,8 @@ export function DiariesPage() {
   }, [filteredNotebooks, isSearching]);
 
   const handleAddNotebook = useCallback(() => {
-    const name = localize('diary.defaultNotebookName', 'My diary');
-    diaryService.addNotebook(name);
-  }, [diaryService]);
+    navigationService.navigate({ path: '/diaries/new' });
+  }, [navigationService]);
 
   return (
     <div className={styles.Page.Root} data-test-id={DiaryList.page}>
