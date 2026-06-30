@@ -192,6 +192,11 @@ export function DiariesPage() {
     return { groups, ungrouped };
   }, [filteredNotebooks, isSearching]);
 
+  const handleAddNotebook = useCallback(() => {
+    const name = localize('diary.defaultNotebookName', 'My diary');
+    diaryService.addNotebook(name);
+  }, [diaryService]);
+
   return (
     <div className={styles.Page.Root} data-test-id={DiaryList.page}>
       <PageHeader
@@ -212,11 +217,25 @@ export function DiariesPage() {
             }
           },
         }}
-        right={showSearch ? {
-          type: 'button',
-          label: localize('common.cancel', 'Cancel'),
-          onClick: closeSearch,
-        } : undefined}
+        right={[
+          {
+            type: 'icon',
+            icon: 'plus',
+            label: localize('diary.addNotebook', 'New notebook'),
+            hide: showSearch,
+            testId: DiaryList.addNotebook,
+            onClick: handleAddNotebook,
+          } as const,
+          ...(showSearch
+            ? [
+                {
+                  type: 'button' as const,
+                  label: localize('common.cancel', 'Cancel'),
+                  onClick: closeSearch,
+                },
+              ]
+            : []),
+        ]}
       />
       <div
         className={cx(
