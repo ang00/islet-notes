@@ -32,6 +32,9 @@ importers:
       '@capacitor/preferences':
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.4.0)
+      '@capgo/capacitor-native-biometric':
+        specifier: ^8.4.11
+        version: 8.4.11(@capacitor/core@8.4.0)
       '@chenglou/pretext':
         specifier: 0.0.7
         version: 0.0.7
@@ -272,6 +275,11 @@ packages:
 
   '@capacitor/synapse@1.0.4':
     resolution: {integrity: sha512-/C1FUo8/OkKuAT4nCIu/34ny9siNHr9qtFezu4kxm6GY1wNFxrCFWjfYx5C1tUhVGz3fxBABegupkpjXvjCHrw==}
+
+  '@capgo/capacitor-native-biometric@8.4.11':
+    resolution: {integrity: sha512-Her2Llnmwu+5Dv5eKa8wpTfyc0v8+2/UiTV98m85hZsAGAIKsloEZQPN54FgzN/0e7VkPKhjldJVq9su7grb4Q==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
 
   '@chenglou/pretext@0.0.7':
     resolution: {integrity: sha512-FV5hj3fGqpBlzbANUbR+s+6XuNRrghVVyuNs33zdH2SzU7MvK+7GlW6xREjDCreixKbexEn7OEkDgAFeWuu5Hg==}
@@ -1723,6 +1731,10 @@ snapshots:
       '@capacitor/core': 8.4.0
 
   '@capacitor/synapse@1.0.4': {}
+
+  '@capgo/capacitor-native-biometric@8.4.11(@capacitor/core@8.4.0)':
+    dependencies:
+      '@capacitor/core': 8.4.0
 
   '@chenglou/pretext@0.0.7': {}
 

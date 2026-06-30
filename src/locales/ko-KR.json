@@ -968,6 +968,10 @@
     "defaultMessage": "Lock",
     "content": "잠금"
   },
+  "diary.unlock": {
+    "defaultMessage": "Unlock",
+    "content": "잠금 해제"
+  },
   "common.confirm": {
     "defaultMessage": "Confirm",
     "content": "확인"
@@ -999,5 +1003,9 @@
   "common.syncFailed": {
     "defaultMessage": "Sync failed",
     "content": "동기화 실패"
+  },
+  "settings.unlockWithBiometric": {
+    "defaultMessage": "Unlock with fingerprint",
+    "content": "지문 잠금 해제"
   }
 }

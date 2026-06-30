@@ -1,5 +1,6 @@
 import { cx } from '@/mobile/styles/ui';
 import { localize } from '@/nls';
+import { Fingerprint } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
 interface PinDialogProps {
@@ -7,9 +8,11 @@ interface PinDialogProps {
   onConfirm: (pin: string) => Promise<boolean> | boolean;
   onCancel: () => void;
   errorMessage?: string;
+  showBiometric?: boolean;
+  onBiometric?: () => void;
 }
 
-export function PinDialog({ title, onConfirm, onCancel, errorMessage }: PinDialogProps) {
+export function PinDialog({ title, onConfirm, onCancel, errorMessage, showBiometric, onBiometric }: PinDialogProps) {
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -49,6 +52,16 @@ export function PinDialog({ title, onConfirm, onCancel, errorMessage }: PinDialo
           <p className='mb-3 text-center text-[13px] font-medium text-danger'>
             {errorMessage ?? localize('settings.pinWrong', 'Wrong PIN')}
           </p>
+        )}
+        {showBiometric && onBiometric && (
+          <button
+            type='button'
+            className='mx-auto mb-5 flex items-center gap-2 rounded-xl bg-surface px-6 py-3 text-base font-medium text-accent active:bg-soft'
+            onClick={onBiometric}
+          >
+            <Fingerprint size={22} />
+            {localize('settings.unlockWithBiometric', 'Unlock with fingerprint')}
+          </button>
         )}
         <div className='relative mb-6 flex justify-center gap-3'>
           <input

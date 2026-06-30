@@ -1,5 +1,6 @@
 import {
   HostFeature,
+  HostBiometricOptions,
   HostCleanVideoRecordOptions,
   HostAttachmentFileOptions,
   HostFilesystemMkdirOptions,
@@ -77,6 +78,7 @@ export class BrowserHostService implements IHostService {
       case 'generateThumbnail':
       case 'webDavHttpRequest':
       case 'attachmentFileCache':
+      case 'biometric':
         return false;
     }
   }
@@ -85,6 +87,10 @@ export class BrowserHostService implements IHostService {
 
   vibrateShort(): void {
     navigator.vibrate?.(12);
+  }
+
+  async authenticateBiometric(_options: HostBiometricOptions): Promise<boolean> {
+    return false;
   }
 
   async writeToClipboard(text: string): Promise<void> {

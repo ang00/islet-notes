@@ -11,6 +11,7 @@ export interface IHostService {
 
   exitApp(): void;
   vibrateShort(): void;
+  authenticateBiometric(options: HostBiometricOptions): Promise<boolean>;
   writeToClipboard(text: string): Promise<void>;
   setBarStyle(theme: HostSystemBarStyle): Promise<void>;
   /** 返回已通过图片类型和大小校验的 Blob，用户取消时返回 undefined。 */
@@ -52,6 +53,12 @@ export interface IHostService {
   rename(options: HostFilesystemRenameOptions): Promise<void>;
 }
 
+export interface HostBiometricOptions {
+  title: string;
+  subtitle?: string;
+  reason?: string;
+}
+
 export const IHostService = createDecorator<IHostService>('IHostService');
 
 export type HostFeature =
@@ -59,7 +66,8 @@ export type HostFeature =
   | 'webDavHttpRequest'
   | 'attachmentFileCache'
   | 'videoUpload'
-  | 'videoTranscode';
+  | 'videoTranscode'
+  | 'biometric';
 
 export interface HostVideoPick {
   /** 原视频已复制到 app 私有目录后的路径，task 只持久化这个路径。 */

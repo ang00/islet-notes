@@ -15,7 +15,7 @@ import { IDiaryService } from '@/services/diary/common/diaryService';
 import { IFileAssetService } from '@/services/fileAsset/common/fileAssetService';
 import { IHostService } from '@/services/native/common/hostService';
 import { INavigationService } from '@/services/navigationService/common/navigationService';
-import React, { useState, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { useService } from '@/hooks/use-service';
 import { Search, X, ChevronRight } from 'lucide-react';
 import type { NotebookRecord } from '@/core/diary/type';
@@ -42,6 +42,10 @@ export function DiariesPage() {
   const syncEnabled = !!fileAssetService.getSyncConfig()?.recoveryKey;
   const isSyncing = diaryService.isSyncing;
   const showSuccessToast = useSuccessToast();
+  const [biometricAvailable, setBiometricAvailable] = useState(false);
+  useEffect(() => {
+    setBiometricAvailable(typeof (window as any).Capacitor?.isNativePlatform === 'function');
+  }, []);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
@@ -155,6 +159,19 @@ export function DiariesPage() {
     },
     [pinNotebookId, hostService, navigationService],
   );
+
+  const handleBiometric = useCallback(async () => {
+    const notebookId = pinNotebookId;
+    if (!notebookId) return;
+    const ok = await hostService.authenticateBiometric({
+      title: localize('settings.enterPin', 'Unlock notebook'),
+    });
+    if (ok) {
+      unlockNotebookSession(notebookId);
+      setPinNotebookId(null);
+      navigationService.navigate({ path: `/diary/${notebookId}` });
+    }
+  }, [pinNotebookId, hostService, navigationService]);
 
   const groupedNotebooks = useMemo(() => {
     if (isSearching) return null;
@@ -350,6 +367,8 @@ export function DiariesPage() {
           title={localize('settings.enterPin', 'Enter PIN')}
           onConfirm={handlePinConfirm}
           onCancel={() => setPinNotebookId(null)}
+          showBiometric={biometricAvailable}
+          onBiometric={handleBiometric}
         />
       )}
     </div>

@@ -968,6 +968,10 @@
     "content": "锁定",
     "defaultMessage": "Lock"
   },
+  "diary.unlock": {
+    "defaultMessage": "Unlock",
+    "content": "解锁"
+  },
   "common.confirm": {
     "content": "确认",
     "defaultMessage": "Confirm"
@@ -999,5 +1003,9 @@
   "common.syncFailed": {
     "defaultMessage": "Sync failed",
     "content": "同步失败"
+  },
+  "settings.unlockWithBiometric": {
+    "defaultMessage": "Unlock with fingerprint",
+    "content": "指纹解锁"
   }
 }

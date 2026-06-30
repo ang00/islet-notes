@@ -22,7 +22,7 @@ import { isUnlockedInSession, unlockNotebookSession } from '@/base/common/sessio
 import { IHostService } from '@/services/native/common/hostService';
 import { INavigationService } from '@/services/navigationService/common/navigationService';
 import { ISpeechRecognitionService } from '@/services/speechRecognition/common/speechRecognitionService';
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useParams, useSearchParams } from 'react-router';
 import { VariableSizeList } from 'react-window';
 
@@ -41,6 +41,19 @@ export function DiaryChatPage() {
     [speechRecognitionService],
   );
   const size = useWindowSize();
+  const [biometricAvailable, setBiometricAvailable] = useState(false);
+  useEffect(() => {
+    setBiometricAvailable(typeof (window as any).Capacitor?.isNativePlatform === 'function');
+  }, []);
+  const handleBiometric = useCallback(async () => {
+    const ok = await hostService.authenticateBiometric({
+      title: localize('settings.unlockWithBiometric', 'Unlock notebook'),
+    });
+    if (ok && notebookId) {
+      unlockNotebookSession(notebookId);
+      navigationService.navigate({ path: `/diary/${notebookId}` });
+    }
+  }, [hostService, notebookId, navigationService]);
   const tasks = useUploadTasks(notebookId);
   const headerRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLElement>(null);
@@ -92,6 +105,8 @@ export function DiaryChatPage() {
           return false;
         }}
         onCancel={() => navigationService.navigate({ path: '/diaries' })}
+        showBiometric={biometricAvailable}
+        onBiometric={handleBiometric}
       />
     );
   }

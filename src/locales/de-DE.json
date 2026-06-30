@@ -968,6 +968,10 @@
     "defaultMessage": "Lock",
     "content": "Sperren"
   },
+  "diary.unlock": {
+    "defaultMessage": "Unlock",
+    "content": "Entsperren"
+  },
   "common.confirm": {
     "defaultMessage": "Confirm",
     "content": "Bestätigen"
@@ -999,5 +1003,9 @@
   "common.syncFailed": {
     "defaultMessage": "Sync failed",
     "content": "Synchronisierung fehlgeschlagen"
+  },
+  "settings.unlockWithBiometric": {
+    "defaultMessage": "Unlock with fingerprint",
+    "content": "Per Fingerabdruck entsperren"
   }
 }

@@ -15,6 +15,7 @@ import { Emitter } from 'vscf/base/common/event';
 import type { ZodType } from 'zod';
 import {
   HostFeature,
+  HostBiometricOptions,
   HostAttachmentFileOptions,
   HostFilesystemMkdirOptions,
   HostFilesystemPathOptions,
@@ -88,6 +89,23 @@ export class CapacitorNativeService implements IHostService {
 
   vibrateShort(): void {
     navigator.vibrate?.(12);
+  }
+
+  async authenticateBiometric(options: HostBiometricOptions): Promise<boolean> {
+    if (!this.isNative) return false;
+    try {
+      const { NativeBiometric } = await import('@capgo/capacitor-native-biometric');
+      const available = await NativeBiometric.isAvailable();
+      if (!available.isAvailable) return false;
+      await NativeBiometric.verifyIdentity({
+        reason: options.reason ?? '',
+        title: options.title,
+        subtitle: options.subtitle,
+      });
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   caniuse(feature: HostFeature): boolean {
@@ -390,6 +408,8 @@ function caniuseHostFeature(feature: HostFeature): boolean {
     case 'videoUpload':
       return Capacitor.getPlatform() === 'android';
     case 'videoTranscode':
+      return Capacitor.getPlatform() === 'android';
+    case 'biometric':
       return Capacitor.getPlatform() === 'android';
   }
 }

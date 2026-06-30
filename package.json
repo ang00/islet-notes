@@ -21,6 +21,7 @@
     "@capacitor/core": "^8.4.0",
     "@capacitor/filesystem": "^8.1.2",
     "@capacitor/preferences": "^8.0.1",
+    "@capgo/capacitor-native-biometric": "^8.4.11",
     "@chenglou/pretext": "0.0.7",
     "@marsaud/smb2": "^0.18.0",
     "date-fns": "^4.1.0",
