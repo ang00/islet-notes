@@ -6,13 +6,20 @@ import { useDiaryModel } from '@/mobile/hooks/useDiaryModel';
 import { CloudSync } from '@/mobile/test.id';
 import { styles } from '@/mobile/styles/ui';
 import { localize } from '@/nls';
+import { IDiaryService } from '@/services/diary/common/diaryService';
 import { syncChannelDisplayName } from '@/base/just-vibes/file-asset-object-store';
 import { INavigationService } from '@/services/navigationService/common/navigationService';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export function SyncManagementPage({ config }: { config: SyncConfigRecord }) {
   const model = useDiaryModel();
   const navigationService = useService(INavigationService);
+  const diaryService = useService(IDiaryService);
+  const [lastSyncTime, setLastSyncTime] = useState<number | undefined>();
+
+  useEffect(() => {
+    diaryService.getLastSyncTime().then(setLastSyncTime);
+  }, [diaryService]);
 
   return (
     <>
@@ -36,6 +43,14 @@ export function SyncManagementPage({ config }: { config: SyncConfigRecord }) {
               testId: CloudSync.storageSummary,
               onClick: () => navigationService.navigate({ path: '/settings/s3/storage' }),
             },
+            ...(lastSyncTime
+              ? [
+                  {
+                    label: localize('settings.sync.lastSync', 'Last sync'),
+                    right: { type: 'value' as const, text: formatRelativeTime(lastSyncTime) },
+                  },
+                ]
+              : []),
           ]}
         />
 
@@ -117,4 +132,28 @@ function formatBytes(bytes: number) {
     unitIndex += 1;
   }
   return `${new Intl.NumberFormat(globalThis.language || undefined, { maximumFractionDigits: value >= 10 ? 1 : 2 }).format(value)} ${units[unitIndex]}`;
+}
+
+function formatRelativeTime(timestamp: number): string {
+  const now = Date.now();
+  const diff = now - timestamp;
+  const seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  const rtf = new Intl.RelativeTimeFormat(globalThis.language || undefined, { numeric: 'auto' });
+
+  if (seconds < 60) return localize('settings.sync.justNow', 'Just now');
+  if (minutes < 60) return rtf.format(-minutes, 'minute');
+  if (hours < 24) return rtf.format(-hours, 'hour');
+  if (days < 30) return rtf.format(-days, 'day');
+
+  return new Intl.DateTimeFormat(globalThis.language || undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(new Date(timestamp));
 }

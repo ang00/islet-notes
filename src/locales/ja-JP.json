@@ -640,6 +640,10 @@
     "defaultMessage": "Sync setup",
     "content": "同期のセットアップ"
   },
+  "settings.sync.justNow": {
+    "defaultMessage": "Just now",
+    "content": "たった今"
+  },
   "settings.sync.key.backedUp": {
     "defaultMessage": "I have safely backed up this recovery key",
     "content": "このリカバリーキーを安全にバックアップしました"
@@ -679,6 +683,10 @@
   "settings.sync.mode.importDesc": {
     "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library.",
     "content": "以前のリカバリーキーを使用して暗号化されたリモートライブラリに接続します。"
+  },
+  "settings.sync.lastSync": {
+    "defaultMessage": "Last sync",
+    "content": "最終同期"
   },
   "settings.sync.none": {
     "defaultMessage": "None",

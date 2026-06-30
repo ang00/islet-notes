@@ -640,6 +640,10 @@
     "content": "同步方式",
     "defaultMessage": "Sync setup"
   },
+  "settings.sync.justNow": {
+    "defaultMessage": "Just now",
+    "content": "剛剛"
+  },
   "settings.sync.key.backedUp": {
     "content": "我已安全備份復原金鑰",
     "defaultMessage": "I have safely backed up this recovery key"
@@ -679,6 +683,10 @@
   "settings.sync.mode.importDesc": {
     "content": "使用之前的復原金鑰連線已有遠端加密庫。",
     "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library."
+  },
+  "settings.sync.lastSync": {
+    "defaultMessage": "Last sync",
+    "content": "上次同步"
   },
   "settings.sync.none": {
     "content": "無",

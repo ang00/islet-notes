@@ -126,6 +126,12 @@ export class WorkbenchDiaryService implements IDiaryService {
       return new Promise((resolve) => this.remoteSyncWaiters.push(resolve));
     }
     await this.runRemoteSync(this.dataModel.storage, this.dataModel.diaryModel, this.dataModel);
+    await this.hostService.savePreference('islet.lastSyncTime', Date.now());
+  }
+
+  async getLastSyncTime(): Promise<number | undefined> {
+    if (!this.hostService) return undefined;
+    return this.hostService.getPreference<number>('islet.lastSyncTime');
   }
 
   softDeleteNotebook(notebookId: string): void {

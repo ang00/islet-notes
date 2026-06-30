@@ -640,6 +640,10 @@
     "defaultMessage": "Sync setup",
     "content": "Configuration de la synchronisation"
   },
+  "settings.sync.justNow": {
+    "defaultMessage": "Just now",
+    "content": "À l'instant"
+  },
   "settings.sync.key.backedUp": {
     "defaultMessage": "I have safely backed up this recovery key",
     "content": "J'ai sauvegardé cette clé de récupération en lieu sûr"
@@ -679,6 +683,10 @@
   "settings.sync.mode.importDesc": {
     "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library.",
     "content": "Utilisez une clé de récupération précédente pour vous connecter à une bibliothèque distante chiffrée."
+  },
+  "settings.sync.lastSync": {
+    "defaultMessage": "Last sync",
+    "content": "Dernière synchronisation"
   },
   "settings.sync.none": {
     "defaultMessage": "None",

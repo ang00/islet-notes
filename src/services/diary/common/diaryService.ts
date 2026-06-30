@@ -19,6 +19,7 @@ export interface IDiaryService {
   readonly isSyncing: boolean;
   setIgnoreDatabaseSync(ignore: boolean): void;
   syncNow(): Promise<void>;
+  getLastSyncTime(): Promise<number | undefined>;
   addNotebook(name: string): string;
   softDeleteNotebook(notebookId: string): void;
   pinNotebook(notebookId: string): void;

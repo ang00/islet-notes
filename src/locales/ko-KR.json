@@ -640,6 +640,10 @@
     "defaultMessage": "Sync setup",
     "content": "동기화 설정"
   },
+  "settings.sync.justNow": {
+    "defaultMessage": "Just now",
+    "content": "방금"
+  },
   "settings.sync.key.backedUp": {
     "defaultMessage": "I have safely backed up this recovery key",
     "content": "이 복구 키를 안전하게 백업했습니다"
@@ -679,6 +683,10 @@
   "settings.sync.mode.importDesc": {
     "defaultMessage": "Use a previous recovery key to connect to an encrypted remote library.",
     "content": "이전 복구 키를 사용하여 암호화된 원격 라이브러리에 연결합니다."
+  },
+  "settings.sync.lastSync": {
+    "defaultMessage": "Last sync",
+    "content": "마지막 동기화"
   },
   "settings.sync.none": {
     "defaultMessage": "None",
