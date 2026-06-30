@@ -7,6 +7,7 @@ import { TextInputRow } from '@/mobile/components/TextInputRow';
 import { DiaryCreate } from '@/mobile/test.id';
 import { useService } from '@/hooks/use-service';
 import { useDiaryModel } from '@/mobile/hooks/useDiaryModel';
+import { useTextInputDialog } from '@/mobile/overlay/textInputDialog/useTextInputDialog';
 import { IDiaryService } from '@/services/diary/common/diaryService';
 import { INavigationService } from '@/services/navigationService/common/navigationService';
 import React, { useState, useCallback } from 'react';
@@ -16,6 +17,7 @@ export function DiariesNewPage() {
   const navigationService = useService(INavigationService);
   const model = useDiaryModel();
   const showActionSheet = useActionSheet();
+  const showTextInputDialog = useTextInputDialog();
   const [name, setName] = useState('');
   const [group, setGroup] = useState<string | undefined>();
   const [tags, setTags] = useState<string[]>([]);
@@ -63,7 +65,20 @@ export function DiariesNewPage() {
 
   const handleAddNewTag = useCallback(() => {
     setShowTagSelector(false);
-  }, []);
+    showTextInputDialog({
+      title: localize('settings.addTag', 'Add tag'),
+      value: '',
+      placeholder: localize('diary.tagPlaceholder', 'Tag name'),
+      saveLabel: localize('common.save', 'Save'),
+      cancelLabel: localize('common.cancel', 'Cancel'),
+      onSave: (value) => {
+        const name = value.trim();
+        if (!name) return;
+        diaryService.addTag(name);
+        setTags((prev) => (prev.includes(name) ? prev : [...prev, name]));
+      },
+    });
+  }, [showTextInputDialog, diaryService]);
 
   return (
     <HeaderPage
